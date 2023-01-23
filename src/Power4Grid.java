@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Power4Grid {
 
     private ArrayList<ArrayList<Integer>> grid;
-    private final int ROWS = 6;
-    private final int COLS = 7;
+    final static int ROWS = 6;
+    final static int COLS = 7;
 
     public Power4Grid() {
         grid = new ArrayList<ArrayList<Integer>>();
