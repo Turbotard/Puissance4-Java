@@ -19,7 +19,7 @@ public class Tableau {
             for (int x = 0; x < C; x++){
                 System.out.print(" " + grille[x] [y] + " ");
             }
-            System.out.println("|");
+            System.out.print("|");
             System.out.println();
         }
         for(int loop = 0 ; loop < C+2+2*C ; loop++)System.out.print('-');
