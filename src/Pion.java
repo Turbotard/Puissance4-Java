@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Pion {
     public static Power4Grid grid;
     public Pion(Power4Grid grid) {
-        this.grid = grid;
+        Pion.grid = grid;
     }
 
     public static void addPion(int col) {
