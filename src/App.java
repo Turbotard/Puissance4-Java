@@ -68,6 +68,7 @@ public class App {
                     break;
                 default:
                     System.out.println("Veuillez saisir un chiffre entre 1 et 7");
+                    mygrid.displayGrid();
                     break;
             }
 
