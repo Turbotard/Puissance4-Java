@@ -22,7 +22,7 @@ public class Tableau {
             System.out.print("|");
             System.out.println();
         }
-        for(int loop = 0 ; loop < C+2+2*C ; loop++)System.out.print('-');
+        for(int loop = 0 ; loop < C+3+3*C ; loop++)System.out.print('-');
 			System.out.println();
     }
     
