@@ -30,7 +30,7 @@ public class Power4Grid {
             System.out.print("" + lol + " " );
         }
         System.out.println();
-        for (int loop = 0; loop < COLS + 2 + 2 * COLS; loop++)
+        for (int loop = 0; loop < COLS * 2 - 1; loop++)
             System.out.print('-');
         System.out.println();
         for (int row = 0; row < ROWS; row++) {
@@ -39,7 +39,7 @@ public class Power4Grid {
             }
             System.out.println();
         }
-        for (int loop = 0; loop < COLS + 2 + 2 * COLS; loop++)
+        for (int loop = 0; loop < COLS * 2 - 1; loop++)
             System.out.print('-');
         System.out.println();
     }
