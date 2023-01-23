@@ -10,7 +10,10 @@ public class Tableau {
                 grille[x][y] = '.';
             }
         }
-
+        for (int lol = 1; lol < C+1;lol++){
+            System.out.print("  " + lol );
+        }
+        System.out.println();
         for (int loop = 0; loop < C + 2 + 2 * C; loop++)
             System.out.print('-');
         System.out.println();
@@ -25,6 +28,8 @@ public class Tableau {
         }
         for (int loop = 0; loop < C + 2 + 2 * C; loop++)
             System.out.print('-');
+        System.out.println();
+        
         System.out.println();
     }
 
