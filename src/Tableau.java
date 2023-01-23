@@ -11,7 +11,7 @@ public class Tableau {
             }
         }
         for (int lol = 1; lol < C+1;lol++){
-            System.out.print(" " + lol + " ");
+            System.out.print("  " + lol );
         }
         System.out.println();
         for (int loop = 0; loop < C + 2 + 2 * C; loop++)
