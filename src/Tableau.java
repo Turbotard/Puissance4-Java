@@ -10,20 +10,20 @@ public class Tableau {
                 grille[x] [y] = '.';
             }
         }
-    }
 
-    public static void afficherGrille(){
-        int C = 7;
-        int L = 6;        
+        for(int loop = 0 ; loop < C+2+2*C ; loop++)System.out.print('-');
+			System.out.println();
 
         for (int y = 0; y < L; y++){
-            System.out.println("|");
+            System.out.print("|");
             for (int x = 0; x < C; x++){
-                System.out.println("" +  grille() + "");
+                System.out.print(" " + grille[x] [y] + " ");
             }
             System.out.println("|");
             System.out.println();
         }
+        for(int loop = 0 ; loop < C+2+2*C ; loop++)System.out.print('-');
+			System.out.println();
     }
     
     
