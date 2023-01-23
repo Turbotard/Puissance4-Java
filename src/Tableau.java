@@ -31,6 +31,8 @@ public class Tableau {
         System.out.println();
         
         System.out.println();
+        Pion.placerPion(grille, 2, 4);
+        Tableau.grille();
     }
-
+    
 }
