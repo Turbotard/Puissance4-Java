@@ -10,13 +10,24 @@ public class Pion {
 
     public void addPion(int col, String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
-        for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
-            if (currentGrid.get(row).get(col) == "0") {
-                currentGrid.get(row).set(col, player);
-                grid.setGrid(currentGrid);
-                break;
+        if (Player.currentPlayer == "1"){
+            for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == "0") {
+                    currentGrid.get(row).set(col, Player.getPionPlayer1());
+                    grid.setGrid(currentGrid);
+                    break;
+                }
+            }
+        }else{
+            for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == "0") {
+                    currentGrid.get(row).set(col, Player.getPionPlayer2());
+                    grid.setGrid(currentGrid);
+                    break;
+                }
             }
         }
+
     }
 
     public void RandomPion(String player) {

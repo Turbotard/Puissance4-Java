@@ -36,6 +36,8 @@ public class Menu {
                     Jeu.jeusolo();
                     break;
                 case "2":
+                    settingP1();
+                    settingP2();
                     Jeu.jeu1v1();
                     break;
                 case "3":
@@ -52,5 +54,56 @@ public class Menu {
 
     public static void quit() {
         System.out.println(ConsoleColors.RED + "Fermeture du menu..." + ConsoleColors.DEFAULT);
+    }
+
+    public static void settingP1(){
+        System.out.println("Joueur1");
+        System.out.println("Veuillez choisir le nom de votre choix");
+        Player.setNomPlayer1();
+        System.out.println("Veuillez choisir le symbole de votre choix");
+        Player.setPionP1();
+        /*System.out.println("Veuillez choisir la couleur de votre choix");
+        Player.getCouleur();*/
+    }
+
+    public static void settingP2(){
+        System.out.println("Joueur 2");
+        System.out.println("Veuillez choisir le nom de votre choix");
+        Player.setNomPlayer2();
+        System.out.println("Veuillez choisir le symbole de votre choix");
+        Player.setPionP2();
+        /*System.out.println("Veuillez choisir la couleur de votre choix");
+        Player.getCouleur();*/
+    }
+
+    public static void displayMenu() throws ParseException {
+        do {
+            System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
+            System.out.println("1. RED");
+            System.out.println("2. GREEN");
+            System.out.println("3. DARK GREEN");
+            System.out.println("4. YELLOW");
+            System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
+
+            String input = CustomeUtils.getUserInput();
+
+            switch (input) {
+                case "1":
+                    System.out.println();
+                    break;
+                case "2":
+                    
+                    break;
+                case "3":
+                    /*displayMenuTri();*/
+                    break;
+                case "q":
+                    quit();
+                    return;
+                default:
+                    System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide" + ConsoleColors.DEFAULT);
+                    break;
+            }
+        } while (true);
     }
 }
