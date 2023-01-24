@@ -110,7 +110,7 @@ public class Jeu {
             System.out.println("Player " + player.getCurrentPlayer() + " wins!");
             break;
         }
-        if(currentPlayer ==1){
+        if(currentPlayer == 1){
             int col;
             String input = CustomeUtils.getUserInput();
             switch (input) {
@@ -122,63 +122,59 @@ public class Jeu {
                 case "1":
                     col = 1;
                     col--;
-                    player.changePlayer();
+
 
                     Pion.addPion(col, currentPlayer);
+                    player.changePlayer();
                     mygrid.displayGrid();
                     break;
                 case "2":
                     col = 2;
                     col--;
-                    player.changePlayer();
+
 
                     Pion.addPion(col, currentPlayer);
-
+                    player.changePlayer();
                     mygrid.displayGrid();
                     break;
                 case "3":
                     col = 3;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
+                    player.changePlayer();
                     mygrid.displayGrid();
                     break;
                 case "4":
                     col = 4;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
+                    player.changePlayer();
                     mygrid.displayGrid();
                     break;
                 case "5":
                     col = 5;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
+                    player.changePlayer();
                     mygrid.displayGrid();
                     break;
                 case "6":
                     col = 6;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
+                    player.changePlayer();
                     mygrid.displayGrid();
                     break;
                 case "7":
                     col = 7;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
+                    player.changePlayer();
                     mygrid.displayGrid();
                     break;
                 default:
@@ -186,12 +182,16 @@ public class Jeu {
                     mygrid.displayGrid();
                     break;
             }
-            currentPlayer = currentPlayer == 1 ? 2 : 1;
-            System.out.println(currentPlayer);
+
             
         }else{
-            IAniv1.RandomPion();
+            Pion.RandomPion(currentPlayer);
+            System.out.println("L'IA a joué");
+            player.changePlayer();
+            mygrid.displayGrid();
         }
+        currentPlayer = currentPlayer == 1 ? 2 : 1;
+        System.out.println(currentPlayer);
             
         } while (true);
 
