@@ -61,11 +61,12 @@ public class Menu {
     }
 
     public static void settingP1(){
+        Player.currentPlayer ="1";
         System.out.println("Joueur1");
         System.out.println("Veuillez choisir le nom de votre choix");
-        Player.setNomPlayer1();
+        Player.setNom();
         System.out.println("Veuillez choisir le symbole de votre choix");
-        Player.setPionP1();
+        Player.setPion();
         try {
             displayMenuCouleurP1();
         } catch (ParseException e) {
@@ -77,11 +78,12 @@ public class Menu {
     }
 
     public static void settingP2(){
+        Player.currentPlayer ="2";
         System.out.println("Joueur 2");
         System.out.println("Veuillez choisir le nom de votre choix");
-        Player.setNomPlayer2();
+        Player.setNom();
         System.out.println("Veuillez choisir le symbole de votre choix");
-        Player.setPionP2();
+        Player.setPion();
         try {
             displayMenuCouleurP2();
         } catch (ParseException e) {

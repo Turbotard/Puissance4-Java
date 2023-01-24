@@ -22,51 +22,16 @@ public class Player {
     public boolean changePlayer() {
         if (currentPlayer == "1") {
             currentPlayer = "2";
-            currentSymbole = getPionPlayer2();
+            currentSymbole = getPion();
         } else if (currentPlayer =="2"){
             currentPlayer = "1";
-            currentSymbole = getPionPlayer1();
+            currentSymbole = getPion();
         }else{
             System.out.println("Erreur");
         }
         return false;
     }
 
-    public static String getNomPlayer1(){
-        return pseudo1;
-    }
-
-    public static String setNomPlayer1(){
-        pseudo1 =CustomeUtils.getUserInput();
-        return pseudo1;
-    }
-    
-    public static String getNomPlayer2(){
-        return pseudo2;
-    }
-
-    public static String setNomPlayer2(){
-        pseudo2 =CustomeUtils.getUserInput();
-        return pseudo2;
-    }
-
-    public static  String getPionPlayer1(){
-        return pion1;
-    }
-
-    public static String setPionP1(){
-        pion1 =CustomeUtils.getUserInput();
-        return pion1;
-    }
-    
-    public static  String getPionPlayer2(){
-        return pion2;
-    }
-
-    public static String setPionP2(){
-        pion2 =CustomeUtils.getUserInput();
-        return pion2;
-    }
 
     public static String pionIA(){
         pion = "x";
@@ -75,5 +40,40 @@ public class Player {
     public static String getcurrentSymbole(){
         return currentSymbole;
     }
-   
+    
+    public static String setNom(){
+        if (currentPlayer.equals ("1")){
+            pseudo1 =CustomeUtils.getUserInput();
+            return pseudo1;
+        }else{
+            pseudo2 =CustomeUtils.getUserInput();
+            return pseudo2;
+        }
+    }
+
+    public static String getNom() {
+        if (currentPlayer.equals("1")){
+            return pseudo1;
+        }else{
+            return pseudo2;
+        } 
+    }
+
+    public static String setPion() {
+        if (currentPlayer.equals("1")){
+            pion1 =CustomeUtils.getUserInput();
+            return pion1;
+        }else{
+            pion2 =CustomeUtils.getUserInput();
+            return pion2;
+        }
+    }
+
+    public static String getPion() {
+        if(currentPlayer.equals("1")){
+            return pion1;
+        }else{
+            return pion2;
+        }
+    }
 }
