@@ -24,7 +24,7 @@ public class Pion {
         if (Player.currentPlayer == "1"){
             for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
                 if (currentGrid.get(row).get(col) == "0") {
-                    currentGrid.get(row).set(col, Menu.couleur1 + Player.getPionPlayer1() + ConsoleColors.DEFAULT);
+                    currentGrid.get(row).set(col, Player.getPionPlayer1());
                     grid.setGrid(currentGrid);
                     break;
                 }
@@ -32,7 +32,7 @@ public class Pion {
         }else{
             for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
                 if (currentGrid.get(row).get(col) == "0") {
-                    currentGrid.get(row).set(col, Menu.couleur2 +Player.getPionPlayer2() + ConsoleColors.DEFAULT);
+                    currentGrid.get(row).set(col, Player.getPionPlayer2());
                     grid.setGrid(currentGrid);
                     break;
                 }
@@ -48,7 +48,7 @@ public class Pion {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
             if (currentGrid.get(row).get(bot) == "0") {
-                currentGrid.get(row).set(bot, Menu.couleur1 + Player.getPionPlayer1() + ConsoleColors.DEFAULT);
+                currentGrid.get(row).set(bot, Player.getPionPlayer1());
                 grid.setGrid(currentGrid);
                 break;
             }
@@ -107,7 +107,7 @@ public class Pion {
 
         for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
             if (currentGrid.get(row).get(random) == "0") {
-                currentGrid.get(row).set(random, Menu.couleur2 + Player.getPionPlayer2() + ConsoleColors.DEFAULT);
+                currentGrid.get(row).set(random,Player.getPionPlayer2());
                 grid.setGrid(currentGrid);
                 break;
             }
