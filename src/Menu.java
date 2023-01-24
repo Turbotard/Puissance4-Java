@@ -49,4 +49,10 @@ public class Menu {
             }
         } while (true);
     }
+
+    private static void quit() {
+    }
+
+    private static void displayAllContacts() {
+    }
 }
