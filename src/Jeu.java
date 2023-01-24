@@ -3,6 +3,7 @@ import model.CustomeUtils;
 public class Jeu {
 
     public static void jeu1v1() {
+        int tourCount = 0;
         Power4Grid mygrid = new Power4Grid();
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
@@ -18,7 +19,14 @@ public class Jeu {
                 break;
             }
             int col;
-            String input = CustomeUtils.getUserInput();
+
+            String input;
+            boolean validInput = false;
+
+            while (!validInput){
+                input = CustomeUtils.getUserInput();
+
+                
             switch (input) {
                 case "q":
                     System.out.println("Bye bye");
@@ -28,79 +36,95 @@ public class Jeu {
                 case "1":
                     col = 1;
                     col--;
-                    player.changePlayer();
+
 
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
+                    tourCount++;
+                    validInput = true;
+
                     break;
                 case "2":
                     col = 2;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
                     mygrid.displayGrid();
+                    tourCount++;
+                    validInput = true;
+
                     break;
+
                 case "3":
                     col = 3;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
                     mygrid.displayGrid();
+                    tourCount++;
+                    validInput = true;
+
                     break;
                 case "4":
                     col = 4;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
                     mygrid.displayGrid();
+                    tourCount++;
+                    validInput = true;
+
                     break;
                 case "5":
                     col = 5;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
                     mygrid.displayGrid();
+                    tourCount++;
+                    validInput = true;
+
                     break;
                 case "6":
                     col = 6;
                     col--;
-                    player.changePlayer();
 
                     Pion.addPion(col, currentPlayer);
-
                     mygrid.displayGrid();
+                    tourCount++;
+                    validInput = true;
+
                     break;
                 case "7":
                     col = 7;
                     col--;
 
-                   if (Pion.addPion(col, currentPlayer)){
-                    tourCount++;
-                    mygrid.displayGrid();
-                    player.changePlayer();
-
                     Pion.addPion(col, currentPlayer);
-
                     mygrid.displayGrid();
+                    tourCount++;
+                    validInput = true;
                     break;
                 default:
                     System.out.println("Veuillez saisir un chiffre entre 1 et 7");
                     mygrid.displayGrid();
                     break;
             }
-            currentPlayer = currentPlayer == "1" ? "2" : "1";
-            System.out.println(currentPlayer);
-        } while (true);
+            
 
-    }
+            if(validInput == true){
+                player.changePlayer();
+            currentPlayer = currentPlayer == "1" ? "2" : "1";
+
+            }
+            System.out.println("Nombre de tours : " + tourCount);
+            System.out.println("Player : " + currentPlayer);
+        } 
+    }while (true);
+        }
+ 
+
+
+
 
     public static void jeusolo() {
         Power4Grid mygrid = new Power4Grid();

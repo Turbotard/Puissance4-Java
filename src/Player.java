@@ -9,12 +9,13 @@ public class Player {
         return currentPlayer;
     }
 
-    public void changePlayer() {
+    public boolean changePlayer() {
         if (currentPlayer == "1") {
             currentPlayer = "2";
         } else {
-            currentPlayer = "1";
+            System.out.println("Erreur");
         }
+        return false;
     }
 
 }
