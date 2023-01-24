@@ -32,7 +32,7 @@ public class Menu {
 
             switch (input) {
                 case "1":
-                    /*createContact();*/
+                    
                     break;
                 case "2":
                     Jeu.jeu1v1();
