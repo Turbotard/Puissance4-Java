@@ -182,7 +182,7 @@ public class Jeu {
                 }
 
             } else {
-                Pion.RandomPion(currentPlayer);
+                Pion.RandomPion1(currentPlayer);
                 System.out.println("L'IA a joué");
                 player.changePlayer();
                 mygrid.displayGrid();
