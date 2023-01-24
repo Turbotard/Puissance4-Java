@@ -116,7 +116,7 @@ public class Jeu {
             switch (input) {
                 case "q":
                     System.out.println("Bye bye");
-                    System.exit(0);
+                    Menu.quit();
                     return;
                     
                 case "1":
@@ -185,12 +185,12 @@ public class Jeu {
 
             
         }else{
-            Pion.RandomPion(currentPlayer);
+            Pion.RandomPion(0, currentPlayer);
             System.out.println("L'IA a joué");
             player.changePlayer();
             mygrid.displayGrid();
         }
-        currentPlayer = currentPlayer == 1 ? 2 : 1;
+        currentPlayer = currentPlayer == "1" ? "2" : "1";
         System.out.println(currentPlayer);
             
         } while (true);
