@@ -35,6 +35,8 @@ public class Menu {
 
             switch (input) {
                 case "1":
+                    settingIA();
+                    settingP2();
                     Jeu.jeusolo();
                     break;
                 case "2":
@@ -86,8 +88,12 @@ public class Menu {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        /*System.out.println("Veuillez choisir la couleur de votre choix");
-        Player.getCouleur();*/
+
+    }
+
+    public static void settingIA(){
+        System.out.println("IA");
+        Player.pionIA();
     }
 
     public static void displayMenuCouleurP1() throws ParseException {

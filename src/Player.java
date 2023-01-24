@@ -6,21 +6,14 @@ public class Player {
     private static String pseudo2;
     private static String pion1;
     private static String pion2;
+    private static String pion;
     
-
     public Player() {
         currentPlayer = "1";
     }
 
     public String getCurrentPlayer() {
-        if (currentPlayer == "1"){
-            currentPlayer = getNomPlayer1();
             return currentPlayer;
-        }
-        else{
-            currentPlayer = getNomPlayer2();
-            return currentPlayer;
-        }
     }
 
     public boolean changePlayer() {
@@ -67,4 +60,10 @@ public class Player {
         pion2 =CustomeUtils.getUserInput();
         return pion2;
     }
+
+    public static String pionIA(){
+        pion = "x";
+        return pion;
+    }
+   
 }
