@@ -31,16 +31,21 @@ public class App {
                 case "q":
                     System.out.println("Bye bye");
                     System.exit(0);
-                    break;
+                    return;
+                    
                 case "1":
                     col = 1;
                     col--;
+                    player.changePlayer();
+
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
                     break;
                 case "2":
                     col = 2;
                     col--;
+                    player.changePlayer();
+
                     Pion.addPion(col, currentPlayer);
 
                     mygrid.displayGrid();
@@ -48,6 +53,8 @@ public class App {
                 case "3":
                     col = 3;
                     col--;
+                    player.changePlayer();
+
                     Pion.addPion(col, currentPlayer);
 
                     mygrid.displayGrid();
@@ -55,6 +62,8 @@ public class App {
                 case "4":
                     col = 4;
                     col--;
+                    player.changePlayer();
+
                     Pion.addPion(col, currentPlayer);
 
                     mygrid.displayGrid();
@@ -62,6 +71,8 @@ public class App {
                 case "5":
                     col = 5;
                     col--;
+                    player.changePlayer();
+
                     Pion.addPion(col, currentPlayer);
 
                     mygrid.displayGrid();
@@ -69,6 +80,8 @@ public class App {
                 case "6":
                     col = 6;
                     col--;
+                    player.changePlayer();
+
                     Pion.addPion(col, currentPlayer);
 
                     mygrid.displayGrid();
@@ -76,6 +89,8 @@ public class App {
                 case "7":
                     col = 7;
                     col--;
+                    player.changePlayer();
+
                     Pion.addPion(col, currentPlayer);
 
                     mygrid.displayGrid();
@@ -86,7 +101,6 @@ public class App {
                     break;
             }
             currentPlayer = currentPlayer == 1 ? 2 : 1;
-            player.changePlayer();
             System.out.println(currentPlayer);
         } while (true);
 
