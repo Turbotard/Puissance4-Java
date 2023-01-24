@@ -17,6 +17,7 @@ import model.ConsoleColors;
  * choix de l'utilisateur
  */
 public class Menu {
+    public static String couleur;
 
     /**
      * Affiche le menu principal et gère les choix de l'utilisateur
@@ -62,6 +63,12 @@ public class Menu {
         Player.setNomPlayer1();
         System.out.println("Veuillez choisir le symbole de votre choix");
         Player.setPionP1();
+        try {
+            displayMenuCouleur();
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         /*System.out.println("Veuillez choisir la couleur de votre choix");
         Player.getCouleur();*/
     }
@@ -72,6 +79,12 @@ public class Menu {
         Player.setNomPlayer2();
         System.out.println("Veuillez choisir le symbole de votre choix");
         Player.setPionP2();
+        try {
+            displayMenuCouleur();
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         /*System.out.println("Veuillez choisir la couleur de votre choix");
         Player.getCouleur();*/
     }
@@ -89,13 +102,16 @@ public class Menu {
 
             switch (input) {
                 case "1":
-                    ConsoleColors.RED;
+                    couleur = ConsoleColors.RED;
                     break;
                 case "2":
-                    ConsoleColors.GREEN;
+                    couleur = ConsoleColors.GREEN;
                     break;
                 case "3":
-                    ConsoleColors.DARK_GREEN
+                    couleur = ConsoleColors.DARK_GREEN;
+                    break;
+                case "4":
+                    couleur = ConsoleColors.YELLOW;
                     break;
                 case "q":
                     quit();
