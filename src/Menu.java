@@ -13,7 +13,8 @@ import model.CustomeUtils;
 import model.ConsoleColors;
 
 /**
- * Ensemble des méthodes qui permettent d'afficher différents menus et gérer les choix de l'utilisateur
+ * Ensemble des méthodes qui permettent d'afficher différents menus et gérer les
+ * choix de l'utilisateur
  */
 public class Menu {
 
