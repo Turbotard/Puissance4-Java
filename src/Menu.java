@@ -76,7 +76,7 @@ public class Menu {
         Player.getCouleur();*/
     }
 
-    public static void displayMenu() throws ParseException {
+    public static void displayMenuCouleur() throws ParseException {
         do {
             System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
             System.out.println("1. RED");
@@ -89,13 +89,13 @@ public class Menu {
 
             switch (input) {
                 case "1":
-                    System.out.println();
+                    ConsoleColors.RED;
                     break;
                 case "2":
-                    
+                    ConsoleColors.GREEN;
                     break;
                 case "3":
-                    /*displayMenuTri();*/
+                    ConsoleColors.DARK_GREEN
                     break;
                 case "q":
                     quit();
