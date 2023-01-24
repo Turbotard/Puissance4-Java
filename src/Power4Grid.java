@@ -24,10 +24,10 @@ public class Power4Grid {
     public void setGrid(ArrayList<ArrayList<String>> grid) {
         this.grid = grid;
     }
-    
+
     public void displayGrid() {
-        for (int lol = 1; lol < COLS+1;lol++){
-            System.out.print(" " + lol + " " );
+        for (int lol = 1; lol < COLS + 1; lol++) {
+            System.out.print(" " + lol + " ");
         }
         System.out.println();
         for (int loop = 0; loop < COLS + 2 * COLS; loop++)
@@ -35,11 +35,11 @@ public class Power4Grid {
         System.out.println();
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
-                System.out.print("|" +grid.get(row).get(col) + "|");
+                System.out.print("|" + grid.get(row).get(col) + "|");
             }
             System.out.println();
         }
-        for (int loop = 0; loop < COLS + 2  * COLS; loop++)
+        for (int loop = 0; loop < COLS + 2 * COLS; loop++)
             System.out.print('-');
         System.out.println();
     }
