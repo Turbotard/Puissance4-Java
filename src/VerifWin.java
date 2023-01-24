@@ -7,8 +7,8 @@ public class VerifWin {
         this.grid = grid;
     }
 
-    public static boolean checkWin(int player) {
-        ArrayList<ArrayList<Integer>> currentGrid = grid.getGrid();
+    public static boolean checkWin(String player) {
+        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
 
         // Vérifie les lignes
         for (int row = 0; row < Power4Grid.ROWS; row++) {
