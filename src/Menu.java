@@ -32,13 +32,12 @@ public class Menu {
 
             switch (input) {
                 case "1":
-                    /*createContact();*/
+                    Jeu.jeusolo();
                     break;
                 case "2":
                     Jeu.jeu1v1();
                     break;
                 case "3":
-                    /*displayMenuTri();*/
                     break;
                 case "q":
                     quit();

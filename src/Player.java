@@ -1,19 +1,20 @@
 public class Player {
-    private int currentPlayer;
+    private String currentPlayer;
 
     public Player() {
-        currentPlayer = 1;
+        currentPlayer = "1";
     }
 
-    public int getCurrentPlayer() {
+    public String getCurrentPlayer() {
         return currentPlayer;
     }
 
     public void changePlayer() {
-        if (currentPlayer == 1) {
-            currentPlayer = 2;
+        if (currentPlayer == "1") {
+            currentPlayer = "2";
         } else {
-            currentPlayer = 1;
+            currentPlayer = "1";
         }
     }
+
 }
