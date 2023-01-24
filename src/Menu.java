@@ -26,19 +26,19 @@ public class Menu {
             System.out.println("1. Jouer en solo");
             System.out.println("2. Jouer à deux ");
             System.out.println("3. Afficehr le top 10");
-            System.out.println("q. Quitter le menu" /*+ ConsoleColors.DEFAULT*/);
+            System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
 
             String input = CustomeUtils.getUserInput();
 
             switch (input) {
                 case "1":
-                    createContact();
+                    /*createContact();*/
                     break;
                 case "2":
-                    displayAllContacts();
+                    Jeu.jeu1v1();
                     break;
                 case "3":
-                    displayMenuTri();
+                    /*displayMenuTri();*/
                     break;
                 case "q":
                     quit();
@@ -48,5 +48,9 @@ public class Menu {
                     break;
             }
         } while (true);
+    }
+
+    public static void quit() {
+        System.out.println(ConsoleColors.RED + "Fermeture du menu..." + ConsoleColors.DEFAULT);
     }
 }
