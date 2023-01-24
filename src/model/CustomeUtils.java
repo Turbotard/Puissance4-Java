@@ -9,9 +9,8 @@ public class CustomeUtils {
      * @return La chaine de caractères saisie par l'utilisateur
      */
     public static String getUserInput() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            String userInput = scanner.nextLine();
-            return userInput;
-        }
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        return userInput;
     }
 }

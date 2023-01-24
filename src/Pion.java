@@ -8,7 +8,7 @@ public class Pion {
         Pion.grid = grid;
     }
 
-    public void addPion(int col, String player) {
+    public static void addPion(int col, String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         if (Player.currentPlayer == "1"){
             for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
@@ -30,7 +30,7 @@ public class Pion {
 
     }
 
-    public void RandomPion(String player) {
+    public static void RandomPion(String player) {
         Random rand = new Random();
         int col = rand.nextInt(6 - 0) + 0;
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();

@@ -6,11 +6,12 @@ public class Jeu {
         Power4Grid mygrid = new Power4Grid();
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
+        VerifWin vf = new VerifWin(mygrid);
 
         String currentPlayer = "1";
         Player player = new Player();
         do {
-            boolean win = VerifWin.checkWin(currentPlayer);
+            boolean win = vf.checkWin(currentPlayer);
             if (win) {
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
                 break;
@@ -100,11 +101,11 @@ public class Jeu {
         Power4Grid mygrid = new Power4Grid();
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
-
+        VerifWin vf = new VerifWin(mygrid);
         String currentPlayer = "1";
         Player player = new Player();
         do {
-            boolean win = VerifWin.checkWin(currentPlayer);
+            boolean win = vf.checkWin(currentPlayer);
             if (win) {
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
                 break;
