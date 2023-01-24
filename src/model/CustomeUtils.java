@@ -3,7 +3,7 @@ package model;
 import java.util.Scanner;
 
 public class CustomeUtils {
- /**
+    /**
      * Récupère la chaine de caractères saisie par l'utilisateur
      *
      * @return La chaine de caractères saisie par l'utilisateur

@@ -15,8 +15,24 @@ public class Pion {
                 currentGrid.get(row).set(col, player);
                 grid.setGrid(currentGrid);
                 break;
+        if (Player.currentPlayer == "1"){
+            for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == "0") {
+                    currentGrid.get(row).set(col, Menu.couleur + Player.getPionPlayer1());
+                    grid.setGrid(currentGrid);
+                    break;
+                }
+            }
+        }else{
+            for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == "0") {
+                    currentGrid.get(row).set(col, Menu.couleur +Player.getPionPlayer2());
+                    grid.setGrid(currentGrid);
+                    break;
+                }
             }
         }
+
     }
 
     public static void RandomPion(String player) {
