@@ -92,7 +92,7 @@ public class Jeu {
                     tourCount++;
                     mygrid.displayGrid();
                     player.changePlayer();
-                    currentPlayer = currentPlayer == 1 ? 2 : 1;
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";
                    }
 
                    else {
@@ -105,7 +105,7 @@ public class Jeu {
                     mygrid.displayGrid();
                     break;
             }
-            currentPlayer = currentPlayer == 1 ? 2 : 1;
+            currentPlayer = currentPlayer == "1" ? "2" : "1";
             System.out.println(currentPlayer);
         } while (true);
 

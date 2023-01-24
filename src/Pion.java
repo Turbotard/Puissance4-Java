@@ -7,7 +7,7 @@ public class Pion {
         Pion.grid = grid;
     }
 
-    public static void addPion(int col, String player) {
+    public static boolean addPion(int col, String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
             if (currentGrid.get(row).get(col) == "0") {
