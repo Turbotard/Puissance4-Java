@@ -10,11 +10,13 @@ public class IAniv1 {
 
     public static void RandomPion(String player) {
         Random rand = new Random();
-        int col = rand.nextInt(6 - 0) + 0;
+        int bot = rand.nextInt(7 - 1 + 1) + 1;
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
-        for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
+        int randomIndex = (int) (Math.random() * Power4Grid.COLS);
+        int col = randomIndex;
+        for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
             if (currentGrid.get(row).get(col) == "0") {
-                currentGrid.get(row).set(col, player);
+                currentGrid.get(row).set(col, bot);
                 grid.setGrid(currentGrid);
                 break;
             }
