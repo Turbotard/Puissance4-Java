@@ -3,6 +3,9 @@ import model.CustomeUtils;
 public class Jeu {
     
     public static void jeu1v1(){
+
+        int tourCount = 0;
+
         Power4Grid mygrid = new Power4Grid();
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
@@ -10,12 +13,16 @@ public class Jeu {
         VerifWin vf = new VerifWin(mygrid);
         int currentPlayer = 1;
         Player player = new Player();
+
         do {
         boolean win = vf.checkWin(currentPlayer);
         if (win) {
             System.out.println("Player " + player.getCurrentPlayer() + " wins!");
             break;
         }
+
+        System.out.println("Player " + currentPlayer + ", your turn");
+        System.out.println("Number of tours : " + tourCount);
             int col;
             String input = CustomeUtils.getUserInput();
             switch (input) {
@@ -80,22 +87,32 @@ public class Jeu {
                 case "7":
                     col = 7;
                     col--;
-                    player.changePlayer();
 
-                    Pion.addPion(col, currentPlayer);
-
+                   if (Pion.addPion(col, currentPlayer)){
+                    tourCount++;
                     mygrid.displayGrid();
-                    break;
+                    player.changePlayer();
+                    currentPlayer = currentPlayer == 1 ? 2 : 1;
+                   }
+
+                   else {
+                    System.out.println("Column full, please choose another one");
+                }
+                break;
+                    
                 default:
                     System.out.println("Veuillez saisir un chiffre entre 1 et 7");
                     mygrid.displayGrid();
                     break;
             }
-            currentPlayer = currentPlayer == 1 ? 2 : 1;
-            System.out.println(currentPlayer);
+            
         } while (true);
 
     }
         
     
 }
+
+
+
+

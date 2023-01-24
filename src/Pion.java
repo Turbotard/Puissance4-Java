@@ -6,7 +6,7 @@ public class Pion {
         Pion.grid = grid;
     }
 
-    public static void addPion(int col, int player) {
+    public boolean addPion(int col, int player) {
         ArrayList<ArrayList<Integer>> currentGrid = grid.getGrid();
         for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
             if (currentGrid.get(row).get(col) == 0) {
@@ -15,5 +15,6 @@ public class Pion {
                 break;
             }
         }
+        return false;
     }
 }
