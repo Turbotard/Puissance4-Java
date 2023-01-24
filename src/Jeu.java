@@ -7,11 +7,10 @@ public class Jeu {
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
 
-        VerifWin vf = new VerifWin(mygrid);
         String currentPlayer = "1";
         Player player = new Player();
         do {
-            boolean win = vf.checkWin(currentPlayer);
+            boolean win = VerifWin.checkWin(currentPlayer);
             if (win) {
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
                 break;
@@ -102,11 +101,10 @@ public class Jeu {
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
 
-        VerifWin vf = new VerifWin(mygrid);
         String currentPlayer = "1";
         Player player = new Player();
         do {
-            boolean win = vf.checkWin(currentPlayer);
+            boolean win = VerifWin.checkWin(currentPlayer);
             if (win) {
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
                 break;

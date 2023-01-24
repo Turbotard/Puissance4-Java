@@ -4,7 +4,7 @@ public class VerifWin {
     private static Power4Grid grid;
 
     public VerifWin(Power4Grid grid) {
-        this.grid = grid;
+        VerifWin.grid = grid;
     }
 
     public static boolean checkWin(String player) {
