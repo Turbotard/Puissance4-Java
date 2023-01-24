@@ -17,7 +17,8 @@ import model.ConsoleColors;
  * choix de l'utilisateur
  */
 public class Menu {
-    public static String couleur;
+    public static String couleur1;
+    public static String couleur2;
 
     /**
      * Affiche le menu principal et gère les choix de l'utilisateur
@@ -64,7 +65,7 @@ public class Menu {
         System.out.println("Veuillez choisir le symbole de votre choix");
         Player.setPionP1();
         try {
-            displayMenuCouleur();
+            displayMenuCouleurP1();
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -80,7 +81,7 @@ public class Menu {
         System.out.println("Veuillez choisir le symbole de votre choix");
         Player.setPionP2();
         try {
-            displayMenuCouleur();
+            displayMenuCouleurP2();
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -89,29 +90,86 @@ public class Menu {
         Player.getCouleur();*/
     }
 
-    public static void displayMenuCouleur() throws ParseException {
+    public static void displayMenuCouleurP1() throws ParseException {
         do {
             System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
             System.out.println("1. RED");
             System.out.println("2. GREEN");
             System.out.println("3. DARK GREEN");
             System.out.println("4. YELLOW");
+            System.out.println("5. PURPLE");
+            System.out.println("6. CYAN");
+            System.out.println("7. BLUE");
             System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
 
             String input = CustomeUtils.getUserInput();
 
             switch (input) {
                 case "1":
-                    couleur = ConsoleColors.RED;
+                    couleur1 = ConsoleColors.RED;
                     break;
                 case "2":
-                    couleur = ConsoleColors.GREEN;
+                    couleur1 = ConsoleColors.GREEN;
                     break;
                 case "3":
-                    couleur = ConsoleColors.DARK_GREEN;
+                    couleur1 = ConsoleColors.DARK_GREEN;
                     break;
                 case "4":
-                    couleur = ConsoleColors.YELLOW;
+                    couleur1 = ConsoleColors.YELLOW;
+                    break;
+                case "5":
+                    couleur2 = ConsoleColors.PURPLE;
+                    break;
+                case "6":
+                    couleur2 = ConsoleColors.CYAN;
+                    break;
+                case "7":
+                    couleur2 = ConsoleColors.BLUE;
+                    break;
+                case "q":
+                    quit();
+                    return;
+                default:
+                    System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide" + ConsoleColors.DEFAULT);
+                    break;
+            }
+        } while (true);
+    }
+    public static void displayMenuCouleurP2() throws ParseException {
+        do {
+            System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
+            System.out.println("1. RED");
+            System.out.println("2. GREEN");
+            System.out.println("3. DARK GREEN");
+            System.out.println("4. YELLOW");
+            System.out.println("5. PURPLE");
+            System.out.println("6. CYAN");
+            System.out.println("7. BLUE");
+            System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
+
+            String input = CustomeUtils.getUserInput();
+
+            switch (input) {
+                case "1":
+                    couleur2 = ConsoleColors.RED;
+                    break;
+                case "2":
+                    couleur2 = ConsoleColors.GREEN;
+                    break;
+                case "3":
+                    couleur2 = ConsoleColors.DARK_GREEN;
+                    break;
+                case "4":
+                    couleur2 = ConsoleColors.YELLOW;
+                    break;
+                case "5":
+                    couleur2 = ConsoleColors.PURPLE;
+                    break;
+                case "6":
+                    couleur2 = ConsoleColors.CYAN;
+                    break;
+                case "7":
+                    couleur2 = ConsoleColors.BLUE;
                     break;
                 case "q":
                     quit();

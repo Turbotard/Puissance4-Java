@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+import model.ConsoleColors;
+
 public class Pion {
     public static Power4Grid grid;
 
@@ -10,13 +12,24 @@ public class Pion {
 
     public static void addPion(int col, String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
-        for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
-            if (currentGrid.get(row).get(col) == "0") {
-                currentGrid.get(row).set(col, player);
-                grid.setGrid(currentGrid);
-                break;
+        if (Player.currentPlayer == "1"){
+            for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == "0") {
+                    currentGrid.get(row).set(col, Menu.couleur1 + Player.getPionPlayer1() + ConsoleColors.DEFAULT);
+                    grid.setGrid(currentGrid);
+                    break;
+                }
+            }
+        }else{
+            for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == "0") {
+                    currentGrid.get(row).set(col, Menu.couleur2 +Player.getPionPlayer2() + ConsoleColors.DEFAULT);
+                    grid.setGrid(currentGrid);
+                    break;
+                }
             }
         }
+
     }
 
     public static void RandomPion(String player) {
