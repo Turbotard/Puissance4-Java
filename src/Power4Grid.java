@@ -2,12 +2,12 @@ import java.util.ArrayList;
 
 public class Power4Grid {
 
-    private ArrayList<ArrayList<String>> grid;
+    private ArrayList<ArrayList<Integer>> grid;
     final static int ROWS = 6;
     final static int COLS = 7;
 
     public Power4Grid() {
-        grid = new ArrayList<ArrayList<String>>();
+        grid = new ArrayList<ArrayList<Integer>>();
         for (int row = 0; row < ROWS; row++) {
             ArrayList<Integer> newRow = new ArrayList<Integer>();
             for (int col = 0; col < COLS; col++) {
