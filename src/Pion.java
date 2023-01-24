@@ -29,11 +29,8 @@ public class Pion {
                 }
             }
         }
-<<<<<<< HEAD
-        return false;
-=======
 
->>>>>>> c678ba61e610d0135c6af827c33cf6e6c6da2c51
+        return false;
     }
 
     public static void RandomPion(String player) {
