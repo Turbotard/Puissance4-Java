@@ -1,57 +1,12 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-import model.ConsoleColors;
-
-public class Pion {
+public class IAniv2 {
     public static Power4Grid grid;
-
-    public Pion(Power4Grid grid) {
+    public void Pion(Power4Grid grid) {
         Pion.grid = grid;
     }
 
-    public static boolean addPion(int col, String player) {
-        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
-        if (Player.currentPlayer == "1"){
-            for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
-                if (currentGrid.get(row).get(col) == "0") {
-                    currentGrid.get(row).set(col, Menu.couleur1 + Player.getPionPlayer1() + ConsoleColors.DEFAULT);
-                    grid.setGrid(currentGrid);
-                    break;
-                }
-            }
-        }else{
-            for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
-                if (currentGrid.get(row).get(col) == "0") {
-                    currentGrid.get(row).set(col, Menu.couleur2 +Player.getPionPlayer2() + ConsoleColors.DEFAULT);
-                    grid.setGrid(currentGrid);
-                    break;
-                }
-            }
-        }
-<<<<<<< HEAD
-        return false;
-=======
-
->>>>>>> c678ba61e610d0135c6af827c33cf6e6c6da2c51
-    }
-
-    public static void RandomPion(String player) {
-        Random rand = new Random();
-        int bot = rand.nextInt(7 - 1 + 1) + 1;
-        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
-        for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
-            if (currentGrid.get(row).get(bot) == "0") {
-                currentGrid.get(row).set(bot, player);
-                grid.setGrid(currentGrid);
-                break;
-            }
-
-        }
-        bot = rand.nextInt(6 - 0) + 0;
-    }
-
-    
     public static void RandomPion1(String player) {
         Random rand = new Random();
         int random = rand.nextInt(6 - 0) + 0;

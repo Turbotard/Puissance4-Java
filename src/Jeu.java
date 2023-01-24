@@ -7,8 +7,8 @@ public class Jeu {
         Power4Grid mygrid = new Power4Grid();
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
-
         VerifWin vf = new VerifWin(mygrid);
+
         String currentPlayer = "1";
         Player player = new Player();
 
@@ -30,7 +30,7 @@ public class Jeu {
             switch (input) {
                 case "q":
                     System.out.println("Bye bye");
-                    System.exit(0);
+                    Menu.quit();
                     return;
 
                 case "1":
@@ -130,7 +130,6 @@ public class Jeu {
         Power4Grid mygrid = new Power4Grid();
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
-
         VerifWin vf = new VerifWin(mygrid);
         String currentPlayer = "1";
         Player player = new Player();
@@ -212,7 +211,7 @@ public class Jeu {
                 }
 
             } else {
-                Pion.RandomPion(currentPlayer);
+                Pion.RandomPion1(currentPlayer);
                 System.out.println("L'IA a joué");
                 player.changePlayer();
                 mygrid.displayGrid();
