@@ -14,13 +14,13 @@ public class Jeu {
         Player player = new Player();
 
         do {
-            boolean win = vf.checkWin(currentPlayer);
+            boolean win = vf.checkWin(Player.getcurrentSymbole());
             if (win) {
                 
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
                 break;
             }
-            currentPlayer = currentPlayer == "1" ? "2" : "1";
+
 
             int col;
 
@@ -115,7 +115,7 @@ public class Jeu {
             }
             
 
-        
+            currentPlayer = currentPlayer == "1" ? "2" : "1";
             System.out.println("Nombre de tours : " + tourCount);
             System.out.println("Player : " + currentPlayer);
         

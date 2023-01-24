@@ -1,19 +1,19 @@
 import java.util.ArrayList;
 
 public class VerifWin {
-    private static Power4Grid grid;
+    private Power4Grid grid;
 
     public VerifWin(Power4Grid grid) {
         this.grid = grid;
     }
 
-    public static boolean checkWin(String player) {
+    public boolean checkWin(String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
 
         // Vérifie les lignes
         for (int row = 0; row < Power4Grid.ROWS; row++) {
             for (int col = 0; col < Power4Grid.COLS - 3; col++) {
-                if (currentGrid.get(row).get(col).equals(player) 
+                if (currentGrid.get(row).get(col).equals(player)
                         && currentGrid.get(row).get(col + 1).equals(player)
                         && currentGrid.get(row).get(col + 2).equals(player)
                         && currentGrid.get(row).get(col + 3).equals(player)) {

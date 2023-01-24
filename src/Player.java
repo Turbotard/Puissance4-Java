@@ -50,7 +50,7 @@ public class Player {
         return pseudo2;
     }
 
-    public static String getPionPlayer1(){
+    public static  String getPionPlayer1(){
         return pion1;
     }
 
@@ -59,7 +59,7 @@ public class Player {
         return pion1;
     }
     
-    public static String getPionPlayer2(){
+    public static  String getPionPlayer2(){
         return pion2;
     }
 
