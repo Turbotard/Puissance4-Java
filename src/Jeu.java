@@ -102,7 +102,7 @@ public class Jeu {
         Pion Pion = new Pion(mygrid);
 
         VerifWin vf = new VerifWin(mygrid);
-        int currentPlayer = 1;
+        String currentPlayer = "1";
         Player player = new Player();
         do {
         boolean win = vf.checkWin(currentPlayer);
@@ -110,7 +110,7 @@ public class Jeu {
             System.out.println("Player " + player.getCurrentPlayer() + " wins!");
             break;
         }
-        if(currentPlayer ==1){
+        if(currentPlayer =="1"){
             int col;
             String input = CustomeUtils.getUserInput();
             switch (input) {
@@ -186,7 +186,7 @@ public class Jeu {
                     mygrid.displayGrid();
                     break;
             }
-            currentPlayer = currentPlayer == 1 ? 2 : 1;
+            currentPlayer = currentPlayer == "1" ? "2" : "1";
             System.out.println(currentPlayer);
             
         }else{
