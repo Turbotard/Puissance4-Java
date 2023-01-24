@@ -13,8 +13,9 @@ public class Jeu {
         Player player = new Player();
 
         do {
-            boolean win = vf.checkWin(currentPlayer);
+            boolean win = VerifWin.checkWin(currentPlayer);
             if (win) {
+                
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
                 break;
             }
