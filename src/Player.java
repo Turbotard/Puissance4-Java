@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-import model.ConsoleColors;
+import model.CustomeUtils;
 
 public class Player {
     public static String currentPlayer;
@@ -8,7 +6,6 @@ public class Player {
     private static String pseudo2;
     private static String pion1;
     private static String pion2;
-    private static String couleur;
     
 
     public Player() {
@@ -39,8 +36,7 @@ public class Player {
     }
 
     public static String setNomPlayer1(){
-        Scanner scanner = new Scanner(System.in);
-        pseudo1 = scanner.nextLine();
+        pseudo1 =CustomeUtils.getUserInput();
         return pseudo1;
     }
     
@@ -49,8 +45,7 @@ public class Player {
     }
 
     public static String setNomPlayer2(){
-        Scanner scanner = new Scanner(System.in);
-        pseudo2 = scanner.nextLine();
+        pseudo2 =CustomeUtils.getUserInput();
         return pseudo2;
     }
 
@@ -59,8 +54,7 @@ public class Player {
     }
 
     public static String setPionP1(){
-        Scanner scanner = new Scanner(System.in);
-        pion1 = scanner.nextLine();
+        pion1 =CustomeUtils.getUserInput();
         return pion1;
     }
     
@@ -69,8 +63,7 @@ public class Player {
     }
 
     public static String setPionP2(){
-        Scanner scanner = new Scanner(System.in);
-        pion2 = scanner.nextLine();
+        pion2 =CustomeUtils.getUserInput();
         return pion2;
     }
 }
