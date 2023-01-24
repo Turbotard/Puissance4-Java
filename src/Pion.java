@@ -5,6 +5,15 @@ import model.ConsoleColors;
 
 public class Pion {
     public static Power4Grid grid;
+    private static String pion;
+
+    public static String getPionIA(){
+        return pion;
+    }
+    public static String setPionIA(){
+        pion = "x" ;
+        return pion;
+    }
 
     public Pion(Power4Grid grid) {
         Pion.grid = grid;
@@ -39,7 +48,7 @@ public class Pion {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
             if (currentGrid.get(row).get(bot) == "0") {
-                currentGrid.get(row).set(bot, player);
+                currentGrid.get(row).set(bot, Menu.couleur1 + Player.getPionPlayer1() + ConsoleColors.DEFAULT);
                 grid.setGrid(currentGrid);
                 break;
             }
@@ -78,6 +87,7 @@ public class Pion {
             }
 
         // Vérifie les diagonales
+
         for (int row = 0; row < Power4Grid.ROWS-3; row++) {
             for (int col = 0; col < Power4Grid.COLS - 3; col++) {
                 if (currentGrid.get(row).get(col) == player
@@ -97,7 +107,7 @@ public class Pion {
 
         for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
             if (currentGrid.get(row).get(random) == "0") {
-                currentGrid.get(row).set(random, player);
+                currentGrid.get(row).set(random, Menu.couleur2 + Player.getPionPlayer2() + ConsoleColors.DEFAULT);
                 grid.setGrid(currentGrid);
                 break;
             }
