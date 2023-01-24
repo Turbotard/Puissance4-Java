@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class VerifWin {
-    private static Power4Grid grid;
+    private Power4Grid grid;
 
     public VerifWin(Power4Grid grid) {
         this.grid = grid;
     }
 
-    public static boolean checkWin(String player) {
+    public boolean checkWin(String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
 
         // Vérifie les lignes

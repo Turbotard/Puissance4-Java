@@ -7,6 +7,9 @@ public class Player {
     private static String pion1;
     private static String pion2;
     private static String pion;
+    public static String currentSymbole;
+    public static String currentColor;
+
     
     public Player() {
         currentPlayer = "1";
@@ -19,7 +22,11 @@ public class Player {
     public boolean changePlayer() {
         if (currentPlayer == "1") {
             currentPlayer = "2";
-        } else {
+            currentSymbole = getPionPlayer2();
+        } else if (currentPlayer =="2"){
+            currentPlayer = "1";
+            currentSymbole = getPionPlayer1();
+        }else{
             System.out.println("Erreur");
         }
         return false;
@@ -64,6 +71,9 @@ public class Player {
     public static String pionIA(){
         pion = "x";
         return pion;
+    }
+    public static String getcurrentSymbole(){
+        return currentSymbole;
     }
    
 }
