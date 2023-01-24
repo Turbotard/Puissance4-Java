@@ -21,7 +21,7 @@ public class Jeu {
             switch (input) {
                 case "q":
                     System.out.println("Bye bye");
-                    System.exit(0);
+                    Menu.quit();
                     return;
 
                 case "1":
