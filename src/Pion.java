@@ -17,13 +17,13 @@ public class Pion {
             }
         }
     }
-    public static void RandomPion(int bot, String player) {
+    public static void RandomPion(int col, String player) {
         Random rand = new Random();
-        bot = rand.nextInt(6 - 0) + 0;
+        col = rand.nextInt(6 - 0) + 0;
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
-            if (currentGrid.get(row).get(bot) == "0") {
-                currentGrid.get(row).set(bot, player);
+            if (currentGrid.get(row).get(col) == "0") {
+                currentGrid.get(row).set(col, player);
                 grid.setGrid(currentGrid);
                 break;
             }
