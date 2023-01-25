@@ -21,7 +21,7 @@ public class Pion {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         if (Player.getCurrentPlayer() == "1"){
             for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
-                if (currentGrid.get(row).get(col) == "   ") {
+                if (currentGrid.get(row).get(col) == "  ") {
                     currentGrid.get(row).set(col, Menu.couleur1);
                     grid.setGrid(currentGrid);
                     break;
@@ -29,7 +29,7 @@ public class Pion {
             }
         } else if (Player.getCurrentPlayer() == "2"){
             for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
-                if (currentGrid.get(row).get(col) == "   ") {
+                if (currentGrid.get(row).get(col) == "  ") {
                     currentGrid.get(row).set(col, Menu.couleur2);
                     grid.setGrid(currentGrid);
                     break;
