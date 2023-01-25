@@ -35,7 +35,7 @@ public class Player {
     public boolean changePlayer2() {
         if (currentPlayer == "1") {
             currentPlayer = "AI";
-            currentSymbole = Menu.couleurbot2;
+            currentSymbole = Menu.couleur2;
         } else if (currentPlayer =="AI"){
             currentPlayer = "1";
             currentSymbole = Menu.couleur1;
@@ -87,7 +87,7 @@ public class Player {
     }
 
     public static String pionAI(){
-        pion = Menu.couleurbot2;
+        pion = Menu.couleur2;
         return pion;
     }
 }

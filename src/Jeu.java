@@ -147,14 +147,14 @@ public class Jeu {
                         col = 1;
                         col--;
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer2();
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                     case "2":
                         col = 2;
                         col--;
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer2();
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                     case "3":
@@ -162,7 +162,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer2();
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                     case "4":
@@ -170,7 +170,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer2();
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                     case "5":
@@ -178,7 +178,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer2();
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                     case "6":
@@ -186,7 +186,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer2();
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                     case "7":
@@ -194,11 +194,12 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer2();
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                     default:
                         System.out.println("Veuillez saisir un chiffre entre 1 et 7");
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                 }
@@ -206,8 +207,10 @@ public class Jeu {
             } else {
                 if (Menu.lvl == 1){
                     Pion.RandomPion();
+                    System.out.println("IA lvl 1 à joué");
                 }else if (Menu.lvl == 2){
-                    Pion.RandomPion1(Player.getPionP1());
+                    Pion.RandomPion1(Menu.couleur1);
+                    System.out.println("IA lvl 2 à joué");
                 }
                 System.out.println("L'IA a joué");
                 player.changePlayer();
