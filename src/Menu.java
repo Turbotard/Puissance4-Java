@@ -23,7 +23,7 @@ import model.CustomeUtils;
 public class Menu {
     public static String couleur1 = "💙";
     public static String couleur2 = "💛";
-    public static String couleurbot = "💔";
+    public static String couleurbot2 = "💔";
     
 
     public static void lister() throws IOException{
@@ -81,6 +81,7 @@ public class Menu {
     }
 
 public static int lvl;
+public static String couleurIA;
     public static void DiffIA() throws ParseException {
 
         System.out.println(ConsoleColors.GREEN + "1. difficulté 1" + ConsoleColors.DEFAULT);
