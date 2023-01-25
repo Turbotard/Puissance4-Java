@@ -19,7 +19,7 @@ public class Jeu {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
             if (win) {
                 
-                System.out.println("Player " + player.getCurrentPlayer() + " wins!");
+                System.out.println("Player " + player.getNom() + " wins!");
                 break;
             }
 
@@ -131,7 +131,7 @@ public class Jeu {
         do {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
             if (win) {
-                System.out.println("Player " + player.getCurrentPlayer() + " wins!");
+                System.out.println("Player " + player.getNom() + " wins!");
                 break;
             }
             if (currentPlayer == "1") {
