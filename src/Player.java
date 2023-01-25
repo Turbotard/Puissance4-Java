@@ -74,7 +74,7 @@ public class Player {
     }
 
     public static String pionAI(){
-        pion = "x";
+        pion = Menu.couleurbot;
         return pion;
     }
 }
