@@ -42,10 +42,35 @@ public class Pion {
 
     }
 
+    public static boolean addPionBot(int col, String player) {
+        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
+        if (Player.getCurrentPlayer() == "1"){
+            for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == "  ") {
+                    currentGrid.get(row).set(col, Menu.couleur1);
+                    grid.setGrid(currentGrid);
+                    break;
+                }
+            }
+        } else if (Player.getCurrentPlayer() == "AI"){
+            for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == "  ") {
+                    currentGrid.get(row).set(col, Menu.couleurbot);
+                    grid.setGrid(currentGrid);
+                    break;
+                }
+            }
+        } else {
+            System.out.println("Erreur");
+        }
+        return false;
+
+    }
+
     public void RandomPion() {
         Random rand = new Random();
         int bot = rand.nextInt(6 - 0) + 0;
-        addPion(bot, Menu.couleurbot2);
+        addPionBot(bot, Menu.couleurbot);
         bot = rand.nextInt(6 - 0) + 0;
     }
 
@@ -61,13 +86,7 @@ public class Pion {
                 if (currentGrid.get(row).get(col).equals(player)
                         && currentGrid.get(row).get(col + 1).equals(player)
                         && currentGrid.get(row).get(col + 2).equals(player)) {
-                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
-                                if (currentGrid.get(row).get(col) == " ") {
-                                    currentGrid.get(row).set(col+3, Menu.couleurbot2);
-                                    grid.setGrid(currentGrid);
-                                    break;
-                                }
-                            }
+                            addPionBot(col+3, Menu.couleurbot);
                             jouer = true;
                     break;
                 }
@@ -80,13 +99,7 @@ public class Pion {
                 if (currentGrid.get(row).get(col).equals(player) 
                     && currentGrid.get(row + 1).get(col).equals(player) 
                     && currentGrid.get(row + 2).get(col).equals(player)){
-                        for (row = Power4Grid.ROWS-1; row >= 0; row--) {
-                            if (currentGrid.get(row).get(col) == " ") {
-                                currentGrid.get(row+3).set(col, Menu.couleurbot2);
-                                grid.setGrid(currentGrid);
-                                break;
-                            }
-                        }
+                        addPionBot(row+3, Menu.couleurbot);
                         jouer = true;
 
                         break;
@@ -103,13 +116,7 @@ public class Pion {
                         && currentGrid.get(row + 1).get(col + 1).equals(player)
                         && currentGrid.get(row + 2).get(col + 2).equals(player)
                         && currentGrid.get(row + 2).get(col + 1).equals(player)) {
-                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
-                                if (currentGrid.get(row).get(col) == " ") {
-                                    currentGrid.get(row).set(col+3, Menu.couleurbot2);
-                                    grid.setGrid(currentGrid);
-                                    break;
-                                }
-                            }
+                            addPionBot(col+3, Menu.couleurbot);
                             jouer = true;
 
                     break;
@@ -118,13 +125,7 @@ public class Pion {
                 if (currentGrid.get(row).get(col + 3).equals(player)
                         && currentGrid.get(row + 1).get(col + 2).equals(player)
                         && currentGrid.get(row + 2).get(col + 1).equals(player)) {
-                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
-                                if (currentGrid.get(row).get(col) == " ") {
-                                    currentGrid.get(row).set(col+3, Menu.couleurbot2);
-                                    grid.setGrid(currentGrid);
-                                    break;
-                                }
-                            }
+                            addPionBot(col+3, Menu.couleurbot);
                             jouer = true;
 
                     break;
