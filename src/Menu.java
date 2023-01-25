@@ -155,38 +155,38 @@ public static int lvl;
     public static void displayMenuCouleurP1() throws ParseException {
         do {
             System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
-            System.out.println("1. RED");
-            System.out.println("2. GREEN");
-            System.out.println("3. DARK GREEN");
-            System.out.println("4. YELLOW");
-            System.out.println("5. PURPLE");
-            System.out.println("6. CYAN");
-            System.out.println("7. BLUE");
+            System.out.println("1. ❤️");
+            System.out.println("2. 💚");
+            System.out.println("3. 💙");
+            System.out.println("4. 💛");
+            System.out.println("5. 💜");
+            System.out.println("6. 🖤");
+            System.out.println("7. 🧡");
             System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
 
             String input = CustomeUtils.getUserInput();
 
             switch (input) {
                 case "1":
-                    couleur1 = ConsoleColors.RED;
+                    couleur1 = "❤️";
                     break;
                 case "2":
-                    couleur1 = ConsoleColors.GREEN;
+                    couleur1 = "💚";
                     break;
                 case "3":
-                    couleur1 = ConsoleColors.DARK_GREEN;
+                    couleur1 = "💙";
                     break;
                 case "4":
-                    couleur1 = ConsoleColors.YELLOW;
+                    couleur1 = "💛";
                     break;
                 case "5":
-                    couleur2 = ConsoleColors.PURPLE;
+                    couleur1 = "💜";
                     break;
                 case "6":
-                    couleur2 = ConsoleColors.CYAN;
+                    couleur1 = "🖤";
                     break;
                 case "7":
-                    couleur2 = ConsoleColors.BLUE;
+                    couleur1= "🧡";
                     break;
                 case "q":
                     quit();
@@ -200,43 +200,43 @@ public static int lvl;
     public static void displayMenuCouleurP2() throws ParseException {
         do {
             System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
-            System.out.println("1. RED");
-            System.out.println("2. GREEN");
-            System.out.println("3. DARK GREEN");
-            System.out.println("4. YELLOW");
-            System.out.println("5. PURPLE");
-            System.out.println("6. CYAN");
-            System.out.println("7. BLUE");
+            System.out.println("1. ❤️");
+            System.out.println("2. 💚");
+            System.out.println("3. 💙");
+            System.out.println("4. 💛");
+            System.out.println("5. 💜");
+            System.out.println("6. 🖤");
+            System.out.println("7. 🧡");
             System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
 
             String input = CustomeUtils.getUserInput();
 
             switch (input) {
                 case "1":
-                    couleur2 = ConsoleColors.RED;
+                    couleur2 = "❤️";
                     break;
                 case "2":
-                    couleur2 = ConsoleColors.GREEN;
+                    couleur2 = "💚";
                     break;
                 case "3":
-                    couleur2 = ConsoleColors.DARK_GREEN;
+                    couleur2 = "💙";
                     break;
                 case "4":
-                    couleur2 = ConsoleColors.YELLOW;
+                    couleur2 = "💛";
                     break;
                 case "5":
-                    couleur2 = ConsoleColors.PURPLE;
+                    couleur2 = "💜";
                     break;
                 case "6":
-                    couleur2 = ConsoleColors.CYAN;
+                    couleur2 = "🖤";
                     break;
                 case "7":
-                    couleur2 = ConsoleColors.BLUE;
+                    couleur2 = "🧡";
                     break;
                 case "q":
                     quit();
                     return;
-                default:
+               default:
                     System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide" + ConsoleColors.DEFAULT);
                     break;
             }
