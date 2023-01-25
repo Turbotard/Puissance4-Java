@@ -9,7 +9,7 @@ public class Pion {
         return pion;
     }
     public static String setPionIA(){
-        pion = Menu.couleurbot ;
+        pion = "x" ;
         return pion;
     }
 
@@ -45,7 +45,7 @@ public class Pion {
     public void RandomPion() {
         Random rand = new Random();
         int bot = rand.nextInt(6 - 0) + 0;
-        addPion(bot, Menu.couleurbot);
+        addPion(bot, Menu.couleurbot2);
         bot = rand.nextInt(6 - 0) + 0;
     }
 
@@ -61,7 +61,13 @@ public class Pion {
                 if (currentGrid.get(row).get(col).equals(player)
                         && currentGrid.get(row).get(col + 1).equals(player)
                         && currentGrid.get(row).get(col + 2).equals(player)) {
-                            addPion(col+3, Menu.couleurbot);
+                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
+                                if (currentGrid.get(row).get(col) == " ") {
+                                    currentGrid.get(row).set(col+3, Menu.couleurbot2);
+                                    grid.setGrid(currentGrid);
+                                    break;
+                                }
+                            }
                             jouer = true;
                     break;
                 }
@@ -74,7 +80,13 @@ public class Pion {
                 if (currentGrid.get(row).get(col).equals(player) 
                     && currentGrid.get(row + 1).get(col).equals(player) 
                     && currentGrid.get(row + 2).get(col).equals(player)){
-                        addPion(row+3, Menu.couleurbot);
+                        for (row = Power4Grid.ROWS-1; row >= 0; row--) {
+                            if (currentGrid.get(row).get(col) == " ") {
+                                currentGrid.get(row+3).set(col, Menu.couleurbot2);
+                                grid.setGrid(currentGrid);
+                                break;
+                            }
+                        }
                         jouer = true;
 
                         break;
@@ -91,7 +103,13 @@ public class Pion {
                         && currentGrid.get(row + 1).get(col + 1).equals(player)
                         && currentGrid.get(row + 2).get(col + 2).equals(player)
                         && currentGrid.get(row + 2).get(col + 1).equals(player)) {
-                            addPion(col+3, Menu.couleurbot);
+                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
+                                if (currentGrid.get(row).get(col) == " ") {
+                                    currentGrid.get(row).set(col+3, Menu.couleurbot2);
+                                    grid.setGrid(currentGrid);
+                                    break;
+                                }
+                            }
                             jouer = true;
 
                     break;
@@ -100,7 +118,13 @@ public class Pion {
                 if (currentGrid.get(row).get(col + 3).equals(player)
                         && currentGrid.get(row + 1).get(col + 2).equals(player)
                         && currentGrid.get(row + 2).get(col + 1).equals(player)) {
-                            addPion(col+3, Menu.couleurbot);
+                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
+                                if (currentGrid.get(row).get(col) == " ") {
+                                    currentGrid.get(row).set(col+3, Menu.couleurbot2);
+                                    grid.setGrid(currentGrid);
+                                    break;
+                                }
+                            }
                             jouer = true;
 
                     break;
@@ -109,8 +133,14 @@ public class Pion {
         }
 
         if (!jouer){
-            random = rand.nextInt(6 - 0) + 0;
-            addPion(random, Menu.couleurbot);
+            random = rand.nextInt(6 - 0) + 0;;
+            for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
+                if (currentGrid.get(row).get(random) == " ") {
+                    currentGrid.get(row).set(random, Menu.couleurbot2);
+                    grid.setGrid(currentGrid);
+                    break;
+                }
+            }
         }
         
 
