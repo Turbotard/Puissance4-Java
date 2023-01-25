@@ -22,8 +22,7 @@ import model.CustomeUtils;
  */
 public class Menu {
     public static String couleur1 = "💙";
-    public static String couleur2 = "💛";
-    public static String couleurbot2 = "💔";
+    public static String couleur2 = "💔";
     
 
     public static void lister() throws IOException{
