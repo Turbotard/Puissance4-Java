@@ -207,7 +207,7 @@ public class Jeu {
                 if (Menu.lvl == 1){
                     Pion.RandomPion();
                 }else if (Menu.lvl == 2){
-                    Pion.RandomPion1(Player.getPionP1());
+                    Pion.RandomPion1(Menu.couleur1);
                 }
                 System.out.println("L'IA a joué");
                 player.changePlayer();
