@@ -21,8 +21,8 @@ import model.CustomeUtils;
  * choix de l'utilisateur
  */
 public class Menu {
-    public static String couleur1;
-    public static String couleur2;
+    public static String couleur1 = "💙";
+    public static String couleur2 = "💛";
     public static String couleurbot = "💔";
     
 
