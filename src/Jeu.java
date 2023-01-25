@@ -46,6 +46,7 @@ public class Jeu {
                     tourCount++;
                     player.changePlayer();
 
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
                 case "2":
                     col = 2;
@@ -54,6 +55,7 @@ public class Jeu {
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
 
                 case "3":
@@ -63,6 +65,7 @@ public class Jeu {
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
                 case "4":
                     col = 4;
@@ -71,6 +74,7 @@ public class Jeu {
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
                 case "5":
                     col = 5;
@@ -79,6 +83,7 @@ public class Jeu {
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
                 case "6":
                     col = 6;
@@ -87,6 +92,7 @@ public class Jeu {
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
                 case "7":
                     col = 7;
@@ -95,13 +101,15 @@ public class Jeu {
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
                 default:
                     System.out.println("Veuillez saisir un chiffre entre 1 et 7");
+                    currentPlayer = currentPlayer ;
                     mygrid.displayGrid();
                     break;
             }
-            currentPlayer = currentPlayer == "1" ? "2" : "1";
+            
             System.out.println("Nombre de tours : " + tourCount);
             System.out.println("Player : " + currentPlayer);
         
@@ -139,14 +147,14 @@ public class Jeu {
                         col = 1;
                         col--;
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
+                        player.changePlayer2();
                         mygrid.displayGrid();
                         break;
                     case "2":
                         col = 2;
                         col--;
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
+                        player.changePlayer2();
                         mygrid.displayGrid();
                         break;
                     case "3":
@@ -154,7 +162,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
+                        player.changePlayer2();
                         mygrid.displayGrid();
                         break;
                     case "4":
@@ -162,7 +170,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
+                        player.changePlayer2();
                         mygrid.displayGrid();
                         break;
                     case "5":
@@ -170,7 +178,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
+                        player.changePlayer2();
                         mygrid.displayGrid();
                         break;
                     case "6":
@@ -178,7 +186,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
+                        player.changePlayer2();
                         mygrid.displayGrid();
                         break;
                     case "7":
@@ -186,7 +194,7 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
+                        player.changePlayer2();
                         mygrid.displayGrid();
                         break;
                     default:
@@ -201,7 +209,6 @@ public class Jeu {
                 }else if (Menu.lvl == 2){
                     Pion.RandomPion1(Player.getPionP1());
                 }
-                
                 System.out.println("L'IA a joué");
                 player.changePlayer();
                 mygrid.displayGrid();
