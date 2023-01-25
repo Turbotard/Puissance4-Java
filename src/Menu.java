@@ -82,8 +82,8 @@ public class Menu {
 public static int lvl;
     public static void DiffIA() throws ParseException {
 
-        System.out.println("1. Difficulté 1");
-        System.out.println("2. difficulté 2");
+        System.out.println(ConsoleColors.GREEN + "1. difficulté 1" + ConsoleColors.DEFAULT);
+        System.out.println(ConsoleColors.YELLOW + "2. difficulté 2" + ConsoleColors.DEFAULT);
         String input = CustomeUtils.getUserInput();
         switch (input){
             case "1":
@@ -101,7 +101,7 @@ public static int lvl;
                 
                 break;
             default:
-                System.out.println("Veuillez entrer une option valide de difficulté");
+                System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide de difficulté" + ConsoleColors.DEFAULT);
                 break;
         }
     }
