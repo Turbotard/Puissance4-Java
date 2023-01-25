@@ -18,13 +18,14 @@ public class Jeu {
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
                 break;
             }
+            currentPlayer = currentPlayer == "1" ? "2" : "1";
+
             int col;
 
             String input;
-            boolean validInput = false;
 
-            while (!validInput){
-                input = CustomeUtils.getUserInput();
+            input = CustomeUtils.getUserInput();
+            
 
                 
             switch (input) {
@@ -41,7 +42,7 @@ public class Jeu {
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
                     tourCount++;
-                    validInput = true;
+                    player.changePlayer();
 
                     break;
                 case "2":
@@ -51,7 +52,7 @@ public class Jeu {
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
                     tourCount++;
-                    validInput = true;
+                    player.changePlayer();
 
                     break;
 
@@ -62,7 +63,7 @@ public class Jeu {
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
                     tourCount++;
-                    validInput = true;
+                    player.changePlayer();
 
                     break;
                 case "4":
@@ -72,7 +73,7 @@ public class Jeu {
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
                     tourCount++;
-                    validInput = true;
+                    player.changePlayer();
 
                     break;
                 case "5":
@@ -82,7 +83,7 @@ public class Jeu {
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
                     tourCount++;
-                    validInput = true;
+                    player.changePlayer();
 
                     break;
                 case "6":
@@ -92,7 +93,7 @@ public class Jeu {
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
                     tourCount++;
-                    validInput = true;
+                    player.changePlayer();
 
                     break;
                 case "7":
@@ -102,7 +103,8 @@ public class Jeu {
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
                     tourCount++;
-                    validInput = true;
+                    player.changePlayer();
+
                     break;
                 default:
                     System.out.println("Veuillez saisir un chiffre entre 1 et 7");
@@ -111,16 +113,12 @@ public class Jeu {
             }
             
 
-            if(validInput == true){
-                player.changePlayer();
-            currentPlayer = currentPlayer == "1" ? "2" : "1";
-
-            }
+        
             System.out.println("Nombre de tours : " + tourCount);
             System.out.println("Player : " + currentPlayer);
-        } 
-    }while (true);
-        }
+        
+        }while (true);
+    }
  
 
 

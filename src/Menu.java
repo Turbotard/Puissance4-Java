@@ -1,16 +1,19 @@
 
+import java.io.IOException;
 import java.text.ParseException;
-// import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FilePermission;
+import java.io.BufferedReader;
 // import java.io.BufferedWriter;
-// import java.io.FileReader;
+import java.io.FileReader;
 // import java.io.FileWriter;
 // import java.io.IOException;
 // import java.io.PrintWriter;
 // import java.util.ArrayList;
 // import java.util.stream.Collectors;
-
-import model.CustomeUtils;
+import java.util.ArrayList;
 import model.ConsoleColors;
+import model.CustomeUtils;
 
 /**
  * Ensemble des méthodes qui permettent d'afficher différents menus et gérer les
@@ -19,11 +22,30 @@ import model.ConsoleColors;
 public class Menu {
     public static String couleur1;
     public static String couleur2;
+    
 
+    public static void lister() throws IOException{
+        String pathFile = "src/Top10.csv";
+        String line = " ";
+
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(pathFile));
+            while((line =br.readLine())!=null){
+                System.out.println(line);
+            }
+            System.out.println("File found");
+        }
+
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+            System.out.println("File not found");
+        }
+    }
     /**
      * Affiche le menu principal et gère les choix de l'utilisateur
+     * @throws IOException
      */
-    public static void displayMenu() throws ParseException {
+    public static void displayMenu() throws ParseException, IOException {
         do {
             System.out.println(ConsoleColors.GREEN + "  -- Menu --");
             System.out.println("1. Jouer en solo");
@@ -35,6 +57,8 @@ public class Menu {
 
             switch (input) {
                 case "1":
+                    settingIA();
+                    settingP2();
                     Jeu.jeusolo();
                     break;
                 case "2":
@@ -43,6 +67,7 @@ public class Menu {
                     Jeu.jeu1v1();
                     break;
                 case "3":
+                    lister();
                     break;
                 case "q":
                     quit();
@@ -53,6 +78,8 @@ public class Menu {
             }
         } while (true);
     }
+
+    
 
     public static void quit() {
         System.out.println(ConsoleColors.RED + "Fermeture du menu..." + ConsoleColors.DEFAULT);
@@ -86,8 +113,12 @@ public class Menu {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        /*System.out.println("Veuillez choisir la couleur de votre choix");
-        Player.getCouleur();*/
+
+    }
+
+    public static void settingIA(){
+        System.out.println("IA");
+        Player.pionIA();
     }
 
     public static void displayMenuCouleurP1() throws ParseException {
@@ -179,5 +210,10 @@ public class Menu {
                     break;
             }
         } while (true);
+    }
+
+
+    private static void listerContact() throws IOException, ParseException{
+
     }
 }
