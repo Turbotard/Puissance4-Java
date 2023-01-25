@@ -22,10 +22,10 @@ public class Player {
     public boolean changePlayer() {
         if (currentPlayer == "1") {
             currentPlayer = "2";
-            currentSymbole = getPion();
+            currentSymbole = getPionP2();
         } else if (currentPlayer =="2"){
             currentPlayer = "1";
-            currentSymbole = getPion();
+            currentSymbole = getPionP1();
         }else{
             System.out.println("Erreur");
         }
@@ -55,22 +55,22 @@ public class Player {
         } 
     }
 
-    public static String setPion() {
-        if (currentPlayer.equals("1")){
+    public static String setPionP1() {
             pion1 =CustomeUtils.getUserInput();
             return pion1;
-        }else{
+    }
+    
+    public static String setPionP2() {
             pion2 =CustomeUtils.getUserInput();
             return pion2;
-        }
     }
 
-    public static String getPion() {
-        if(currentPlayer.equals("1")){
+    public static String getPionP1() {      
             return pion1;
-        }else{
-            return pion2;
-        }
+    }
+
+    public static String getPionP2() {
+        return pion2;
     }
 
     public static String pionAI(){
