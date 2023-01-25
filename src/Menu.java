@@ -35,7 +35,6 @@ public class Menu {
 
             switch (input) {
                 case "1":
-                    settingIA();
                     settingP2();
                     Jeu.jeusolo();
                     break;
@@ -93,10 +92,6 @@ public class Menu {
 
     }
 
-    public static void settingIA(){
-        System.out.println("IA");
-        Player.pionIA();
-    }
 
     public static void displayMenuCouleurP1() throws ParseException {
         do {

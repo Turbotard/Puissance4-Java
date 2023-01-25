@@ -33,10 +33,6 @@ public class Player {
     }
 
 
-    public static String pionIA(){
-        pion = "x";
-        return pion;
-    }
     public static String getcurrentSymbole(){
         return currentSymbole;
     }
@@ -75,5 +71,10 @@ public class Player {
         }else{
             return pion2;
         }
+    }
+
+    public static String pionAI(){
+        pion = "x";
+        return pion;
     }
 }
