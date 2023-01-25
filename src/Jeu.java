@@ -199,6 +199,7 @@ public class Jeu {
                         break;
                     default:
                         System.out.println("Veuillez saisir un chiffre entre 1 et 7");
+                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                 }
@@ -206,8 +207,10 @@ public class Jeu {
             } else {
                 if (Menu.lvl == 1){
                     Pion.RandomPion();
+                    System.out.println("IA lvl 1 à joué");
                 }else if (Menu.lvl == 2){
                     Pion.RandomPion1(Menu.couleur1);
+                    System.out.println("IA lvl 2 à joué");
                 }
                 System.out.println("L'IA a joué");
                 player.changePlayer();

@@ -83,22 +83,28 @@ public class Pion {
         // Vérifie les lignes
         for (int row = 0; row < Power4Grid.ROWS; row++) {
             for (int col = 0; col < Power4Grid.COLS - 3; col++) {
-                if (currentGrid.get(row).get(col).equals(player)
-                        && currentGrid.get(row).get(col + 1).equals(player)
-                        && currentGrid.get(row).get(col + 2).equals(player)) {
-                            addPion(col+3, Menu.couleur2);
-                            jouer = true;
-                    break;
+                if (currentGrid.get(row).get(col)==player
+                && currentGrid.get(row).get(col + 1)==player
+                && currentGrid.get(row).get(col + 2)==player
+                && currentGrid.get(row).get(col + 3)=="  ") {
+                        System.out.println("ligne2");
+                        addPion(col+3, Menu.couleur2);
+                        jouer = true;
+                        break;
+                    
                 }
             }
         }
 
           // Vérifie les colonnes
         for (int col = 0; col < Power4Grid.COLS; col++) {
-            for (int row = 0; row < Power4Grid.ROWS - 3; row++) {
-                if (currentGrid.get(row).get(col).equals(player) 
-                    && currentGrid.get(row + 1).get(col).equals(player) 
-                    && currentGrid.get(row + 2).get(col).equals(player)){
+            for (int row = 0; row < Power4Grid.ROWS-3; row++) {
+                if (currentGrid.get(row).get(col)==player 
+                    && currentGrid.get(row + 1).get(col)==player 
+                    && currentGrid.get(row + 2).get(col)==player
+                    && currentGrid.get(row + 3 ).get(col)=="  "){
+                        System.out.println("colonne");
+
                         addPion(row+3, Menu.couleur2);
                         jouer = true;
 
@@ -112,19 +118,21 @@ public class Pion {
 
         for (int row = 0; row < Power4Grid.ROWS-3; row++) {
             for (int col = 0; col < Power4Grid.COLS - 3; col++) {
-                if (currentGrid.get(row).get(col) .equals(player)
-                        && currentGrid.get(row + 1).get(col + 1).equals(player)
-                        && currentGrid.get(row + 2).get(col + 2).equals(player)
-                        && currentGrid.get(row + 2).get(col + 1).equals(player)) {
+                if (currentGrid.get(row).get(col) ==player
+                        && currentGrid.get(row + 1).get(col + 1)==player
+                        && currentGrid.get(row + 2).get(col + 2)==player
+                        && currentGrid.get(row + 2).get(col + 1).equals("  ")) {
+                            System.out.println("diago");
                             addPion(col+3, Menu.couleur2);
                             jouer = true;
 
                     break;
                 }
 
-                if (currentGrid.get(row).get(col + 3).equals(player)
-                        && currentGrid.get(row + 1).get(col + 2).equals(player)
-                        && currentGrid.get(row + 2).get(col + 1).equals(player)) {
+                if (currentGrid.get(row).get(col + 3)==player
+                        && currentGrid.get(row + 1).get(col + 2)==player
+                        && currentGrid.get(row + 2).get(col + 1)==player) {
+                            System.out.println("diago2");
                             addPion(col+3, Menu.couleur2);
                             jouer = true;
 
