@@ -11,7 +11,7 @@ public class Power4Grid {
         for (int row = 0; row < ROWS; row++) {
             ArrayList<String> newRow = new ArrayList<String>();
             for (int col = 0; col < COLS; col++) {
-                newRow.add("0");
+                newRow.add(" ");
             }
             grid.add(newRow);
         }

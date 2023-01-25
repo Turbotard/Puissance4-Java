@@ -57,8 +57,8 @@ public class Menu {
 
             switch (input) {
                 case "1":
+                    settingP1();
                     settingIA();
-                    settingP2();
                     Jeu.jeusolo();
                     break;
                 case "2":
@@ -86,9 +86,10 @@ public class Menu {
     }
 
     public static void settingP1(){
+        Player.currentPlayer ="1";
         System.out.println("Joueur1");
         System.out.println("Veuillez choisir le nom de votre choix");
-        Player.setNomPlayer1();
+        Player.setNom();
         System.out.println("Veuillez choisir le symbole de votre choix");
         Player.setPionP1();
         try {
@@ -102,9 +103,10 @@ public class Menu {
     }
 
     public static void settingP2(){
+        Player.currentPlayer ="2";
         System.out.println("Joueur 2");
         System.out.println("Veuillez choisir le nom de votre choix");
-        Player.setNomPlayer2();
+        Player.setNom();
         System.out.println("Veuillez choisir le symbole de votre choix");
         Player.setPionP2();
         try {
@@ -115,11 +117,13 @@ public class Menu {
         }
 
     }
-
     public static void settingIA(){
-        System.out.println("IA");
-        Player.pionIA();
+        Player.currentPlayer ="2";
+        Player.pseudo2 ="IA";
+        Player.pion2 = "X";
+
     }
+
 
     public static void displayMenuCouleurP1() throws ParseException {
         do {
