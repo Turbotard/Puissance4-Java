@@ -50,7 +50,7 @@ public class Pion {
     }
 
     
-    public void RandomPion1(String player) {
+    public static void RandomPion1(String player) {
         Random rand = new Random();
         int random = rand.nextInt(6 - 0) + 0;
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
