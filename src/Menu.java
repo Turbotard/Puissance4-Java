@@ -118,8 +118,7 @@ public static int lvl;
         System.out.println("Joueur1");
         System.out.println("Veuillez choisir le nom de votre choix");
         Player.setNom();
-        System.out.println("Veuillez choisir le symbole de votre choix");
-        Player.setPionP1();
+        System.out.println("Veuillez choisir le symbole de votre choix");;
         try {
             displayMenuCouleurP1();
         } catch (ParseException e) {
@@ -136,7 +135,6 @@ public static int lvl;
         System.out.println("Veuillez choisir le nom de votre choix");
         Player.setNom();
         System.out.println("Veuillez choisir le symbole de votre choix");
-        Player.setPionP2();
         try {
             displayMenuCouleurP2();
         } catch (ParseException e) {
