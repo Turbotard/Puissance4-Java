@@ -22,10 +22,10 @@ public class Player {
     public boolean changePlayer() {
         if (currentPlayer == "1") {
             currentPlayer = "2";
-            currentSymbole = getPionP2();
+            currentSymbole = Menu.couleur2;
         } else if (currentPlayer =="2"){
             currentPlayer = "1";
-            currentSymbole = getPionP1();
+            currentSymbole = Menu.couleur1;
         }else{
             System.out.println("Erreur");
         }
