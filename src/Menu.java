@@ -90,14 +90,14 @@ public static String couleurIA;
             case "1":
                 settingP1();
                 settingIA();
-                lvl =1;
+                lvl = 1;
                 Jeu.jeusolo();
                 
                 break;
             case "2":
                 settingP1();
                 settingIA();
-                lvl =2;
+                lvl = 2;
                 Jeu.jeusolo();
                 
                 break;
