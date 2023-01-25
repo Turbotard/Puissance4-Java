@@ -51,7 +51,7 @@ public class Menu {
             System.out.println(ConsoleColors.GREEN + "  -- Menu --");
             System.out.println("1. Jouer en solo");
             System.out.println("2. Jouer à deux ");
-            System.out.println("3. Afficehr le top 10");
+            System.out.println("3. Afficher le top 10");
             System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
 
             String input = CustomeUtils.getUserInput();
