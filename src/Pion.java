@@ -42,10 +42,10 @@ public class Pion {
 
     }
 
-    public static void RandomPion(String player) {
+    public void RandomPion() {
         Random rand = new Random();
         int bot = rand.nextInt(6 - 0) + 0;
-        addPion(bot, player);
+        addPion(bot, "X");
         bot = rand.nextInt(6 - 0) + 0;
     }
 
