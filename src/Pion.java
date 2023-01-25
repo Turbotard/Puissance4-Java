@@ -39,7 +39,7 @@ public class Pion {
     }
 
     
-    public void RandomPion1(String player) {
+    public void RandomPion1(String player, String ia) {
         Random rand = new Random();
         int random = rand.nextInt(6 - 0) + 0;
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
@@ -50,7 +50,8 @@ public class Pion {
                 if (currentGrid.get(row).get(col)== player
                         && currentGrid.get(row).get(col + 1)== player
                         && currentGrid.get(row).get(col + 2)== player) {
-                    Pion.addPion(col + 3, player);
+                    Pion.addPion(col + 3, ia);
+                    break;
                 }
             }
         }
@@ -61,7 +62,8 @@ public class Pion {
                 if (currentGrid.get(row).get(col)== player 
                     && currentGrid.get(row + 1).get(col)== player 
                     && currentGrid.get(row + 2).get(col)== player){
-                        Pion.addPion(col+3, player);
+                        Pion.addPion(col+3, ia);
+                        break;
                     } 
 
                 }
@@ -75,13 +77,15 @@ public class Pion {
                         && currentGrid.get(row + 1).get(col + 1)== player
                         && currentGrid.get(row + 2).get(col + 2)== player
                         && currentGrid.get(row + 2).get(col + 1)== player) {
-                    Pion.addPion(col + 3, player);
+                    Pion.addPion(col + 3, ia);
+                    break;
                 }
 
                 if (currentGrid.get(row).get(col + 3)== player
                         && currentGrid.get(row + 1).get(col + 2)== player
                         && currentGrid.get(row + 2).get(col + 1)== player) {
-                    Pion.addPion(col + 3, player);
+                    Pion.addPion(col + 3, ia);
+                    break;
                 }
             }
         }

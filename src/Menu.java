@@ -35,7 +35,7 @@ public class Menu {
 
             switch (input) {
                 case "1":
-                    settingP2();
+                    settingP1();
                     Jeu.jeusolo();
                     break;
                 case "2":
