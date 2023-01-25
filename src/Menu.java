@@ -155,7 +155,7 @@ public static int lvl;
     public static void displayMenuCouleurP1() throws ParseException {
         do {
             System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
-            System.out.println("1. ❤️");
+            System.out.println("1. 💕");
             System.out.println("2. 💚");
             System.out.println("3. 💙");
             System.out.println("4. 💛");
@@ -168,7 +168,7 @@ public static int lvl;
 
             switch (input) {
                 case "1":
-                    couleur1 = "❤️";
+                    couleur1 = "💕";
                     break;
                 case "2":
                     couleur1 = "💚";
@@ -200,7 +200,7 @@ public static int lvl;
     public static void displayMenuCouleurP2() throws ParseException {
         do {
             System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
-            System.out.println("1. ❤️");
+            System.out.println("1. 💕");
             System.out.println("2. 💚");
             System.out.println("3. 💙");
             System.out.println("4. 💛");
@@ -213,7 +213,7 @@ public static int lvl;
 
             switch (input) {
                 case "1":
-                    couleur2 = "❤️";
+                    couleur2 = "💕";
                     break;
                 case "2":
                     couleur2 = "💚";
