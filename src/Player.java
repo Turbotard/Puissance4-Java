@@ -35,7 +35,7 @@ public class Player {
     public boolean changePlayer2() {
         if (currentPlayer == "1") {
             currentPlayer = "AI";
-            currentSymbole = Menu.couleurbot;
+            currentSymbole = Menu.couleurbot2;
         } else if (currentPlayer =="AI"){
             currentPlayer = "1";
             currentSymbole = Menu.couleur1;

@@ -6,4 +6,11 @@ public class Score {
         return Score;
     }
 
+    public int triSc(){
+        foreach(score in scorelist){
+            if
+        }
+    }
+   
+
 }

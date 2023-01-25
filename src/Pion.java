@@ -55,7 +55,7 @@ public class Pion {
         } else if (Player.getCurrentPlayer() == "AI"){
             for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
                 if (currentGrid.get(row).get(col) == "  ") {
-                    currentGrid.get(row).set(col, Menu.couleurbot);
+                    currentGrid.get(row).set(col, Menu.couleurbot2);
                     grid.setGrid(currentGrid);
                     break;
                 }
@@ -70,7 +70,7 @@ public class Pion {
     public void RandomPion() {
         Random rand = new Random();
         int bot = rand.nextInt(6 - 0) + 0;
-        addPionBot(bot, Menu.couleurbot);
+        addPionBot(bot, Menu.couleurbot2);
         bot = rand.nextInt(6 - 0) + 0;
     }
 
@@ -86,7 +86,7 @@ public class Pion {
                 if (currentGrid.get(row).get(col).equals(player)
                         && currentGrid.get(row).get(col + 1).equals(player)
                         && currentGrid.get(row).get(col + 2).equals(player)) {
-                            addPionBot(col+3, Menu.couleurbot);
+                            addPionBot(col+3, Menu.couleurbot2);
                             jouer = true;
                     break;
                 }
@@ -99,7 +99,7 @@ public class Pion {
                 if (currentGrid.get(row).get(col).equals(player) 
                     && currentGrid.get(row + 1).get(col).equals(player) 
                     && currentGrid.get(row + 2).get(col).equals(player)){
-                        addPionBot(row+3, Menu.couleurbot);
+                        addPionBot(row+3, Menu.couleurbot2);
                         jouer = true;
 
                         break;
@@ -116,7 +116,7 @@ public class Pion {
                         && currentGrid.get(row + 1).get(col + 1).equals(player)
                         && currentGrid.get(row + 2).get(col + 2).equals(player)
                         && currentGrid.get(row + 2).get(col + 1).equals(player)) {
-                            addPionBot(col+3, Menu.couleurbot);
+                            addPionBot(col+3, Menu.couleurbot2);
                             jouer = true;
 
                     break;
@@ -125,7 +125,7 @@ public class Pion {
                 if (currentGrid.get(row).get(col + 3).equals(player)
                         && currentGrid.get(row + 1).get(col + 2).equals(player)
                         && currentGrid.get(row + 2).get(col + 1).equals(player)) {
-                            addPionBot(col+3, Menu.couleurbot);
+                            addPionBot(col+3, Menu.couleurbot2);
                             jouer = true;
 
                     break;

@@ -16,6 +16,7 @@ import model.ConsoleColors;
 import model.CustomeUtils;
 import model.ScoreComparator;
 
+import java.util.*;
 /**
  * Ensemble des méthodes qui permettent d'afficher différents menus et gérer les
  * choix de l'utilisateur
@@ -26,23 +27,49 @@ public class Menu {
     public static String couleurbot2 = "💔";
     
 
-    public static void lister() throws IOException{
-        String pathFile = "src/Top10.csv";
-        String line = " ";
+    // public static void lister() throws IOException{
+    //     String pathFile = "src/Top10.csv";
+    //     String line = " ";
 
-        try{
-            BufferedReader br = new BufferedReader(new FileReader(pathFile));
-            while((line =br.readLine())!=null){
-                System.out.println(line);
+    //     try{
+    //         BufferedReader br = new BufferedReader(new FileReader(pathFile));
+    //         while((line =br.readLine())!=null){
+    //             System.out.println(line);
+    //         }
+    //         System.out.println("File found");
+    //     }
+
+    //     catch(FileNotFoundException e){
+    //         e.printStackTrace();
+    //         System.out.println("File not found");
+    //     }
+    // }
+    static int bestScore = 0;
+    static String bestPlayer = "";
+    public static Object main;
+
+
+    public static void lister(String[] args) {
+        String csvFile = "src/Top10.csv";
+        String line = "";
+        String cvsSplitBy = ";";
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            while ((line = br.readLine()) != null) {
+                String[] player = line.split(cvsSplitBy);
+                String name = player[0];
+                int score = Integer.parseInt(player[1]); 
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestPlayer = name;
+                }
             }
-            System.out.println("File found");
-        }
-
-        catch(FileNotFoundException e){
+        } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("File not found");
         }
+        System.out.println("Le joueur avec le meilleur score est " + bestPlayer + " avec " + bestScore + " points.");
     }
+
+
     /**
      * Affiche le menu principal et gère les choix de l'utilisateur
      * @throws IOException
@@ -68,8 +95,9 @@ public class Menu {
                     Jeu.jeu1v1();
                     break;
                 case "3":
-                    lister();
+                    lister(null);
                     //rator.compare();
+                    //ScoreComparator.main(null);
                     break;
                 case "q":
                     quit();
