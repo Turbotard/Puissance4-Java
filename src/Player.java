@@ -15,7 +15,7 @@ public class Player {
         currentPlayer = "1";
     }
 
-    public String getCurrentPlayer() {
+    public static String getCurrentPlayer() {
             return currentPlayer;
     }
 
