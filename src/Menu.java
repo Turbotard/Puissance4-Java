@@ -14,6 +14,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import model.ConsoleColors;
 import model.CustomeUtils;
+import src.Jeu;
+import src.Pion.RandomPion;
+import src.Pion.RandomPion1;
 
 /**
  * Ensemble des méthodes qui permettent d'afficher différents menus et gérer les
@@ -57,6 +60,7 @@ public class Menu {
 
             switch (input) {
                 case "1":
+                    DiffIA();
                     settingP1();
                     settingIA();
                     Jeu.jeusolo();
@@ -77,6 +81,24 @@ public class Menu {
                     break;
             }
         } while (true);
+    }
+
+
+    public static void DiffIA() throws ParseException {
+        System.out.println("1. Difficulté 1");
+        System.out.println("2. difficulté 2");
+        String input = CustomeUtils.getUserInput();
+        switch (input){
+            case "1":
+                Pion.RandomPion(player);
+                break;
+            case "2":
+                Pion.RandomPion1(player);
+                break;
+            default:
+                System.out.println("Veuillez entrer une option valide de difficulté");
+                break;
+        }
     }
 
     
