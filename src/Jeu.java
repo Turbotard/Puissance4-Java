@@ -118,6 +118,7 @@ public class Jeu {
         Pion Pion = new Pion(mygrid);
         VerifWin vf = new VerifWin(mygrid);
         String currentPlayer = "1";
+        String PionIA = Pion.setPionIA();
         Player player = new Player();
         do {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
@@ -195,7 +196,7 @@ public class Jeu {
                 }
 
             } else {
-                Pion.RandomPion1(Player.getcurrentSymbole(),Player.pionAI());
+                Pion.RandomPion1(Player.getPionP1());
                 System.out.println("L'IA a joué");
                 player.changePlayer();
                 mygrid.displayGrid();

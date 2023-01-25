@@ -36,6 +36,7 @@ public class Menu {
             switch (input) {
                 case "1":
                     settingP1();
+                    settingIA();
                     Jeu.jeusolo();
                     break;
                 case "2":
@@ -65,7 +66,7 @@ public class Menu {
         System.out.println("Veuillez choisir le nom de votre choix");
         Player.setNom();
         System.out.println("Veuillez choisir le symbole de votre choix");
-        Player.setPion();
+        Player.setPionP1();
         try {
             displayMenuCouleurP1();
         } catch (ParseException e) {
@@ -82,13 +83,19 @@ public class Menu {
         System.out.println("Veuillez choisir le nom de votre choix");
         Player.setNom();
         System.out.println("Veuillez choisir le symbole de votre choix");
-        Player.setPion();
+        Player.setPionP2();
         try {
             displayMenuCouleurP2();
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+    }
+    public static void settingIA(){
+        Player.currentPlayer ="2";
+        Player.pseudo2 ="IA";
+        Player.pion2 = "X";
 
     }
 

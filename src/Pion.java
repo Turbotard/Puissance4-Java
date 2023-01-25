@@ -19,27 +19,38 @@ public class Pion {
 
     public static boolean addPion(int col, String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
+        if (Player.getCurrentPlayer() == "1"){
             for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
                 if (currentGrid.get(row).get(col) == " ") {
-                    currentGrid.get(row).set(col, Player.getPion());
+                    currentGrid.get(row).set(col, Player.getPionP1());
                     grid.setGrid(currentGrid);
                     break;
                 }
             }
-        
+        } else if (Player.getCurrentPlayer() == "2"){
+            for (int row = Power4Grid.ROWS-1; row >= 0; row--) {
+                if (currentGrid.get(row).get(col) == " ") {
+                    currentGrid.get(row).set(col, Player.getPionP2());
+                    grid.setGrid(currentGrid);
+                    break;
+                }
+            }
+        } else {
+            System.out.println("Erreur");
+        }
         return false;
 
     }
 
     public static void RandomPion(String player) {
         Random rand = new Random();
-        int bot = rand.nextInt(7 - 1 + 1) + 1;
+        int bot = rand.nextInt(6 - 0) + 0;
         addPion(bot, player);
         bot = rand.nextInt(6 - 0) + 0;
     }
 
     
-    public void RandomPion1(String player, String ia) {
+    public void RandomPion1(String player) {
         Random rand = new Random();
         int random = rand.nextInt(6 - 0) + 0;
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
@@ -50,7 +61,13 @@ public class Pion {
                 if (currentGrid.get(row).get(col)== player
                         && currentGrid.get(row).get(col + 1)== player
                         && currentGrid.get(row).get(col + 2)== player) {
-                    Pion.addPion(col + 3, ia);
+                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
+                                if (currentGrid.get(row).get(col) == " ") {
+                                    currentGrid.get(row).set(col, "X");
+                                    grid.setGrid(currentGrid);
+                                    break;
+                                }
+                            }
                     break;
                 }
             }
@@ -62,7 +79,13 @@ public class Pion {
                 if (currentGrid.get(row).get(col)== player 
                     && currentGrid.get(row + 1).get(col)== player 
                     && currentGrid.get(row + 2).get(col)== player){
-                        Pion.addPion(col+3, ia);
+                        for (row = Power4Grid.ROWS-1; row >= 0; row--) {
+                            if (currentGrid.get(row).get(col) == " ") {
+                                currentGrid.get(row).set(col, "X");
+                                grid.setGrid(currentGrid);
+                                break;
+                            }
+                        }
                         break;
                     } 
 
@@ -77,21 +100,34 @@ public class Pion {
                         && currentGrid.get(row + 1).get(col + 1)== player
                         && currentGrid.get(row + 2).get(col + 2)== player
                         && currentGrid.get(row + 2).get(col + 1)== player) {
-                    Pion.addPion(col + 3, ia);
+                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
+                                if (currentGrid.get(row).get(col) == " ") {
+                                    currentGrid.get(row).set(col, "X");
+                                    grid.setGrid(currentGrid);
+                                    break;
+                                }
+                            }
                     break;
                 }
 
                 if (currentGrid.get(row).get(col + 3)== player
                         && currentGrid.get(row + 1).get(col + 2)== player
                         && currentGrid.get(row + 2).get(col + 1)== player) {
-                    Pion.addPion(col + 3, ia);
+                            for (row = Power4Grid.ROWS-1; row >= 0; row--) {
+                                if (currentGrid.get(row).get(col) == " ") {
+                                    currentGrid.get(row).set(col, "X");
+                                    grid.setGrid(currentGrid);
+                                    break;
+                                }
+                            }
                     break;
                 }
             }
         }
 
-        addPion(random, Player.pionAI());
+        
         random = rand.nextInt(6 - 0) + 0;
+        addPion(random, "X");
 
     }
 }

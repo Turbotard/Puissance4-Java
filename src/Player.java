@@ -3,9 +3,9 @@ import model.CustomeUtils;
 public class Player {
     public static String currentPlayer;
     private static String pseudo1;
-    private static String pseudo2;
+    static String pseudo2;
     private static String pion1;
-    private static String pion2;
+    static String pion2;
     private static String pion;
     public static String currentSymbole;
     public static String currentColor;
