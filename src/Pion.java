@@ -84,11 +84,20 @@ public class Pion {
         for (int row = 0; row < Power4Grid.ROWS; row++) {
             for (int col = 0; col < Power4Grid.COLS - 3; col++) {
                 if (currentGrid.get(row).get(col).equals(player)
-                        && currentGrid.get(row).get(col + 1).equals(player)
-                        && currentGrid.get(row).get(col + 2).equals(player)) {
-                            addPion(col+3, Menu.couleur2);
-                            jouer = true;
-                    break;
+                && currentGrid.get(row).get(col + 1).equals(player)
+                && currentGrid.get(row).get(col + 2).equals(player)
+                && currentGrid.get(row).get(col + 3).equals("  ")) {
+
+                    System.out.println("ligne");
+                    if (currentGrid.get(row).get(col).equals(player)
+                            && currentGrid.get(row).get(col + 1).equals(player)
+                            && currentGrid.get(row).get(col + 2).equals(player)) {
+
+                                System.out.println("ligne2");
+                                addPion(col+3, Menu.couleur2);
+                                jouer = true;
+                        break;
+                    }
                 }
             }
         }
@@ -96,9 +105,12 @@ public class Pion {
           // Vérifie les colonnes
         for (int col = 0; col < Power4Grid.COLS; col++) {
             for (int row = 0; row < Power4Grid.ROWS - 3; row++) {
+                System.out.println("test");
                 if (currentGrid.get(row).get(col).equals(player) 
                     && currentGrid.get(row + 1).get(col).equals(player) 
                     && currentGrid.get(row + 2).get(col).equals(player)){
+                        System.out.println("colonne");
+
                         addPion(row+3, Menu.couleur2);
                         jouer = true;
 
@@ -116,6 +128,7 @@ public class Pion {
                         && currentGrid.get(row + 1).get(col + 1).equals(player)
                         && currentGrid.get(row + 2).get(col + 2).equals(player)
                         && currentGrid.get(row + 2).get(col + 1).equals(player)) {
+                            System.out.println("diago");
                             addPion(col+3, Menu.couleur2);
                             jouer = true;
 
@@ -125,6 +138,7 @@ public class Pion {
                 if (currentGrid.get(row).get(col + 3).equals(player)
                         && currentGrid.get(row + 1).get(col + 2).equals(player)
                         && currentGrid.get(row + 2).get(col + 1).equals(player)) {
+                            System.out.println("diago2");
                             addPion(col+3, Menu.couleur2);
                             jouer = true;
 
