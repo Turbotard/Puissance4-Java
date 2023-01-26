@@ -87,7 +87,6 @@ public class Pion {
                        && currentGrid.get(row).get(col +1).equals(player)
                        && currentGrid.get(row).get(col +2).equals(player)
                        && currentGrid.get(row).get(col + 3).equals("  ")) {
-                   System.out.println("ligne");
                    addPion(col + 3, Menu.couleur2);
                    jouer = true;
                    break;
@@ -103,8 +102,6 @@ public class Pion {
                        && currentGrid.get(row -1).get(col).equals(player)
                        && currentGrid.get(row -2).get(col).equals(player)
                        && currentGrid.get(row - 3).get(col).equals("  ")) {
-                   System.out.println("colonne");
-
                    addPion(col, Menu.couleur2);
                    jouer = true;
 
@@ -123,7 +120,6 @@ public class Pion {
                     && currentGrid.get(row + 1).get(col +1).equals(player)
                     && currentGrid.get(row + 2).get(col +2).equals(player)
                     && currentGrid.get(row + 3).get(col +3).equals("  ")) {
-                        System.out.println("diago1");
                     addPion(col + 3, Menu.couleur2);
                 
             }
@@ -133,7 +129,6 @@ public class Pion {
                     && currentGrid.get(row + 1).get(col +2).equals(player)
                     && currentGrid.get(row + 2).get(col +1).equals(player)
                     && currentGrid.get(row+3).get(col +0).equals("  ")) {
-                        System.out.println("diago2");
                     addPion(col + 3, Menu.couleur2);
         
             }
@@ -144,7 +139,6 @@ public class Pion {
                 && currentGrid.get(row + 1).get(col -1).equals(player)
                 && currentGrid.get(row + 2).get(col -2).equals(player)
                 && currentGrid.get(row + 3).get(col -3).equals("  ")) {
-                System.out.println("anti-diagohaut");
                addPion(col - 3, Menu.couleur2);
         
 }
@@ -156,7 +150,6 @@ public class Pion {
             && currentGrid.get(row + 1).get(col -2).equals(player)
             && currentGrid.get(row + 2).get(col -1).equals(player)
             && currentGrid.get(row+3).get(col -0).equals("  ")) {
-            System.out.println("anti-diago-bas");
            addPion(col - 3, Menu.couleur2);
         
 }
