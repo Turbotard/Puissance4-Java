@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class VerifWin {
     private static Power4Grid grid;
+    public static int nbPion = 0;
 
     public VerifWin(Power4Grid grid) {
         this.grid = grid;
@@ -58,4 +59,22 @@ public class VerifWin {
         System.out.println("no win");
         return false;
     }
+
+    public static boolean checkNul(){
+        if (nbPion == 42){
+            System.out.println("Match nul");
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean checkcol(int col){
+        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
+        if (currentGrid.get(0).get(col) != "  "){
+            System.out.println("Tu ne peux plus poser dans cette colonne");
+            return true;
+        }
+        return false; 
+    }
+    
 }

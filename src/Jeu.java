@@ -123,11 +123,10 @@ public class Jeu {
 
         do {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
+            boolean egalite = VerifWin.checkNul();
             if (win) {
                 
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
-                saveScore(Player.getNom(), tourCount);
-
                 break;
             }
 
@@ -151,7 +150,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount += 1;
+                    tourCount++;
                     player.changePlayer();
 
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
@@ -161,7 +160,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount += 1;
+                    tourCount++;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -171,7 +170,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount += 1;
+                    tourCount++;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -180,7 +179,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount += 1;
+                    tourCount++;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -189,25 +188,30 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount += 1;
+                    tourCount++;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
                 case "6":
                     col = 6;
                     col--;
-                    Pion.addPion(col, currentPlayer);
-                    mygrid.displayGrid();
-                    tourCount += 1;
-                    player.changePlayer();
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                    break;
+                    if (vf.checkcol(col)){
+                        break;
+                    }else{
+                        Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion  += 1;
+                        player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
+                        mygrid.displayGrid(); 
+                        break;
+                    }
                 case "7":
                     col = 7;
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount += 1;
+                    tourCount++;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -239,9 +243,9 @@ public class Jeu {
         Player player = new Player();
         do {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
+            boolean egalite = VerifWin.checkNul();
             if (win) {
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
-                saveScore(Player.getNom(), tourCount);
                 break;
 
             }
@@ -257,20 +261,21 @@ public class Jeu {
                     case "1":
                         col = 1;
                         col--;
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col) == true){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         mygrid.displayGrid();
-                        tourCount += 1;
-
                         break;
+                        }
                     case "2":
                         col = 2;
                         col--;
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
-                    tourCount += 1;
-
                         break;
                     case "3":
                         col = 3;
@@ -279,52 +284,58 @@ public class Jeu {
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
-                    tourCount += 1;
-
                         break;
+                        }
                     case "4":
                         col = 4;
                         col--;
-
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         mygrid.displayGrid();
-                    tourCount += 1;
-
                         break;
+                        }
                     case "5":
                         col = 5;
                         col--;
-
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         mygrid.displayGrid();
-                    tourCount += 1;
-
                         break;
+                        }
                     case "6":
                         col = 6;
                         col--;
-
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         mygrid.displayGrid();
-                    tourCount += 1;
-
                         break;
+                        }
                     case "7":
                         col = 7;
                         col--;
-
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         mygrid.displayGrid();
-                    tourCount += 1;
-
                         break;
+                        }
                     default:
                         System.out.println("Veuillez saisir un chiffre entre 1 et 7");
-                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                 }
@@ -336,12 +347,19 @@ public class Jeu {
                 }else if (Menu.lvl == 2){
                     Pion.RandomPion1(Menu.couleur1);
                     System.out.println("IA lvl 2 à joué");
+                }else if (Menu.lvl == 3){
+                    Pion.RandomPion2(Menu.couleur1);
+                    System.out.println("IA lvl 3 à joué");
+                }else if (Menu.lvl == 4){
+                    Pion.IAgodmode(Menu.couleur2);
+                    System.out.println("IA lvl 4 à joué");
                 }
                 System.out.println("L'IA a joué");
                 player.changePlayer();
                 mygrid.displayGrid();
+                currentPlayer = currentPlayer == "1" ? "2" : "1";
+
             }
-            currentPlayer = currentPlayer == "1" ? "2" : "1";
             System.out.println(currentPlayer);
 
         } while (true);
