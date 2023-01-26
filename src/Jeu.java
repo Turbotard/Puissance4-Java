@@ -359,9 +359,7 @@ public class Jeu {
                 // } while (true);
                 // randomPion 1 2 3 4
                 
-                    if (vf.checkcolbot()){
-                        break;
-                    }else{
+                    
                         if (Menu.lvl == 1){
                             Pion.RandomPion();
                             System.out.println("IA lvl 1 à joué");
@@ -372,7 +370,7 @@ public class Jeu {
                             Pion.RandomPion2(Menu.couleur1);
                             System.out.println("IA lvl 3 à joué");
                         }
-                    }
+            
                     System.out.println("L'IA a joué");
                     player.changePlayer();
                     mygrid.displayGrid();
