@@ -362,11 +362,11 @@ public class Jeu {
             }
             System.out.println(currentPlayer);
 
-        } while (true);
+        }while (true);
 
     }
 
-}
+
 
 
 
