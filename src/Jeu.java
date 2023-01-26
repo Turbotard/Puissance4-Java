@@ -109,6 +109,7 @@ public class Jeu {
             if (win) {
 
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
+                saveScore(Player.getNom(), tourCount/2);
                 break;
             }
 
@@ -228,6 +229,8 @@ public class Jeu {
             boolean egalite = VerifWin.checkNul();
             if (win) {
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
+                saveScore(Player.getNom(), tourCount);
+
                 break;
 
             }
@@ -251,6 +254,7 @@ public class Jeu {
                             player.changePlayer();
                             currentPlayer = currentPlayer == "1" ? "2" : "1";
                             mygrid.displayGrid();
+                            tourCount++;
                             break;
                         }
 
@@ -265,6 +269,8 @@ public class Jeu {
                             player.changePlayer();
                             currentPlayer = currentPlayer == "1" ? "2" : "1";
                             mygrid.displayGrid();
+                            tourCount++;
+
                             break;
                         }
                     case "3":
@@ -278,6 +284,8 @@ public class Jeu {
                             player.changePlayer();
                             currentPlayer = currentPlayer == "1" ? "2" : "1";
                             mygrid.displayGrid();
+                            tourCount++;
+
                             break;
                         }
                     case "4":
@@ -291,6 +299,8 @@ public class Jeu {
                             player.changePlayer();
                             currentPlayer = currentPlayer == "1" ? "2" : "1";
                             mygrid.displayGrid();
+                            tourCount++;
+
                             break;
                         }
                     case "5":
@@ -304,6 +314,8 @@ public class Jeu {
                             player.changePlayer();
                             currentPlayer = currentPlayer == "1" ? "2" : "1";
                             mygrid.displayGrid();
+                            tourCount++;
+
                             break;
                         }
                     case "6":
@@ -317,6 +329,8 @@ public class Jeu {
                             player.changePlayer();
                             currentPlayer = currentPlayer == "1" ? "2" : "1";
                             mygrid.displayGrid();
+                            tourCount++;
+
                             break;
                         }
                     case "7":
@@ -330,6 +344,8 @@ public class Jeu {
                             player.changePlayer();
                             currentPlayer = currentPlayer == "1" ? "2" : "1";
                             mygrid.displayGrid();
+                            tourCount++;
+
                             break;
                         }
                     default:
@@ -369,6 +385,9 @@ public class Jeu {
                         }else if (Menu.lvl == 3){
                             Pion.RandomPion2(Menu.couleur1);
                             System.out.println("IA lvl 3 à joué");
+                        }else if (Menu.lvl == 4){
+                            Pion.IAgodmode(Menu.couleur2);
+                            System.out.println("IA lvl 4 à joué");
                         }
             
                     System.out.println("L'IA a joué");

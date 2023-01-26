@@ -1,3 +1,5 @@
 *.class
 bin
 .DS_Store
+*.csv
+Top10.csv

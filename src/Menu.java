@@ -282,8 +282,7 @@ public static String couleurIA;
             System.out.println("5. 💜");
             System.out.println("6. 🖤");
             System.out.println("7. 🧡");
-            System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
-
+            System.out.println("e. accepter les modifs" + ConsoleColors.DEFAULT);
             String input = CustomeUtils.getUserInput();
 
             switch (input) {
@@ -308,8 +307,7 @@ public static String couleurIA;
                 case "7":
                     couleur1= "🧡";
                     break;
-                case "q":
-                    quit();
+                case "e":
                     return;
                 default:
                     System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide" + ConsoleColors.DEFAULT);
@@ -327,7 +325,7 @@ public static String couleurIA;
             System.out.println("5. 💜");
             System.out.println("6. 🖤");
             System.out.println("7. 🧡");
-            System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
+            System.out.println("e. accepter les modifs" + ConsoleColors.DEFAULT);
 
             String input = CustomeUtils.getUserInput();
 
@@ -353,8 +351,7 @@ public static String couleurIA;
                 case "7":
                     couleur2 = "🧡";
                     break;
-                case "q":
-                    quit();
+                case "e":
                     return;
                default:
                     System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide" + ConsoleColors.DEFAULT);

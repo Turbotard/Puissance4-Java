@@ -213,8 +213,17 @@ public class Pion {
                     break;
 
                 }
+
+                if (currentGrid.get(row).get(col).equals(player)
+                        && currentGrid.get(row).get(col+1).equals(player)
+                        && currentGrid.get(row).get(col + 2).equals("  ") 
+                        && currentGrid.get(row).get(col + 3).equals(player)){
+                            System.out.println("le contre ligne est ok");
+                            addPion(col + 2, Menu.couleur2);
+                        }
+                        }
+                       
             }
-        }
 
         // Verifie les colonnes
         for (int col = 0; col < Power4Grid.COLS; col++) {
@@ -223,7 +232,7 @@ public class Pion {
                         && currentGrid.get(row - 1).get(col).equals(player)
                         && currentGrid.get(row - 2).get(col).equals(player)
                         && currentGrid.get(row - 3).get(col).equals("  ")) {
-                    System.out.println("colonne");
+                        System.out.println("colonne");
 
                     addPion(col, Menu.couleur2);
                     jouer = true;
@@ -347,6 +356,7 @@ public class Pion {
                         && currentGrid.get(row + 2).get(col + 2).equals(player)
                         && currentGrid.get(row + 3).get(col + 3).equals("  ")) {
                     addPion(col + 3, Menu.couleur2);
+                    return;
 
                 }
 
@@ -356,6 +366,7 @@ public class Pion {
                         && currentGrid.get(row + 2).get(col + 1).equals(player)
                         && currentGrid.get(row + 3).get(col + 0).equals("  ")) {
                     addPion(col + 3, Menu.couleur2);
+                    return;
 
                 }
 
@@ -366,6 +377,7 @@ public class Pion {
                             && currentGrid.get(row + 2).get(col - 2).equals(player)
                             && currentGrid.get(row + 3).get(col - 3).equals("  ")) {
                         addPion(col - 3, Menu.couleur2);
+                        return;
 
                     }
                 }
@@ -377,6 +389,7 @@ public class Pion {
                             && currentGrid.get(row + 2).get(col - 1).equals(player)
                             && currentGrid.get(row + 3).get(col - 0).equals("  ")) {
                         addPion(col - 3, Menu.couleur2);
+                        return;
 
                     }
                 }
