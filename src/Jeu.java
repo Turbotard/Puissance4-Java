@@ -1,8 +1,114 @@
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.CustomeUtils;
 
+
+
+
 public class Jeu {
+
+
+
+    private static void saveScore(String player, int tourCount) {
+        try {
+            File file = new File("Top10.csv");
+            FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(player + ";" + tourCount);
+            bw.newLine();
+            bw.close();
+        } catch (IOException e) {
+            System.out.println("Error saving score: " + e.getMessage());
+        }
+
+    }
+
+
+
+
+
+
+
+    // private static final int MAX_SCORE_COUNT = 10;
+
+    // private static void saveScore(Player player, int score) {
+    //     try {
+    //         //Créer ou ouvrir le fichier "Top10.csv" en mode "append"
+    //         File file = new File("Top10.csv");
+    //         FileWriter fw = new FileWriter(file, true);
+    //         BufferedWriter bw = new BufferedWriter(fw);
+    
+    //         //Lire les scores existants dans le fichier
+    //         List<Score> scores = readScores();
+    
+    //         //Ajouter le nouveau score à la liste
+    //         scores.add(new Score(player.getNom(), score));
+    
+    //         //Trier la liste des scores par ordre décroissant de score (meilleur score en premier)
+    //         scores.sort((s1, s2) -> s1.score - s2.score);
+    
+    //         //Retenir les 10 meilleurs scores
+    //         if(scores.size() > MAX_SCORE_COUNT) {
+    //             scores = scores.subList(0, MAX_SCORE_COUNT);
+    //         }
+    
+    //         //Effacer le contenu du fichier pour écrire les scores à jour
+    //         fw.flush();
+    //         fw.seek(0);
+    
+    //         //Ecriture des scores dans le fichier
+    //         for (Score sc : scores) {
+    //             bw.write(sc.name + "," + sc.score);
+    //             bw.newLine();
+    //         }
+    //         bw.close();
+    //     } catch (IOException e) {
+    //         System.out.println("Erreur lors de la sauvegarde du score : " + e.getMessage());
+    //     }
+    // }
+    
+    // private static List<Score> readScores() throws IOException {
+    //     List<Score> scores = new ArrayList<>();
+    //     File file = new File("Top10.csv");
+    //     if (file.exists() && file.length() > 0) {
+    //         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+    //             String line;
+    //             while ((line = br.readLine()) != null) {
+    //                 String[] parts = line.split(",");
+    //                 scores.add(new Score(parts[0], Integer.parseInt(parts[1])));
+    //             }
+    //         }
+    //     }
+    //     return scores;
+    // }
+    
+    private static class Score {
+        public String name;
+        public int score;
+    
+        public Score(String name, int score) {
+            this.name = name;
+            this.score = score;
+        }
+    }
+
+
+
+
+
+
+
+
+
 
     public static void jeu1v1() {
         int tourCount = 0;
@@ -20,6 +126,8 @@ public class Jeu {
             if (win) {
                 
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
+                saveScore(Player.getNom(), tourCount);
+
                 break;
             }
 
@@ -43,7 +151,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount++;
+                    tourCount += 1;
                     player.changePlayer();
 
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
@@ -53,7 +161,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount++;
+                    tourCount += 1;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -63,7 +171,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount++;
+                    tourCount += 1;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -72,7 +180,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount++;
+                    tourCount += 1;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -81,7 +189,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount++;
+                    tourCount += 1;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -90,7 +198,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount++;
+                    tourCount += 1;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -99,7 +207,7 @@ public class Jeu {
                     col--;
                     Pion.addPion(col, currentPlayer);
                     mygrid.displayGrid();
-                    tourCount++;
+                    tourCount += 1;
                     player.changePlayer();
                     currentPlayer = currentPlayer == "1" ? "2" : "1";
                     break;
@@ -121,6 +229,7 @@ public class Jeu {
 
 
     public static void jeusolo() {
+        int tourCount = 0;
         Power4Grid mygrid = new Power4Grid();
         mygrid.displayGrid();
         Pion Pion = new Pion(mygrid);
@@ -132,7 +241,9 @@ public class Jeu {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
             if (win) {
                 System.out.println("Player " + player.getCurrentPlayer() + " wins!");
+                saveScore(Player.getNom(), tourCount);
                 break;
+
             }
             if (currentPlayer == "1") {
                 int col;
@@ -149,6 +260,8 @@ public class Jeu {
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
+                        tourCount += 1;
+
                         break;
                     case "2":
                         col = 2;
@@ -156,6 +269,8 @@ public class Jeu {
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
+                    tourCount += 1;
+
                         break;
                     case "3":
                         col = 3;
@@ -164,6 +279,8 @@ public class Jeu {
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
+                    tourCount += 1;
+
                         break;
                     case "4":
                         col = 4;
@@ -172,6 +289,8 @@ public class Jeu {
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
+                    tourCount += 1;
+
                         break;
                     case "5":
                         col = 5;
@@ -180,6 +299,8 @@ public class Jeu {
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
+                    tourCount += 1;
+
                         break;
                     case "6":
                         col = 6;
@@ -188,6 +309,8 @@ public class Jeu {
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
+                    tourCount += 1;
+
                         break;
                     case "7":
                         col = 7;
@@ -196,6 +319,8 @@ public class Jeu {
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
                         mygrid.displayGrid();
+                    tourCount += 1;
+
                         break;
                     default:
                         System.out.println("Veuillez saisir un chiffre entre 1 et 7");

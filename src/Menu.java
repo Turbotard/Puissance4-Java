@@ -4,8 +4,11 @@ import java.text.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FilePermission;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 // import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 // import java.io.FileWriter;
 // import java.io.IOException;
 // import java.io.PrintWriter;
@@ -14,7 +17,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import model.ConsoleColors;
 import model.CustomeUtils;
-import model.ScoreComparator;
+import model.Classement;
 
 import java.util.*;
 /**
@@ -48,26 +51,99 @@ public class Menu {
     public static Object main;
 
 
-    public static void lister(String[] args) {
-        String csvFile = "src/Top10.csv";
-        String line = "";
+
+
+    // static void top10ToCsv() {
+    //     try (BufferedWriter bw = new BufferedWriter(new FileWriter("Top10.csv"))) {
+    //         for (Classement score : topTen) {
+    //             String contactString = contact.toString();
+    //             bw.write(contactString);
+    //             bw.newLine();
+    //         }
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+
+
+
+
+    // public static void lister(String[] args) {
+    //     String csvFile = "Top10.csv";
+    //     String line = "";
+    //     String cvsSplitBy = ";";
+    //     try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+    //         while ((line = br.readLine()) != null) {
+    //             String[] player = line.split(cvsSplitBy);
+    //             String name = player[0];
+    //             int score = Integer.parseInt(player[1]); 
+    //             if (score > bestScore) {
+    //                 bestScore = score;
+    //                 bestPlayer = name;
+    //             }
+    //         }
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    //     System.out.println("Le joueur avec le meilleur score est " + bestPlayer + " avec " + bestScore + " points.");
+    // }
+
+
+
+    
+    // public static void lister(String filePath) {
+    //     List<String> scores = new ArrayList<>();
+    //     String line;
+    //     String cvsSplitBy = ";";
+    //     try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+    //         while ((line = br.readLine()) != null) {
+    //             String[] score = line.split(cvsSplitBy);
+    //             scores.add(score[0].toString());
+    //         }
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    //     Collections.sort(scores, Collections.reverseOrder());
+    //     for (String score : scores) {
+    //         System.out.println(score);
+    //     }
+    // }
+    
+
+    public static void lister(String filePath) {
+        List<String[]> scores = new ArrayList<>();
+        String line;
         String cvsSplitBy = ";";
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             while ((line = br.readLine()) != null) {
-                String[] player = line.split(cvsSplitBy);
-                String name = player[0];
-                int score = Integer.parseInt(player[1]); 
-                if (score > bestScore) {
-                    bestScore = score;
-                    bestPlayer = name;
-                }
+                String[] score = line.split(cvsSplitBy);
+                scores.add(score);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Le joueur avec le meilleur score est " + bestPlayer + " avec " + bestScore + " points.");
+        Collections.sort(scores, (a, b) -> Integer.compare(Integer.parseInt(a[1]), Integer.parseInt(b[1])));
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Joueur: " + scores.get(i)[0] + " avec un score de " + scores.get(i)[1]);
+        }
     }
 
+
+
+
+
+    // public void topTenToCsv() {
+
+    //     try (BufferedWriter pw = new BufferedWriter(new FileWriter(this.filename))) {
+    //         for (Classement score : topTen) {
+    //             String stringScore = score.toString();
+    //             pw.write(stringScore);
+    //             pw.newLine();
+    //         }
+    //     } catch (IOException e) {
+    //         System.out.println("Erreur lors de l'écriture du fichier");
+    //     }
+    // }
 
     /**
      * Affiche le menu principal et gère les choix de l'utilisateur
@@ -94,7 +170,8 @@ public class Menu {
                     Jeu.jeu1v1();
                     break;
                 case "3":
-                    lister(null);
+                    lister("Top10.csv");
+                    //Classement.afficherClassement();
                     //rator.compare();
                     //ScoreComparator.main(null);
                     break;
@@ -271,7 +348,5 @@ public static String couleurIA;
     }
 
 
-    private static void listerContact() throws IOException, ParseException{
-
-    }
+   
 }
