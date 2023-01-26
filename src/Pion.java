@@ -276,4 +276,30 @@ public class Pion {
  
 
    }
+
+   public void IAgodmode(String player) {
+    ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
+
+    // Vérifie si l'IA peut aligner 4 pions
+    for (int row = 0; row < Power4Grid.ROWS; row++) {
+        for (int col = 0; col < Power4Grid.COLS - 3; col++) {
+            if (currentGrid.get(row).get(col)== player
+                    && currentGrid.get(row).get(col + 1)== player
+                    && currentGrid.get(row).get(col + 2)== "  "
+                    && currentGrid.get(row).get(col + 3)== "  ") {
+                currentGrid.get(row).set(col + 2, player);
+                VerifWin.nbPion++;
+                if (VerifWin.checkWin(player)) {
+                    System.out.println("IA a gagné !");
+                    return;
+                }
+                return;
+            }
+        }
+    }
+
+
+    // Sinon, l'IA joue aléatoirement
+    RandomPion2(player);
+}
 }

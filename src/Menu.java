@@ -85,7 +85,8 @@ public static String couleurIA;
 
         System.out.println(ConsoleColors.GREEN + "1. difficulté 1" + ConsoleColors.DEFAULT);
         System.out.println(ConsoleColors.YELLOW + "2. difficulté 2" + ConsoleColors.DEFAULT);
-        System.out.println(ConsoleColors.RED + "3. difficulté 3" + ConsoleColors.DEFAULT);
+        System.out.println(ConsoleColors.PURPLE + "3. difficulté 3" + ConsoleColors.DEFAULT);
+        System.out.println(ConsoleColors.RED + "4. GODMODE !!!!" + ConsoleColors.DEFAULT);
         String input = CustomeUtils.getUserInput();
         switch (input){
             case "1":
@@ -106,6 +107,13 @@ public static String couleurIA;
                 settingP1();
                 settingIA();
                 lvl = 3;
+                Jeu.jeusolo();
+                
+                break;
+            case "4":
+                settingP1();
+                settingIA();
+                lvl = 4;
                 Jeu.jeusolo();
                 
                 break;

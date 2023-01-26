@@ -239,11 +239,14 @@ public class Jeu {
                     Pion.RandomPion();
                     System.out.println("IA lvl 1 à joué");
                 }else if (Menu.lvl == 2){
-                    Pion.RandomPion1(Menu.couleur1);
+                    Pion.RandomPion1(Menu.couleur2);
                     System.out.println("IA lvl 2 à joué");
                 }else if (Menu.lvl == 3){
-                    Pion.RandomPion2(Menu.couleur1);
+                    Pion.RandomPion2(Menu.couleur2);
                     System.out.println("IA lvl 3 à joué");
+                }else if (Menu.lvl == 4){
+                    Pion.IAgodmode(Menu.couleur2);
+                    System.out.println("IA lvl 4 à joué");
                 }
                 System.out.println("L'IA a joué");
                 player.changePlayer();
