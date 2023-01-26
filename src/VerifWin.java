@@ -76,5 +76,16 @@ public class VerifWin {
         }
         return false; 
     }
+
+    public static boolean checkcolbot(){
+        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
+            for (int col = 0; col < Power4Grid.COLS - 3; col++) {
+                if (currentGrid.get(0).get(col) != "  "){
+                    System.out.println("Tu ne peux plus poser dans cette colonne");
+                    return true;
+                }
+            }
+        return false; 
+    }
     
 }

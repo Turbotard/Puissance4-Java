@@ -207,7 +207,14 @@ public class Jeu {
 
         } while (true);
     }
+ 
 
+
+
+
+    /**
+     * 
+     */
     public static void jeusolo() {
         int tourCount = 0;
         Power4Grid mygrid = new Power4Grid();
@@ -347,29 +354,53 @@ public class Jeu {
                         break;
                 }
             } else {
-                if (Menu.lvl == 1) {
-                    Pion.RandomPion();
-                    System.out.println("IA lvl 1 à joué");
-                } else if (Menu.lvl == 2) {
-                    Pion.RandomPion1(Menu.couleur1);
-                    System.out.println("IA lvl 2 à joué");
-                } else if (Menu.lvl == 3) {
-                    Pion.RandomPion2(Menu.couleur1);
-                    System.out.println("IA lvl 3 à joué");
-                } else if (Menu.lvl == 4) {
-                    Pion.IAgodmode(Menu.couleur2);
-                    System.out.println("IA lvl 4 à joué");
-                }
-                System.out.println("L'IA a joué");
-                player.changePlayer();
-                mygrid.displayGrid();
-                currentPlayer = currentPlayer == "1" ? "2" : "1";
+                // do {
+                //     int col;
+                //     if (Menu.lvl == 1){
+                //         col = Pion.RandomPion();
+                //         System.out.println("IA lvl 1 à joué");
+                //     }else if (Menu.lvl == 2){
+                //         col = Pion.RandomPion1(Menu.couleur1);
+                //         System.out.println("IA lvl 2 à joué");
+                //     }
+                //     // else if (Menu.lvl == 3){
+                //     //     col = Pion.RandomPion2(Menu.couleur1);
+                //     //     System.out.println("IA lvl 3 à joué");
+                //     // }
 
-            }
-
+                //     if (!vf.checkcol(col)) {
+                //         Pion.addPion(col, Menu.couleur2);
+                //         break;
+                //     }
+                // } while (true);
+                // randomPion 1 2 3 4
+                
+                    if (vf.checkcolbot()){
+                        break;
+                    }else{
+                        if (Menu.lvl == 1){
+                            Pion.RandomPion();
+                            System.out.println("IA lvl 1 à joué");
+                        }else if (Menu.lvl == 2){
+                            Pion.RandomPion1(Menu.couleur1);
+                            System.out.println("IA lvl 2 à joué");
+                        }else if (Menu.lvl == 3){
+                            Pion.RandomPion2(Menu.couleur1);
+                            System.out.println("IA lvl 3 à joué");
+                        }
+                    }
+                    System.out.println("L'IA a joué");
+                    player.changePlayer();
+                    mygrid.displayGrid();
+                    currentPlayer = currentPlayer == "1" ? "2" : "1";    
+        }       
+    }while(true);
             System.out.println(currentPlayer);
 
-        } while (true);
-
+        
     }
 }
+
+
+
+
