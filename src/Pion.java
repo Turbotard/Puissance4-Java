@@ -2,21 +2,21 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Pion {
-   public static Power4Grid grid;
-   private static String pion;
+    public static Power4Grid grid;
+    private static String pion;
 
-   public static String getPionIA() {
-       return pion;
-   }
+    public static String getPionIA() {
+        return pion;
+    }
 
-   public static String setPionIA() {
-       pion = "x";
-       return pion;
-   }
+    public static String setPionIA() {
+        pion = "x";
+        return pion;
+    }
 
-   public Pion(Power4Grid grid) {
-       Pion.grid = grid;
-   }
+    public Pion(Power4Grid grid) {
+        Pion.grid = grid;
+    }
 
    public static boolean addPion(int col, String player) {
        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
@@ -75,7 +75,7 @@ public class Pion {
        bot = rand.nextInt(6 - 0) + 0;
    }
 
-   public void RandomPion1(String player) {
+   public void RandomPion1(String player){
        Random rand = new Random();
        int random = rand.nextInt(6 - 0) + 0;
        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
@@ -125,24 +125,52 @@ public class Pion {
                     && currentGrid.get(row + 3).get(col +3).equals("  ")) {
                         System.out.println("diago1");
                     addPion(col + 3, Menu.couleur2);
-                return;
+                
             }
 
             // diago vers le bas
-                    if (currentGrid.get(row + 3).get(col).equals(player)
-                    && currentGrid.get(row + 2).get(col +1).equals(player)
+                    if (currentGrid.get(row).get(col +3).equals(player)
                     && currentGrid.get(row + 1).get(col +2).equals(player)
-                    && currentGrid.get(row).get(col +3).equals("  ")) {
+                    && currentGrid.get(row + 2).get(col +1).equals(player)
+                    && currentGrid.get(row+3).get(col +0).equals("  ")) {
                         System.out.println("diago2");
                     addPion(col + 3, Menu.couleur2);
-                return;
+        
             }
+
+                //anti diago vers le haut
+                if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+                if (currentGrid.get(row).get(col).equals(player)
+                && currentGrid.get(row + 1).get(col -1).equals(player)
+                && currentGrid.get(row + 2).get(col -2).equals(player)
+                && currentGrid.get(row + 3).get(col -3).equals("  ")) {
+                System.out.println("anti-diagohaut");
+               addPion(col - 3, Menu.couleur2);
+        
+}
+            }
+
+            // anti-diago vers le bas
+            if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+            if (currentGrid.get(row).get(col -3).equals(player)
+            && currentGrid.get(row + 1).get(col -2).equals(player)
+            && currentGrid.get(row + 2).get(col -1).equals(player)
+            && currentGrid.get(row+3).get(col -0).equals("  ")) {
+            System.out.println("anti-diago-bas");
+           addPion(col - 3, Menu.couleur2);
+        
+}
+            }
+
         }
     }
-    random = rand.nextInt(Power4Grid.COLS);
-    System.out.println("pif");
-    addPion(random, Menu.couleur2);
-
+    if (jouer == false){
+        random = rand.nextInt(Power4Grid.COLS);
+        System.out.println("pif");
+        addPion(random, Menu.couleur2);
+        jouer = false;    
+    }
+    
     
     /*if (!jouer) {
         random = rand.nextInt(6 - 0) + 0;
