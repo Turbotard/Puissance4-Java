@@ -46,75 +46,102 @@ public class Jeu {
                 case "1":
                     col = 1;
                     col--;
-                    Pion.addPion(col, currentPlayer);
-                    VerifWin.nbPion ++;
-                    mygrid.displayGrid();
-                    tourCount++;
-                    player.changePlayer();
+                    if (vf.checkcol(col)){
+                        break;
+                    }else{
+                        Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
+                        player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                    break;
+                        mygrid.displayGrid(); 
+                        break;
+                    }
                 case "2":
                     col = 2;
                     col--;
-                    Pion.addPion(col, currentPlayer);
-                    VerifWin.nbPion ++;
-                    mygrid.displayGrid();
-                    tourCount++;
-                    player.changePlayer();
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                    break;
+                    if (vf.checkcol(col)){
+                        break;
+                    }else{
+                        Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
+                        player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
+                        mygrid.displayGrid(); 
+                        break;
+                    }
 
                 case "3":
                     col = 3;
                     col--;
-                    Pion.addPion(col, currentPlayer);
-                    VerifWin.nbPion ++;
-                    mygrid.displayGrid();
-                    tourCount++;
-                    player.changePlayer();
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                    break;
+                    if (vf.checkcol(col)){
+                        break;
+                    }else{
+                        Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
+                        player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
+                        mygrid.displayGrid(); 
+                        break;
+                    }
                 case "4":
                     col = 4;
                     col--;
-                    Pion.addPion(col, currentPlayer);
-                    VerifWin.nbPion ++;
-                    mygrid.displayGrid();
-                    tourCount++;
-                    player.changePlayer();
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                    break;
+                    if (vf.checkcol(col)){
+                        break;
+                    }else{
+                        Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
+                        player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
+                        mygrid.displayGrid(); 
+                        break;
+                    }
                 case "5":
                     col = 5;
                     col--;
-                    Pion.addPion(col, currentPlayer);
-                    VerifWin.nbPion ++;
-                    mygrid.displayGrid();
-                    tourCount++;
-                    player.changePlayer();
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                    break;
+                    if (vf.checkcol(col)){
+                        break;
+                    }else{
+                        Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
+                        player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
+                        mygrid.displayGrid(); 
+                        break;
+                    }
                 case "6":
                     col = 6;
                     col--;
-                    Pion.addPion(col, currentPlayer);
-                    VerifWin.nbPion ++;
-                    mygrid.displayGrid();
-                    tourCount++;
-                    player.changePlayer();
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                    break;
+                    if (vf.checkcol(col)){
+                        break;
+                    }else{
+                        Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
+                        player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
+                        mygrid.displayGrid(); 
+                        break;
+                    }
                 case "7":
                     col = 7;
                     col--;
-                    Pion.addPion(col, currentPlayer);
-                    VerifWin.nbPion ++;
-                    mygrid.displayGrid();
-                    tourCount++;
-                    player.changePlayer();
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                    break;
+                    if (vf.checkcol(col)){
+                        break;
+                    }else{
+                        Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
+                        player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
+                        mygrid.displayGrid(); 
+                        break;
+                    }
                 default:
                     System.out.println("Veuillez saisir un chiffre entre 1 et 7");
                     currentPlayer = currentPlayer ;
@@ -163,71 +190,101 @@ public class Jeu {
                     case "1":
                         col = 1;
                         col--;
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col) == true){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                        mygrid.displayGrid();
+                        mygrid.displayGrid(); 
                         break;
+                        }
                     case "2":
                         col = 2;
                         col--;
-                        Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
-                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                            VerifWin.nbPion ++;
+                            player.changePlayer();
+                            currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                        mygrid.displayGrid();
-                        break;
+                            mygrid.displayGrid(); 
+                            break;
+                        }
                     case "3":
                         col = 3;
                         col--;
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                            VerifWin.nbPion ++;
+                            player.changePlayer();
+                            currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                        Pion.addPion(col, currentPlayer);
-                        player.changePlayer();   
-                        currentPlayer = currentPlayer == "1" ? "2" : "1";
-
-                        mygrid.displayGrid();
+                            mygrid.displayGrid(); 
                         break;
+                        }
                     case "4":
                         col = 4;
                         col--;
-
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                        mygrid.displayGrid();
+                        mygrid.displayGrid(); 
                         break;
+                        }
                     case "5":
                         col = 5;
                         col--;
-
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                        mygrid.displayGrid();
+                        mygrid.displayGrid(); 
                         break;
+                        }
                     case "6":
                         col = 6;
                         col--;
-
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                        mygrid.displayGrid();
+                        mygrid.displayGrid(); 
                         break;
+                        }
                     case "7":
                         col = 7;
                         col--;
-
-                        Pion.addPion(col, currentPlayer);
+                        if (vf.checkcol(col)){
+                            break;
+                        }else{
+                            Pion.addPion(col, currentPlayer);
+                        VerifWin.nbPion ++;
                         player.changePlayer();
                         currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                        mygrid.displayGrid();
+                        mygrid.displayGrid(); 
                         break;
+                        }
                     default:
                         System.out.println("Veuillez saisir un chiffre entre 1 et 7");
                         mygrid.displayGrid();
