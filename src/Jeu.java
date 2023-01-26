@@ -1,13 +1,13 @@
 
-import java.io.BufferedReader;
+//import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
+//import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
+// import java.text.ParseException;
+// import java.util.ArrayList;
+// import java.util.List;
 
 import model.CustomeUtils;
 
@@ -82,15 +82,15 @@ public class Jeu {
     // return scores;
     // }
 
-    private static class Score {
-        public String name;
-        public int score;
+    // private static class Score {
+    //     public String name;
+    //     public int score;
 
-        public Score(String name, int score) {
-            this.name = name;
-            this.score = score;
-        }
-    }
+    //     public Score(String name, int score) {
+    //         this.name = name;
+    //         this.score = score;
+    //     }
+    // }
 
     public static void jeu1v1() {
         int tourCount = 0;
@@ -105,10 +105,10 @@ public class Jeu {
 
         do {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
-            boolean egalite = VerifWin.checkNul();
+            //boolean egalite = VerifWin.checkNul();
             if (win) {
 
-                System.out.println("Player " + player.getCurrentPlayer() + " wins!");
+                System.out.println("Player " + Player.getCurrentPlayer() + " wins!");
                 saveScore(Player.getNom(), tourCount/2);
                 break;
             }
@@ -197,7 +197,7 @@ public class Jeu {
                     break;
                 default:
                     System.out.println("Veuillez saisir un chiffre entre 1 et 7");
-                    currentPlayer = currentPlayer;
+                    //currentPlayer = currentPlayer;
                     mygrid.displayGrid();
                     break;
             }
@@ -222,13 +222,13 @@ public class Jeu {
         Pion Pion = new Pion(mygrid);
         VerifWin vf = new VerifWin(mygrid);
         String currentPlayer = "1";
-        String PionIA = Pion.setPionIA();
+        //String PionIA = Pion.setPionIA();
         Player player = new Player();
         do {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
-            boolean egalite = VerifWin.checkNul();
+            //boolean egalite = VerifWin.checkNul();
             if (win) {
-                System.out.println("Player " + player.getCurrentPlayer() + " wins!");
+                System.out.println("Player " + Player.getCurrentPlayer() + " wins!");
                 saveScore(Player.getNom(), tourCount);
 
                 break;

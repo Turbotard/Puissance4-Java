@@ -10,7 +10,8 @@ public class CustomeUtils {
      */
     public static String getUserInput() {
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        return userInput;
+            String userInput = scanner.nextLine();
+            return userInput;
+        
     }
 }
