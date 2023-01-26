@@ -148,6 +148,8 @@ public class Jeu {
                         col--;
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
                         mygrid.displayGrid();
                         break;
                     case "2":
@@ -155,6 +157,8 @@ public class Jeu {
                         col--;
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
                         mygrid.displayGrid();
                         break;
                     case "3":
@@ -162,7 +166,9 @@ public class Jeu {
                         col--;
 
                         Pion.addPion(col, currentPlayer);
-                        player.changePlayer();
+                        player.changePlayer();   
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
                         mygrid.displayGrid();
                         break;
                     case "4":
@@ -171,6 +177,8 @@ public class Jeu {
 
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
                         mygrid.displayGrid();
                         break;
                     case "5":
@@ -179,6 +187,8 @@ public class Jeu {
 
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
                         mygrid.displayGrid();
                         break;
                     case "6":
@@ -187,6 +197,8 @@ public class Jeu {
 
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
                         mygrid.displayGrid();
                         break;
                     case "7":
@@ -195,6 +207,8 @@ public class Jeu {
 
                         Pion.addPion(col, currentPlayer);
                         player.changePlayer();
+                        currentPlayer = currentPlayer == "1" ? "2" : "1";
+
                         mygrid.displayGrid();
                         break;
                     default:
@@ -215,8 +229,9 @@ public class Jeu {
                 System.out.println("L'IA a joué");
                 player.changePlayer();
                 mygrid.displayGrid();
+                currentPlayer = currentPlayer == "1" ? "2" : "1";
+
             }
-            currentPlayer = currentPlayer == "1" ? "2" : "1";
             System.out.println(currentPlayer);
 
         } while (true);
