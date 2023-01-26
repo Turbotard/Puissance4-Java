@@ -17,9 +17,14 @@ public class Jeu {
 
         do {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
+            boolean egalite = VerifWin.checkNul();
             if (win) {
                 
                 System.out.println("Player " + player.getNom() + " wins!");
+                break;
+            }
+            if (egalite){
+                System.out.println("Dommage");
                 break;
             }
 
@@ -42,6 +47,7 @@ public class Jeu {
                     col = 1;
                     col--;
                     Pion.addPion(col, currentPlayer);
+                    VerifWin.nbPion ++;
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
@@ -52,6 +58,7 @@ public class Jeu {
                     col = 2;
                     col--;
                     Pion.addPion(col, currentPlayer);
+                    VerifWin.nbPion ++;
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
@@ -62,6 +69,7 @@ public class Jeu {
                     col = 3;
                     col--;
                     Pion.addPion(col, currentPlayer);
+                    VerifWin.nbPion ++;
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
@@ -71,6 +79,7 @@ public class Jeu {
                     col = 4;
                     col--;
                     Pion.addPion(col, currentPlayer);
+                    VerifWin.nbPion ++;
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
@@ -80,6 +89,7 @@ public class Jeu {
                     col = 5;
                     col--;
                     Pion.addPion(col, currentPlayer);
+                    VerifWin.nbPion ++;
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
@@ -89,6 +99,7 @@ public class Jeu {
                     col = 6;
                     col--;
                     Pion.addPion(col, currentPlayer);
+                    VerifWin.nbPion ++;
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
@@ -98,6 +109,7 @@ public class Jeu {
                     col = 7;
                     col--;
                     Pion.addPion(col, currentPlayer);
+                    VerifWin.nbPion ++;
                     mygrid.displayGrid();
                     tourCount++;
                     player.changePlayer();
@@ -130,8 +142,13 @@ public class Jeu {
         Player player = new Player();
         do {
             boolean win = vf.checkWin(Player.getcurrentSymbole());
+            boolean egalite = VerifWin.checkNul();
             if (win) {
                 System.out.println("Player " + player.getNom() + " wins!");
+                break;
+            }
+            if (egalite){
+                System.out.println("Dommage");
                 break;
             }
             if (currentPlayer == "1") {
