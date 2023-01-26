@@ -321,6 +321,7 @@ public class Pion {
                         && currentGrid.get(row + 2).get(col + 2).equals(player)
                         && currentGrid.get(row + 3).get(col + 3).equals("  ")) {
                     addPion(col + 3, Menu.couleur2);
+                    return;
 
                 }
 
@@ -330,6 +331,7 @@ public class Pion {
                         && currentGrid.get(row + 2).get(col + 1).equals(player)
                         && currentGrid.get(row + 3).get(col + 0).equals("  ")) {
                     addPion(col + 3, Menu.couleur2);
+                    return;
 
                 }
 
@@ -340,6 +342,7 @@ public class Pion {
                             && currentGrid.get(row + 2).get(col - 2).equals(player)
                             && currentGrid.get(row + 3).get(col - 3).equals("  ")) {
                         addPion(col - 3, Menu.couleur2);
+                        return;
 
                     }
                 }
@@ -351,6 +354,7 @@ public class Pion {
                             && currentGrid.get(row + 2).get(col - 1).equals(player)
                             && currentGrid.get(row + 3).get(col - 0).equals("  ")) {
                         addPion(col - 3, Menu.couleur2);
+                        return;
 
                     }
                 }

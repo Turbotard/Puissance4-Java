@@ -387,6 +387,9 @@ public class Jeu {
                         }else if (Menu.lvl == 3){
                             Pion.RandomPion2(Menu.couleur1);
                             System.out.println("IA lvl 3 à joué");
+                        }else if (Menu.lvl == 4){
+                            Pion.IAgodmode(Menu.couleur2);
+                            System.out.println("IA lvl 4 à joué");
                         }
                     }
                     System.out.println("L'IA a joué");
