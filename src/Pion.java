@@ -2,21 +2,21 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Pion {
-   public static Power4Grid grid;
-   private static String pion;
+    public static Power4Grid grid;
+    private static String pion;
 
-   public static String getPionIA() {
-       return pion;
-   }
+    public static String getPionIA() {
+        return pion;
+    }
 
-   public static String setPionIA() {
-       pion = "x";
-       return pion;
-   }
+    public static String setPionIA() {
+        pion = "x";
+        return pion;
+    }
 
-   public Pion(Power4Grid grid) {
-       Pion.grid = grid;
-   }
+    public Pion(Power4Grid grid) {
+        Pion.grid = grid;
+    }
 
    public static boolean addPion(int col, String player) {
        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
