@@ -139,10 +139,13 @@ public class Pion {
             }
         }
     }
-    random = rand.nextInt(Power4Grid.COLS);
-    System.out.println("pif");
-    addPion(random, Menu.couleur2);
-
+    if (jouer == false){
+        random = rand.nextInt(Power4Grid.COLS);
+        System.out.println("pif");
+        addPion(random, Menu.couleur2);
+        jouer = false;    
+    }
+    
     
     /*if (!jouer) {
         random = rand.nextInt(6 - 0) + 0;
