@@ -213,7 +213,6 @@ public class Jeu {
                         break;
                     default:
                         System.out.println("Veuillez saisir un chiffre entre 1 et 7");
-                        player.changePlayer();
                         mygrid.displayGrid();
                         break;
                 }
