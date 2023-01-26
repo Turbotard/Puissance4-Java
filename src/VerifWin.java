@@ -67,5 +67,14 @@ public class VerifWin {
         }
         return false;
     }
+
+    public static boolean checkcol(int col){
+        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
+        if (currentGrid.get(0).get(col) != "  "){
+            System.out.println("Tu ne peux plus poser dans cette colonne");
+            return true;
+        }
+        return false; 
+    }
     
 }
