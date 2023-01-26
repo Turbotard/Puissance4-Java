@@ -312,6 +312,51 @@ public class Pion {
 
             }
         }
+        for (int row = 0; row < Power4Grid.ROWS - 3; row++) {
+            for (int col = 0; col < Power4Grid.COLS - 3; col++) {
+
+                // diago vers le haut
+                if (currentGrid.get(row).get(col).equals(player)
+                        && currentGrid.get(row + 1).get(col + 1).equals(player)
+                        && currentGrid.get(row + 2).get(col + 2).equals(player)
+                        && currentGrid.get(row + 3).get(col + 3).equals("  ")) {
+                    addPion(col + 3, Menu.couleur2);
+
+                }
+
+                // diago vers le bas
+                if (currentGrid.get(row).get(col + 3).equals(player)
+                        && currentGrid.get(row + 1).get(col + 2).equals(player)
+                        && currentGrid.get(row + 2).get(col + 1).equals(player)
+                        && currentGrid.get(row + 3).get(col + 0).equals("  ")) {
+                    addPion(col + 3, Menu.couleur2);
+
+                }
+
+                // anti diago vers le haut
+                if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+                    if (currentGrid.get(row).get(col).equals(player)
+                            && currentGrid.get(row + 1).get(col - 1).equals(player)
+                            && currentGrid.get(row + 2).get(col - 2).equals(player)
+                            && currentGrid.get(row + 3).get(col - 3).equals("  ")) {
+                        addPion(col - 3, Menu.couleur2);
+
+                    }
+                }
+
+                // anti-diago vers le bas
+                if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+                    if (currentGrid.get(row).get(col - 3).equals(player)
+                            && currentGrid.get(row + 1).get(col - 2).equals(player)
+                            && currentGrid.get(row + 2).get(col - 1).equals(player)
+                            && currentGrid.get(row + 3).get(col - 0).equals("  ")) {
+                        addPion(col - 3, Menu.couleur2);
+
+                    }
+                }
+
+            }
+        }
 
         // Sinon, l'IA joue aléatoirement
         RandomPion2(Menu.couleur1);
