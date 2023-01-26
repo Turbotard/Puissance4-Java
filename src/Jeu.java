@@ -292,20 +292,21 @@ public class Jeu {
                 }
 
             } else {
+                if (Menu.lvl == 1){
+                    Pion.RandomPion();
+                    System.out.println("IA lvl 1 à joué");
+                }else if (Menu.lvl == 2){
+                    Pion.RandomPion1(Menu.couleur1);
+                    System.out.println("IA lvl 2 à joué");
+                }else if (Menu.lvl == 3){
+                    Pion.RandomPion2(Menu.couleur1);
+                    System.out.println("IA lvl 3 à joué");
+                }
+                System.out.println("L'IA a joué");
+                player.changePlayer();
+                mygrid.displayGrid();
+                currentPlayer = currentPlayer == "1" ? "2" : "1";
 
-                    if (Menu.lvl == 1){
-                        Pion.RandomPion();
-                        System.out.println("IA lvl 1 à joué");
-                    }else if (Menu.lvl == 2){
-                        Pion.RandomPion1(Menu.couleur1);
-                        System.out.println("IA lvl 2 à joué");
-                    }
-                    System.out.println("L'IA a joué");
-                    //VerifWin.nbPion ++;
-                    player.changePlayer();
-                    mygrid.displayGrid();
-                    currentPlayer = currentPlayer == "1" ? "2" : "1";
-                
             }
             System.out.println(currentPlayer);
 
