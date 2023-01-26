@@ -178,4 +178,109 @@ public class Pion {
     }*/
     
    }
+   /*-----------------------------------------------------------------------------------------------------------------------
+
+                    IA NIV 3
+
+   -----------------------------------------------------------------------------------------------------------------------*/
+
+
+   public void RandomPion2(String player){
+    Random rand = new Random();
+    int random = rand.nextInt(6 - 0) + 0;
+    ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
+    boolean jouer = false;
+    // Vérifie les lignes
+    for (int row = 0; row < Power4Grid.ROWS; row++) {
+        for (int col = 0; col < Power4Grid.COLS - 3; col++) {
+            if (currentGrid.get(row).get(col).equals(player)
+                    && currentGrid.get(row).get(col +1).equals(player)
+                    && currentGrid.get(row).get(col +2).equals(player)
+                    && currentGrid.get(row).get(col + 3).equals("  ")) {
+                System.out.println("ligne");
+                addPion(col + 3, Menu.couleur2);
+                jouer = true;
+                break;
+
+            }
+        }
+    }
+
+    // Verifie les colonnes
+    for (int col = 0; col < Power4Grid.COLS; col++) {
+        for (int row = 5; row >= 0; row--) {
+            if (currentGrid.get(row).get(col).equals(player)
+                    && currentGrid.get(row -1).get(col).equals(player)
+                    && currentGrid.get(row -2).get(col).equals(player)
+                    && currentGrid.get(row - 3).get(col).equals("  ")) {
+                System.out.println("colonne");
+
+                addPion(col, Menu.couleur2);
+                jouer = true;
+
+                break;
+            }
+
+        }
+    }
+
+
+     for (int row = 0; row < Power4Grid.ROWS - 3; row++) {
+     for (int col = 0; col < Power4Grid.COLS - 3; col++) {
+
+         // diago vers le haut
+         if (currentGrid.get(row).get(col).equals(player)
+                 && currentGrid.get(row + 1).get(col +1).equals(player)
+                 && currentGrid.get(row + 2).get(col +2).equals(player)
+                 && currentGrid.get(row + 3).get(col +3).equals("  ")) {
+                     System.out.println("diago1");
+                 addPion(col + 3, Menu.couleur2);
+             
+         }
+
+         // diago vers le bas
+                 if (currentGrid.get(row).get(col +3).equals(player)
+                 && currentGrid.get(row + 1).get(col +2).equals(player)
+                 && currentGrid.get(row + 2).get(col +1).equals(player)
+                 && currentGrid.get(row+3).get(col +0).equals("  ")) {
+                     System.out.println("diago2");
+                 addPion(col + 3, Menu.couleur2);
+     
+         }
+
+             //anti diago vers le haut
+             if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+             if (currentGrid.get(row).get(col).equals(player)
+             && currentGrid.get(row + 1).get(col -1).equals(player)
+             && currentGrid.get(row + 2).get(col -2).equals(player)
+             && currentGrid.get(row + 3).get(col -3).equals("  ")) {
+             System.out.println("anti-diagohaut");
+            addPion(col - 3, Menu.couleur2);
+     
+}
+         }
+
+         // anti-diago vers le bas
+         if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+         if (currentGrid.get(row).get(col -3).equals(player)
+         && currentGrid.get(row + 1).get(col -2).equals(player)
+         && currentGrid.get(row + 2).get(col -1).equals(player)
+         && currentGrid.get(row+3).get(col -0).equals("  ")) {
+         System.out.println("anti-diago-bas");
+        addPion(col - 3, Menu.couleur2);
+     
+}
+         }
+
+     }
+ }
+ if (jouer == false){
+     random = rand.nextInt(Power4Grid.COLS);
+     System.out.println("pif");
+     addPion(random, Menu.couleur2);
+     jouer = false;    
+ }
+ 
+
+   }
 }
