@@ -130,8 +130,8 @@ public class Pion {
 
             // diago vers le bas
                     if (currentGrid.get(row + 3).get(col).equals(player)
-                    && currentGrid.get(row + 2).get(col -1).equals(player)
-                    && currentGrid.get(row + 1).get(col -2).equals(player)
+                    && currentGrid.get(row + 2).get(col +1).equals(player)
+                    && currentGrid.get(row + 1).get(col +2).equals(player)
                     && currentGrid.get(row).get(col +3).equals("  ")) {
                         System.out.println("diago2");
                     addPion(col + 3, Menu.couleur2);
