@@ -90,4 +90,8 @@ public class Player {
         pion = Menu.couleur2;
         return pion;
     }
+
+    public int getScore() {
+        return 0;
+    }
 }

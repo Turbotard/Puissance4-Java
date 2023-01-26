@@ -4,8 +4,11 @@ import java.text.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FilePermission;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 // import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 // import java.io.FileWriter;
 // import java.io.IOException;
 // import java.io.PrintWriter;
@@ -14,8 +17,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import model.ConsoleColors;
 import model.CustomeUtils;
+import model.Classement;
 
-
+import java.util.*;
 /**
  * Ensemble des méthodes qui permettent d'afficher différents menus et gérer les
  * choix de l'utilisateur
@@ -25,23 +29,122 @@ public class Menu {
     public static String couleur2 = "💔";
     
 
-    public static void lister() throws IOException{
-        String pathFile = "src/Top10.csv";
-        String line = " ";
+    // public static void lister() throws IOException{
+    //     String pathFile = "src/Top10.csv";
+    //     String line = " ";
 
-        try{
-            BufferedReader br = new BufferedReader(new FileReader(pathFile));
-            while((line =br.readLine())!=null){
-                System.out.println(line);
+    //     try{
+    //         BufferedReader br = new BufferedReader(new FileReader(pathFile));
+    //         while((line =br.readLine())!=null){
+    //             System.out.println(line);
+    //         }
+    //         System.out.println("File found");
+    //     }
+
+    //     catch(FileNotFoundException e){
+    //         e.printStackTrace();
+    //         System.out.println("File not found");
+    //     }
+    // }
+    static int bestScore = 0;
+    static String bestPlayer = "";
+    public static Object main;
+
+
+
+
+    // static void top10ToCsv() {
+    //     try (BufferedWriter bw = new BufferedWriter(new FileWriter("Top10.csv"))) {
+    //         for (Classement score : topTen) {
+    //             String contactString = contact.toString();
+    //             bw.write(contactString);
+    //             bw.newLine();
+    //         }
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+
+
+
+
+    // public static void lister(String[] args) {
+    //     String csvFile = "Top10.csv";
+    //     String line = "";
+    //     String cvsSplitBy = ";";
+    //     try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+    //         while ((line = br.readLine()) != null) {
+    //             String[] player = line.split(cvsSplitBy);
+    //             String name = player[0];
+    //             int score = Integer.parseInt(player[1]); 
+    //             if (score > bestScore) {
+    //                 bestScore = score;
+    //                 bestPlayer = name;
+    //             }
+    //         }
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    //     System.out.println("Le joueur avec le meilleur score est " + bestPlayer + " avec " + bestScore + " points.");
+    // }
+
+
+
+    
+    // public static void lister(String filePath) {
+    //     List<String> scores = new ArrayList<>();
+    //     String line;
+    //     String cvsSplitBy = ";";
+    //     try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+    //         while ((line = br.readLine()) != null) {
+    //             String[] score = line.split(cvsSplitBy);
+    //             scores.add(score[0].toString());
+    //         }
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    //     Collections.sort(scores, Collections.reverseOrder());
+    //     for (String score : scores) {
+    //         System.out.println(score);
+    //     }
+    // }
+    
+
+    public static void lister(String filePath) {
+        List<String[]> scores = new ArrayList<>();
+        String line;
+        String cvsSplitBy = ";";
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            while ((line = br.readLine()) != null) {
+                String[] score = line.split(cvsSplitBy);
+                scores.add(score);
             }
-            System.out.println("File found");
-        }
-
-        catch(FileNotFoundException e){
+        } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("File not found");
+        }
+        Collections.sort(scores, (a, b) -> Integer.compare(Integer.parseInt(a[1]), Integer.parseInt(b[1])));
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Joueur: " + scores.get(i)[0] + " avec un score de " + scores.get(i)[1]);
         }
     }
+
+
+
+
+
+    // public void topTenToCsv() {
+
+    //     try (BufferedWriter pw = new BufferedWriter(new FileWriter(this.filename))) {
+    //         for (Classement score : topTen) {
+    //             String stringScore = score.toString();
+    //             pw.write(stringScore);
+    //             pw.newLine();
+    //         }
+    //     } catch (IOException e) {
+    //         System.out.println("Erreur lors de l'écriture du fichier");
+    //     }
+    // }
+
     /**
      * Affiche le menu principal et gère les choix de l'utilisateur
      * @throws IOException
@@ -51,7 +154,7 @@ public class Menu {
             System.out.println(ConsoleColors.GREEN + "  -- Menu --");
             System.out.println("1. Jouer en solo");
             System.out.println("2. Jouer à deux ");
-            System.out.println("3. Afficehr le top 10");
+            System.out.println("3. Afficher le top 10");
             System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
 
             String input = CustomeUtils.getUserInput();
@@ -67,7 +170,10 @@ public class Menu {
                     Jeu.jeu1v1();
                     break;
                 case "3":
-                    lister();
+                    lister("Top10.csv");
+                    //Classement.afficherClassement();
+                    //rator.compare();
+                    //ScoreComparator.main(null);
                     break;
                 case "q":
                     quit();
@@ -85,7 +191,8 @@ public static String couleurIA;
 
         System.out.println(ConsoleColors.GREEN + "1. difficulté 1" + ConsoleColors.DEFAULT);
         System.out.println(ConsoleColors.YELLOW + "2. difficulté 2" + ConsoleColors.DEFAULT);
-        System.out.println(ConsoleColors.RED + "3. difficulté 3" + ConsoleColors.DEFAULT);
+        System.out.println(ConsoleColors.PURPLE + "3. difficulté 3" + ConsoleColors.DEFAULT);
+        System.out.println(ConsoleColors.RED + "4. GODMODE !!!!" + ConsoleColors.DEFAULT);
         String input = CustomeUtils.getUserInput();
         switch (input){
             case "1":
@@ -109,12 +216,18 @@ public static String couleurIA;
                 Jeu.jeusolo();
                 
                 break;
+            case "4":
+                settingP1();
+                settingIA();
+                lvl = 4;
+                Jeu.jeusolo();
+                
+                break;
             default:
                 System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide de difficulté" + ConsoleColors.DEFAULT);
                 break;
         }
     }
-
     
 
     public static void quit() {
@@ -251,7 +364,5 @@ public static String couleurIA;
     }
 
 
-    private static void listerContact() throws IOException, ParseException{
-
-    }
+   
 }
