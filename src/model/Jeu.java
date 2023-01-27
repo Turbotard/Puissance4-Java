@@ -1,8 +1,8 @@
+package model;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import model.CustomeUtils;
 
 public class Jeu {  //classe jeu
 

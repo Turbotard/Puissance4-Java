@@ -1,6 +1,5 @@
+package model;
 import java.text.ParseException;
-
-import model.CustomeUtils;
 
 public class Player {
     public static String currentPlayer;
@@ -118,7 +117,7 @@ public class Player {
     public static String getPionP1() {      
             return pion1;
     }
-    
+
     /**
      * auteur Benjamin
      * Permet de récuperer le Pion du Joueur 2

@@ -1,11 +1,10 @@
+package model;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import model.ConsoleColors;
-import model.CustomeUtils;
 import java.util.*;
 /**
  * Ensemble des méthodes qui permettent d'afficher différents menus et gérer les
