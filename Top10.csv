@@ -1,14 +1,17 @@
 test1;8
-<<<<<<< HEAD
 IA;9
 1;7
 q;9
-=======
 A;13
 A;11
 IA;7
+<<<<<<< HEAD
 >>>>>>> 1d29b228ba79cd1e135a97d4a94d315ff39c687e
 A;13
 IA;10
 IA;6
 IA;11
+=======
+IA;8
+IA;10
+>>>>>>> 77acb1b93a934de05ceed44eeeb929a655851bcc
