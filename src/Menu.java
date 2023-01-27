@@ -33,7 +33,11 @@ public class Menu { // classe mneu
             e.printStackTrace();
         }
         Collections.sort(scores, (a, b) -> Integer.compare(Integer.parseInt(a[1]), Integer.parseInt(b[1])));
-        for (int i = 0; i < 10; i++) {
+        int limit = Math.min(scores.size(), 10);
+        if (scores.size() < 10) {
+            limit = scores.size();
+        }
+        for (int i = 0; i < limit; i++) {
             System.out.println("Joueur: " + scores.get(i)[0] + " avec un score de " + scores.get(i)[1]);
         }
     }
@@ -125,7 +129,7 @@ public class Menu { // classe mneu
         System.out.println(ConsoleColors.RED + "Fermeture du menu..." + ConsoleColors.DEFAULT);
     }
 
-    public static void settingP1(){  // fonction pour paramétrer le joueur 1 / autheur : Esteban
+    public static void settingP1() throws ParseException{
         Player.currentPlayer ="1";
         System.out.println("Joueur1");
         System.out.println("Veuillez choisir le nom de votre choix");
@@ -138,7 +142,7 @@ public class Menu { // classe mneu
         }
     }
 
-    public static void settingP2(){  // fonction pour paramétrer le joueur 2 / autheur : Esteban
+    public static void settingP2() throws ParseException{
         Player.currentPlayer ="2";
         System.out.println("Joueur 2");
         System.out.println("Veuillez choisir le nom de votre choix");
