@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 public class CustomeUtils {
     /**
+     * auteur Benjamin
      * Récupère la chaine de caractères saisie par l'utilisateur
      *
      * @return La chaine de caractères saisie par l'utilisateur
@@ -17,6 +18,14 @@ public class CustomeUtils {
             return userInput;
         
     }
+    /**
+     * auteur Benjamin
+     * @param value
+     * @param pattern
+     * @param errorMessage
+     * @return
+     * @throws ParseException
+     */
     public static String matchValue(String value, String pattern, String errorMessage) throws ParseException {
         Pattern pat = Pattern.compile(pattern);
         Matcher matcher = pat.matcher(value);
