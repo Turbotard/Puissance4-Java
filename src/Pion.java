@@ -238,6 +238,15 @@ public class Pion {
 
                 }
 
+                if (currentGrid.get(row).get(col).equals(player)
+                        && currentGrid.get(row +1).get(col+1).equals(player)
+                        && currentGrid.get(row).get(col + 2).equals("  ") 
+                        && currentGrid.get(row +3).get(col + 3).equals(player)){
+                            System.out.println("le contre diago est ok");
+                            addPion(col + 2, Menu.couleur2);
+                        }
+
+
                 // diago vers le bas
                 if (currentGrid.get(row).get(col + 3).equals(player)
                         && currentGrid.get(row + 1).get(col + 2).equals(player)
@@ -247,6 +256,14 @@ public class Pion {
                     addPion(col + 3, Menu.couleur2);
 
                 }
+
+                if (currentGrid.get(row).get(col+3).equals(player)
+                        && currentGrid.get(row +1).get(col+2).equals(player)
+                        && currentGrid.get(row +2).get(col + 1).equals("  ") 
+                        && currentGrid.get(row +3).get(col + 3).equals(player)){
+                            System.out.println("le contre diago bas est ok");
+                            addPion(col + 1, Menu.couleur2);
+                        }
 
                 // anti diago vers le haut
                 if (row + 3 < currentGrid.size() && col - 3 >= 0) {
@@ -258,6 +275,15 @@ public class Pion {
                         addPion(col - 3, Menu.couleur2);
 
                     }
+
+                    if (currentGrid.get(row).get(col).equals(player)
+                        && currentGrid.get(row +1).get(col+1).equals(player)
+                        && currentGrid.get(row).get(col + 2).equals("  ") 
+                        && currentGrid.get(row +3).get(col + 3).equals(player)){
+                            System.out.println("le contre diago-haut est ok");
+                            addPion(col + 2, Menu.couleur2);
+                        }
+                    
                 }
 
                 // anti-diago vers le bas
@@ -265,11 +291,21 @@ public class Pion {
                     if (currentGrid.get(row).get(col - 3).equals(player)
                             && currentGrid.get(row + 1).get(col - 2).equals(player)
                             && currentGrid.get(row + 2).get(col - 1).equals(player)
-                            && currentGrid.get(row + 3).get(col - 0).equals("  ")) {
+                            && currentGrid.get(row + 3).get(col).equals("  ")) {
                         System.out.println("anti-diago-bas");
                         addPion(col - 3, Menu.couleur2);
 
                     }
+
+                    if (currentGrid.get(row).get(col -3).equals(player)
+                        && currentGrid.get(row+1).get(col-2).equals(player)
+                        && currentGrid.get(row).get(col - 1).equals("  ") 
+                        && currentGrid.get(row +3).get(col).equals(player)){
+                            System.out.println("le contre anti diago est ok");
+                            addPion(col + 2, Menu.couleur2);
+                        }
+
+
                 }
 
             }
