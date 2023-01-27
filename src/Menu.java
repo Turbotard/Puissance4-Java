@@ -123,7 +123,11 @@ public class Menu {
             e.printStackTrace();
         }
         Collections.sort(scores, (a, b) -> Integer.compare(Integer.parseInt(a[1]), Integer.parseInt(b[1])));
-        for (int i = 0; i < 10; i++) {
+        int limit = Math.min(scores.size(), 10);
+        if (scores.size() < 10) {
+            limit = scores.size();
+        }
+        for (int i = 0; i < limit; i++) {
             System.out.println("Joueur: " + scores.get(i)[0] + " avec un score de " + scores.get(i)[1]);
         }
     }
@@ -282,8 +286,7 @@ public static String couleurIA;
             System.out.println("5. 💜");
             System.out.println("6. 🖤");
             System.out.println("7. 🧡");
-            System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
-
+            System.out.println("e. accepter les modifs" + ConsoleColors.DEFAULT);
             String input = CustomeUtils.getUserInput();
 
             switch (input) {
@@ -308,8 +311,7 @@ public static String couleurIA;
                 case "7":
                     couleur1= "🧡";
                     break;
-                case "q":
-                    quit();
+                case "e":
                     return;
                 default:
                     System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide" + ConsoleColors.DEFAULT);
@@ -327,7 +329,7 @@ public static String couleurIA;
             System.out.println("5. 💜");
             System.out.println("6. 🖤");
             System.out.println("7. 🧡");
-            System.out.println("q. Quitter le menu" + ConsoleColors.DEFAULT);
+            System.out.println("e. accepter les modifs" + ConsoleColors.DEFAULT);
 
             String input = CustomeUtils.getUserInput();
 
@@ -353,8 +355,7 @@ public static String couleurIA;
                 case "7":
                     couleur2 = "🧡";
                     break;
-                case "q":
-                    quit();
+                case "e":
                     return;
                default:
                     System.out.println(ConsoleColors.RED + "Veuillez entrer une option valide" + ConsoleColors.DEFAULT);

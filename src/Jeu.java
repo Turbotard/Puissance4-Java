@@ -82,15 +82,15 @@ public class Jeu {
     // return scores;
     // }
 
-    private static class Score {
-        public String name;
-        public int score;
+    // private static class Score {
+    //     public String name;
+    //     public int score;
 
-        public Score(String name, int score) {
-            this.name = name;
-            this.score = score;
-        }
-    }
+    //     public Score(String name, int score) {
+    //         this.name = name;
+    //         this.score = score;
+    //     }
+    // }
 
     public static void jeu1v1() {
         int tourCount = 0;
@@ -375,9 +375,7 @@ public class Jeu {
                 // } while (true);
                 // randomPion 1 2 3 4
                 
-                    if (vf.checkcolbot()){
-                        break;
-                    }else{
+                    
                         if (Menu.lvl == 1){
                             Pion.RandomPion();
                             System.out.println("IA lvl 1 à joué");
@@ -387,8 +385,11 @@ public class Jeu {
                         }else if (Menu.lvl == 3){
                             Pion.RandomPion2(Menu.couleur1);
                             System.out.println("IA lvl 3 à joué");
+                        }else if (Menu.lvl == 4){
+                            Pion.IAgodmode(Menu.couleur2);
+                            System.out.println("IA lvl 4 à joué");
                         }
-                    }
+            
                     System.out.println("L'IA a joué");
                     player.changePlayer();
                     mygrid.displayGrid();
