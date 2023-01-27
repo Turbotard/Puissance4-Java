@@ -129,7 +129,7 @@ public class Menu { // classe mneu
         System.out.println(ConsoleColors.RED + "Fermeture du menu..." + ConsoleColors.DEFAULT);
     }
 
-    public static void settingP1() throws ParseException{
+    public static void settingP1() throws ParseException{  // fonction pour paramétrer le joueur 1 / autheur : Esteban
         Player.currentPlayer ="1";
         System.out.println("Joueur1");
         System.out.println("Veuillez choisir le nom de votre choix");
@@ -142,7 +142,7 @@ public class Menu { // classe mneu
         }
     }
 
-    public static void settingP2() throws ParseException{
+    public static void settingP2() throws ParseException{  // fonction pour paramétrer le joueur 2 / autheur : Esteban
         Player.currentPlayer ="2";
         System.out.println("Joueur 2");
         System.out.println("Veuillez choisir le nom de votre choix");
