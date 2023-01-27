@@ -1,4 +1,5 @@
-# Projet ALGO - JAVA - Puissance 4 (le vrai)
+# Projet ALGO - JAVA - Puissance 4 (le vrai) 
+(Regarder tout en bas pour plus de détails sur notre groupe)
 
 # I- Sujet
 
@@ -110,8 +111,8 @@ Les fichiers rendus peuvent aussi comprendre:
 Pour tout autre type de fichier, veuillez demander à l'enseignant si son inclusion est appropriée.
 La soutenance dure 10 minutes durant lesquelles les membres présentent leur travail. Un échange de questions peut se faire entre le professeur et les membres du groupe.
 
-Les groupes sont les suivants:
-Benjamin T;
-Samba;
-Lucas T;
-Esteban
+L'équipe nommé "L'équipe Tout-Terrains" est composé de :
+Benjamin T -> Responsable de tout un peu 
+Samba -> Responsable des IA
+Lucas T -> Responsable du fichier CSV
+Esteban -> Responsable de l'UI et de la gestions des menus
