@@ -6,6 +6,11 @@ public class Power4Grid {
     final static int ROWS = 6;
     final static int COLS = 7;
 
+
+     /** @auteur All
+     * génère une grille de 6 par 7
+     */
+
     public Power4Grid() {
         grid = new ArrayList<ArrayList<String>>();
         for (int row = 0; row < ROWS; row++) {
@@ -17,6 +22,12 @@ public class Power4Grid {
         }
     }
 
+
+     /**
+     * @auteur All
+     * @return grid
+     */
+
     public ArrayList<ArrayList<String>> getGrid() {
         return grid;
     }
@@ -25,6 +36,13 @@ public class Power4Grid {
         this.grid = grid;
     }
 
+
+      /**
+     * @auteur All
+     * Affiche la grille générée précédemment
+     */
+
+     
     public void displayGrid() {
         for (int lol = 1; lol < COLS + 1; lol++) {
             System.out.print("  " + lol + " ");
