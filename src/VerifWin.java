@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 
 public class VerifWin {
+
+      /**
+     * @auteur Benjamin
+     * récupère l'état de la grille
+     */
+
     private Power4Grid grid;
     public static int nbPion = 0;
 
@@ -8,6 +14,12 @@ public class VerifWin {
         this.grid = grid;
     }
 
+      /**
+     * @auteur Benjamin
+     * @param player
+     * @return vérifie si un joueur a gagné 
+     */
+    
     public boolean checkWin(String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
 
