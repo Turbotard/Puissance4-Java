@@ -18,7 +18,7 @@ public class Pion {
         Pion.grid = grid;
     }
 
-    public static boolean addPion(int col, String player) {
+    public boolean addPion(int col, String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         if (Player.getCurrentPlayer() == "1") {
             for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
@@ -70,7 +70,17 @@ public class Pion {
 
     public void RandomPion() {
         Random rand = new Random();
+        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         int bot = rand.nextInt(6 - 0) + 0;
+        Boolean choixBot = true;
+        while(choixBot){
+            System.out.println(bot);
+            if (currentGrid.get(0).get(bot) != "  "){
+                bot = rand.nextInt(6 - 0) + 0;
+            }else{
+                choixBot = false;
+            }
+        }
         addPion(bot, Menu.couleur2);
         bot = rand.nextInt(6 - 0) + 0;
     }
@@ -158,7 +168,15 @@ public class Pion {
         }
         if (jouer == false) {
             random = rand.nextInt(Power4Grid.COLS);
-            System.out.println("pif");
+            Boolean choixBot = true;
+            while(choixBot){
+                System.out.println(random);
+                if (currentGrid.get(0).get(random) != "  "){
+                    random = rand.nextInt(6 - 0) + 0;
+                }else{
+                    choixBot = false;
+                }
+            }
             addPion(random, Menu.couleur2);
             jouer = false;
         }
@@ -312,7 +330,15 @@ public class Pion {
         }
         if (jouer == false) {
             random = rand.nextInt(Power4Grid.COLS);
-            System.out.println("pif");
+            Boolean choixBot = true;
+            while(choixBot){
+                System.out.println(random);
+                if (currentGrid.get(0).get(random) != "  "){
+                    random = rand.nextInt(Power4Grid.COLS - 1);
+                }else{
+                    choixBot = false;
+                }
+            }
             addPion(random, Menu.couleur2);
             jouer = false;
         }

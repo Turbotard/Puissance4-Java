@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class VerifWin {
-    private static Power4Grid grid;
+    private Power4Grid grid;
     public static int nbPion = 0;
 
     public VerifWin(Power4Grid grid) {
         this.grid = grid;
     }
 
-    public static boolean checkWin(String player) {
+    public boolean checkWin(String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
 
         // Vérifie les lignes
@@ -68,7 +68,7 @@ public class VerifWin {
         return false;
     }
 
-    public static boolean checkcol(int col){
+    public boolean checkcol(int col){
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         if (currentGrid.get(0).get(col) != "  "){
             System.out.println("Tu ne peux plus poser dans cette colonne");
@@ -77,15 +77,6 @@ public class VerifWin {
         return false; 
     }
 
-    public static boolean checkcolbot(){
-        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
-            for (int col = 0; col < Power4Grid.COLS - 3; col++) {
-                if (currentGrid.get(0).get(col) != "  "){
-                    System.out.println("Tu ne peux plus poser dans cette colonne");
-                    return true;
-                }
-            }
-        return false; 
-    }
+
     
 }
