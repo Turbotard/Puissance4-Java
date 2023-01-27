@@ -73,11 +73,11 @@ public class Pion {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         int bot = rand.nextInt(6 - 0) + 0;
         Boolean choixBot = true;
-        while(choixBot){
+        while (choixBot) {
             System.out.println(bot);
-            if (currentGrid.get(0).get(bot) != "  "){
+            if (currentGrid.get(0).get(bot) != "  ") {
                 bot = rand.nextInt(6 - 0) + 0;
-            }else{
+            } else {
                 choixBot = false;
             }
         }
@@ -168,11 +168,11 @@ public class Pion {
         if (jouer == false) {
             random = rand.nextInt(Power4Grid.COLS);
             Boolean choixBot = true;
-            while(choixBot){
+            while (choixBot) {
                 System.out.println(random);
-                if (currentGrid.get(0).get(random) != "  "){
+                if (currentGrid.get(0).get(random) != "  ") {
                     random = rand.nextInt(6 - 0) + 0;
-                }else{
+                } else {
                     choixBot = false;
                 }
             }
@@ -214,15 +214,15 @@ public class Pion {
                 }
 
                 if (currentGrid.get(row).get(col).equals(player)
-                        && currentGrid.get(row).get(col+1).equals(player)
-                        && currentGrid.get(row).get(col + 2).equals("  ") 
-                        && currentGrid.get(row).get(col + 3).equals(player)){
-                            System.out.println("le contre ligne est ok");
-                            addPion(col + 2, Menu.couleur2);
-                        }
-                        }
-                       
+                        && currentGrid.get(row).get(col + 1).equals(player)
+                        && currentGrid.get(row).get(col + 2).equals("  ")
+                        && currentGrid.get(row).get(col + 3).equals(player)) {
+                    System.out.println("le contre ligne est ok");
+                    addPion(col + 2, Menu.couleur2);
+                }
             }
+
+        }
 
         // Verifie les colonnes
         for (int col = 0; col < Power4Grid.COLS; col++) {
@@ -231,7 +231,7 @@ public class Pion {
                         && currentGrid.get(row - 1).get(col).equals(player)
                         && currentGrid.get(row - 2).get(col).equals(player)
                         && currentGrid.get(row - 3).get(col).equals("  ")) {
-                        System.out.println("colonne");
+                    System.out.println("colonne");
 
                     addPion(col, Menu.couleur2);
                     jouer = true;
@@ -256,13 +256,12 @@ public class Pion {
                 }
 
                 if (currentGrid.get(row).get(col).equals(player)
-                        && currentGrid.get(row +1).get(col+1).equals(player)
-                        && currentGrid.get(row).get(col + 2).equals("  ") 
-                        && currentGrid.get(row +3).get(col + 3).equals(player)){
-                            System.out.println("le contre diago est ok");
-                            addPion(col + 2, Menu.couleur2);
-                        }
-
+                        && currentGrid.get(row + 1).get(col + 1).equals(player)
+                        && currentGrid.get(row).get(col + 2).equals("  ")
+                        && currentGrid.get(row + 3).get(col + 3).equals(player)) {
+                    System.out.println("le contre diago est ok");
+                    addPion(col + 2, Menu.couleur2);
+                }
 
                 // diago vers le bas
                 if (currentGrid.get(row).get(col + 3).equals(player)
@@ -274,13 +273,13 @@ public class Pion {
 
                 }
 
-                if (currentGrid.get(row).get(col+3).equals(player)
-                        && currentGrid.get(row +1).get(col+2).equals(player)
-                        && currentGrid.get(row +2).get(col + 1).equals("  ") 
-                        && currentGrid.get(row +3).get(col + 3).equals(player)){
-                            System.out.println("le contre diago bas est ok");
-                            addPion(col + 1, Menu.couleur2);
-                        }
+                if (currentGrid.get(row).get(col + 3).equals(player)
+                        && currentGrid.get(row + 1).get(col + 2).equals(player)
+                        && currentGrid.get(row + 2).get(col + 1).equals("  ")
+                        && currentGrid.get(row + 3).get(col + 3).equals(player)) {
+                    System.out.println("le contre diago bas est ok");
+                    addPion(col + 1, Menu.couleur2);
+                }
 
                 // anti diago vers le haut
                 if (row + 3 < currentGrid.size() && col - 3 >= 0) {
@@ -294,13 +293,13 @@ public class Pion {
                     }
 
                     if (currentGrid.get(row).get(col).equals(player)
-                        && currentGrid.get(row +1).get(col+1).equals(player)
-                        && currentGrid.get(row).get(col + 2).equals("  ") 
-                        && currentGrid.get(row +3).get(col + 3).equals(player)){
-                            System.out.println("le contre diago-haut est ok");
-                            addPion(col + 2, Menu.couleur2);
-                        }
-                    
+                            && currentGrid.get(row + 1).get(col + 1).equals(player)
+                            && currentGrid.get(row + 2).get(col + 2).equals("  ")
+                            && currentGrid.get(row + 3).get(col + 3).equals(player)) {
+                        System.out.println("le contre diago-haut est ok");
+                        addPion(col + 2, Menu.couleur2);
+                    }
+
                 }
 
                 // anti-diago vers le bas
@@ -314,14 +313,13 @@ public class Pion {
 
                     }
 
-                    if (currentGrid.get(row).get(col -3).equals(player)
-                        && currentGrid.get(row+1).get(col-2).equals(player)
-                        && currentGrid.get(row).get(col - 1).equals("  ") 
-                        && currentGrid.get(row +3).get(col).equals(player)){
-                            System.out.println("le contre anti diago est ok");
-                            addPion(col + 2, Menu.couleur2);
-                        }
-
+                    if (currentGrid.get(row).get(col - 3).equals(player)
+                            && currentGrid.get(row + 1).get(col - 2).equals(player)
+                            && currentGrid.get(row).get(col - 1).equals("  ")
+                            && currentGrid.get(row + 3).get(col).equals(player)) {
+                        System.out.println("le contre anti diago est ok");
+                        addPion(col + 2, Menu.couleur2);
+                    }
 
                 }
 
@@ -330,11 +328,11 @@ public class Pion {
         if (jouer == false) {
             random = rand.nextInt(Power4Grid.COLS);
             Boolean choixBot = true;
-            while(choixBot){
+            while (choixBot) {
                 System.out.println(random);
-                if (currentGrid.get(0).get(random) != "  "){
+                if (currentGrid.get(0).get(random) != "  ") {
                     random = rand.nextInt(Power4Grid.COLS - 1);
-                }else{
+                } else {
                     choixBot = false;
                 }
             }
@@ -344,151 +342,148 @@ public class Pion {
 
     }
 
-/*-----------------------------------------------------------------------------------------------------------------------
+    /*-----------------------------------------------------------------------------------------------------------------------
     
                     IA GOD MODE
     
     -----------------------------------------------------------------------------------------------------------------------*/
 
-
     public void IAgodmode(String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
 
-       // Vérifie les lignes
-       for (int row = 0; row < Power4Grid.ROWS; row++) {
-        for (int col = 0; col < Power4Grid.COLS - 3; col++) {
-            if (currentGrid.get(row).get(col).equals(player)
-                    && currentGrid.get(row).get(col + 1).equals(player)
-                    && currentGrid.get(row).get(col + 2).equals(player)
-                    && currentGrid.get(row).get(col + 3).equals("  ")) {
-                System.out.println("ligne");
-                addPion(col + 3, Menu.couleur2);
-                break;
-
-            }
-
-            if (currentGrid.get(row).get(col).equals(player)
-                    && currentGrid.get(row).get(col+1).equals(player)
-                    && currentGrid.get(row).get(col + 2).equals("  ") 
-                    && currentGrid.get(row).get(col + 3).equals(player)){
-                        System.out.println("le contre ligne est ok");
-                        addPion(col + 2, Menu.couleur2);
-                        break;
-                    }
-                    }
-                   
-        }
-
-    // Verifie les colonnes
-    for (int col = 0; col < Power4Grid.COLS; col++) {
-        for (int row = 5; row >= 3; row--) {
-            if (currentGrid.get(row).get(col).equals(player)
-                    && currentGrid.get(row - 1).get(col).equals(player)
-                    && currentGrid.get(row - 2).get(col).equals(player)
-                    && currentGrid.get(row - 3).get(col).equals("  ")) {
-                    System.out.println("colonne");
-
-                addPion(col, Menu.couleur2);
-
-                break;
-            }
-
-        }
-    }
-
-    for (int row = 0; row < Power4Grid.ROWS - 3; row++) {
-        for (int col = 0; col < Power4Grid.COLS - 3; col++) {
-
-            // diago vers le haut
-            if (currentGrid.get(row).get(col).equals(player)
-                    && currentGrid.get(row + 1).get(col + 1).equals(player)
-                    && currentGrid.get(row + 2).get(col + 2).equals(player)
-                    && currentGrid.get(row + 3).get(col + 3).equals("  ")) {
-                System.out.println("diago1");
-                addPion(col + 3, Menu.couleur2);
-                break;
-
-            }
-
-            if (currentGrid.get(row).get(col).equals(player)
-                    && currentGrid.get(row +1).get(col+1).equals(player)
-                    && currentGrid.get(row).get(col + 2).equals("  ") 
-                    && currentGrid.get(row +3).get(col + 3).equals(player)){
-                        System.out.println("le contre diago est ok");
-                        addPion(col + 2, Menu.couleur2);
-                        break;
-                    }
-
-
-            // diago vers le bas
-            if (currentGrid.get(row).get(col + 3).equals(player)
-                    && currentGrid.get(row + 1).get(col + 2).equals(player)
-                    && currentGrid.get(row + 2).get(col + 1).equals(player)
-                    && currentGrid.get(row + 3).get(col + 0).equals("  ")) {
-                System.out.println("diago2");
-                addPion(col + 3, Menu.couleur2);
-                break;
-
-            }
-
-            if (currentGrid.get(row).get(col+3).equals(player)
-                    && currentGrid.get(row +1).get(col+2).equals(player)
-                    && currentGrid.get(row +2).get(col + 1).equals("  ") 
-                    && currentGrid.get(row +3).get(col + 3).equals(player)){
-                        System.out.println("le contre diago bas est ok");
-                        addPion(col + 1, Menu.couleur2);
-                        break;
-                    }
-
-            // anti diago vers le haut
-            if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+        // Vérifie les lignes
+        for (int row = 0; row < Power4Grid.ROWS; row++) {
+            for (int col = 0; col < Power4Grid.COLS - 3; col++) {
                 if (currentGrid.get(row).get(col).equals(player)
-                        && currentGrid.get(row + 1).get(col - 1).equals(player)
-                        && currentGrid.get(row + 2).get(col - 2).equals(player)
-                        && currentGrid.get(row + 3).get(col - 3).equals("  ")) {
-                    System.out.println("anti-diagohaut");
-                    addPion(col - 3, Menu.couleur2);
+                        && currentGrid.get(row).get(col + 1).equals(player)
+                        && currentGrid.get(row).get(col + 2).equals(player)
+                        && currentGrid.get(row).get(col + 3).equals("  ")) {
+                    System.out.println("ligne");
+                    addPion(col + 3, Menu.couleur2);
                     break;
 
                 }
 
                 if (currentGrid.get(row).get(col).equals(player)
-                    && currentGrid.get(row +1).get(col+1).equals(player)
-                    && currentGrid.get(row).get(col + 2).equals("  ") 
-                    && currentGrid.get(row +3).get(col + 3).equals(player)){
+                        && currentGrid.get(row).get(col + 1).equals(player)
+                        && currentGrid.get(row).get(col + 2).equals("  ")
+                        && currentGrid.get(row).get(col + 3).equals(player)) {
+                    System.out.println("le contre ligne est ok");
+                    addPion(col + 2, Menu.couleur2);
+                    break;
+                }
+            }
+
+        }
+
+        // Verifie les colonnes
+        for (int col = 0; col < Power4Grid.COLS; col++) {
+            for (int row = 5; row >= 3; row--) {
+                if (currentGrid.get(row).get(col).equals(player)
+                        && currentGrid.get(row - 1).get(col).equals(player)
+                        && currentGrid.get(row - 2).get(col).equals(player)
+                        && currentGrid.get(row - 3).get(col).equals("  ")) {
+                    System.out.println("colonne");
+
+                    addPion(col, Menu.couleur2);
+
+                    break;
+                }
+
+            }
+        }
+
+        for (int row = 0; row < Power4Grid.ROWS - 3; row++) {
+            for (int col = 0; col < Power4Grid.COLS - 3; col++) {
+
+                // diago vers le haut
+                if (currentGrid.get(row).get(col).equals(player)
+                        && currentGrid.get(row + 1).get(col + 1).equals(player)
+                        && currentGrid.get(row + 2).get(col + 2).equals(player)
+                        && currentGrid.get(row + 3).get(col + 3).equals("  ")) {
+                    System.out.println("diago1");
+                    addPion(col + 3, Menu.couleur2);
+                    break;
+
+                }
+
+                if (currentGrid.get(row).get(col).equals(player)
+                        && currentGrid.get(row + 1).get(col + 1).equals(player)
+                        && currentGrid.get(row).get(col + 2).equals("  ")
+                        && currentGrid.get(row + 3).get(col + 3).equals(player)) {
+                    System.out.println("le contre diago est ok");
+                    addPion(col + 2, Menu.couleur2);
+                    break;
+                }
+
+                // diago vers le bas
+                if (currentGrid.get(row).get(col + 3).equals(player)
+                        && currentGrid.get(row + 1).get(col + 2).equals(player)
+                        && currentGrid.get(row + 2).get(col + 1).equals(player)
+                        && currentGrid.get(row + 3).get(col + 0).equals("  ")) {
+                    System.out.println("diago2");
+                    addPion(col + 3, Menu.couleur2);
+                    break;
+
+                }
+
+                if (currentGrid.get(row).get(col + 3).equals(player)
+                        && currentGrid.get(row + 1).get(col + 2).equals(player)
+                        && currentGrid.get(row + 2).get(col + 1).equals("  ")
+                        && currentGrid.get(row + 3).get(col + 3).equals(player)) {
+                    System.out.println("le contre diago bas est ok");
+                    addPion(col + 1, Menu.couleur2);
+                    break;
+                }
+
+                // anti diago vers le haut
+                if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+                    if (currentGrid.get(row).get(col).equals(player)
+                            && currentGrid.get(row + 1).get(col - 1).equals(player)
+                            && currentGrid.get(row + 2).get(col - 2).equals(player)
+                            && currentGrid.get(row + 3).get(col - 3).equals("  ")) {
+                        System.out.println("anti-diagohaut");
+                        addPion(col - 3, Menu.couleur2);
+                        break;
+
+                    }
+
+                    if (currentGrid.get(row).get(col).equals(player)
+                            && currentGrid.get(row + 1).get(col + 1).equals(player)
+                            && currentGrid.get(row).get(col + 2).equals("  ")
+                            && currentGrid.get(row + 3).get(col + 3).equals(player)) {
                         System.out.println("le contre diago-haut est ok");
                         addPion(col + 2, Menu.couleur2);
                         break;
                     }
-                
-            }
-
-            // anti-diago vers le bas
-            if (row + 3 < currentGrid.size() && col - 3 >= 0) {
-                if (currentGrid.get(row).get(col - 3).equals(player)
-                        && currentGrid.get(row + 1).get(col - 2).equals(player)
-                        && currentGrid.get(row + 2).get(col - 1).equals(player)
-                        && currentGrid.get(row + 3).get(col).equals("  ")) {
-                    System.out.println("anti-diago-bas");
-                    addPion(col - 3, Menu.couleur2);
-                    break;
 
                 }
 
-                if (currentGrid.get(row).get(col -3).equals(player)
-                    && currentGrid.get(row+1).get(col-2).equals(player)
-                    && currentGrid.get(row).get(col - 1).equals("  ") 
-                    && currentGrid.get(row +3).get(col).equals(player)){
+                // anti-diago vers le bas
+                if (row + 3 < currentGrid.size() && col - 3 >= 0) {
+                    if (currentGrid.get(row).get(col - 3).equals(player)
+                            && currentGrid.get(row + 1).get(col - 2).equals(player)
+                            && currentGrid.get(row + 2).get(col - 1).equals(player)
+                            && currentGrid.get(row + 3).get(col).equals("  ")) {
+                        System.out.println("anti-diago-bas");
+                        addPion(col - 3, Menu.couleur2);
+                        break;
+
+                    }
+
+                    if (currentGrid.get(row).get(col - 3).equals(player)
+                            && currentGrid.get(row + 1).get(col - 2).equals(player)
+                            && currentGrid.get(row).get(col - 1).equals("  ")
+                            && currentGrid.get(row + 3).get(col).equals(player)) {
                         System.out.println("le contre anti diago est ok");
                         addPion(col + 2, Menu.couleur2);
                         break;
                     }
 
+                }
 
             }
-
         }
-    }
 
         // Sinon, l'IA joue aléatoirement
         RandomPion2(Menu.couleur1);
