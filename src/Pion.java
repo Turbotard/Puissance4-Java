@@ -5,19 +5,41 @@ public class Pion {
     public static Power4Grid grid;
     private static String pion;
 
+    /**
+     * auteur Benjamin
+     * return le pion de l'IA
+     * @return pion
+     */
     public static String getPionIA() {
         return pion;
     }
 
+    /**
+     * auteur Benjamin
+     * permet de set un pion pour l'ia
+     * @return pion
+     */
     public static String setPionIA() {
         pion = "x";
         return pion;
     }
 
+    /**
+     * auteur Benjamin
+     * @param grid
+     * met le pion dans la grille
+     */
     public Pion(Power4Grid grid) {
         Pion.grid = grid;
     }
 
+    /**
+     * auteur Benjamin
+     * @param col
+     * @param player
+     * place un pion sur une grille par rapport à une colonne donnée en prenant la couleure du joueur
+     * @return
+     */
     public boolean addPion(int col, String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
         if (Player.getCurrentPlayer() == "1") {
@@ -42,32 +64,17 @@ public class Pion {
         return false;
 
     }
+    /*-----------------------------------------------------------------------------------------------------------------------
+    
+                    IA NIV 1
+    
+    -----------------------------------------------------------------------------------------------------------------------*/
 
-    public static boolean addPionBot(int col, String player) {
-        ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
-        if (Player.getCurrentPlayer() == "1") {
-            for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
-                if (currentGrid.get(row).get(col) == "  ") {
-                    currentGrid.get(row).set(col, Menu.couleur1);
-                    grid.setGrid(currentGrid);
-                    break;
-                }
-            }
-        } else if (Player.getCurrentPlayer() == "AI") {
-            for (int row = Power4Grid.ROWS - 1; row >= 0; row--) {
-                if (currentGrid.get(row).get(col) == "  ") {
-                    currentGrid.get(row).set(col, Menu.couleur2);
-                    grid.setGrid(currentGrid);
-                    break;
-                }
-            }
-        } else {
-            System.out.println("Erreur");
-        }
-        return false;
 
-    }
-
+    /**
+     * auteur Samba
+     * IA de niveau 1 qui place un Pion aléatoirement 
+     */
     public void RandomPion() {
         Random rand = new Random();
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
@@ -84,7 +91,18 @@ public class Pion {
         addPion(bot, Menu.couleur2);
         bot = rand.nextInt(6 - 0) + 0;
     }
+    /*-----------------------------------------------------------------------------------------------------------------------
+    
+                    IA NIV 2
+    
+    -----------------------------------------------------------------------------------------------------------------------*/
 
+
+    /**
+     * auteur Samba
+     * comme IA niveau 1 mais regarde si elle peut nous contrer en prenant en paramètre la couleure du joueur en face de lui
+     * @param player
+     */
     public void RandomPion1(String player) {
         Random rand = new Random();
         int random = rand.nextInt(6 - 0) + 0;
@@ -180,12 +198,6 @@ public class Pion {
             jouer = false;
         }
 
-        /*
-         * if (!jouer) {
-         * random = rand.nextInt(6 - 0) + 0;
-         * addPion(random, Menu.couleur2);
-         * }
-         */
 
     }
     /*-----------------------------------------------------------------------------------------------------------------------
@@ -194,6 +206,12 @@ public class Pion {
     
     -----------------------------------------------------------------------------------------------------------------------*/
 
+    /**
+     * auteur Samba
+     * @param player
+     * Comme RandomPion1 mais rajoute en plus le fait qu'elle regardera où il ne faut PAS poser de pion pour nous laisser gagner
+     *
+     */
     public void RandomPion2(String player) {
         Random rand = new Random();
         int random = rand.nextInt(6 - 0) + 0;
@@ -348,6 +366,13 @@ public class Pion {
     
     -----------------------------------------------------------------------------------------------------------------------*/
 
+    /**
+     * auteur Benjamin et Samba
+     * @param player
+     * Meme code que RandomPion mais cette fois ci elle prend en argument les pions du joueurs en face,
+     * pour pouvoir elle meme chercher à faire des 
+     * Puiassances 4
+     */
     public void IAgodmode(String player) {
         ArrayList<ArrayList<String>> currentGrid = grid.getGrid();
 
