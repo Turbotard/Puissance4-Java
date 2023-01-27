@@ -1,3 +1,5 @@
+import java.text.ParseException;
+
 import model.CustomeUtils;
 
 public class Player {
@@ -9,6 +11,7 @@ public class Player {
     private static String pion;
     public static String currentSymbole;
     public static String currentColor;
+    private static final String NAME_PATTERN = "^[a-zA-Z]+(([\\'\\,\\.\\-][a-zA-Z])?[a-zA-Z]*)*$";
 
     
     public Player() {
@@ -32,30 +35,19 @@ public class Player {
         return false;
     }
 
-    public boolean changePlayer2() {
-        if (currentPlayer == "1") {
-            currentPlayer = "AI";
-            currentSymbole = Menu.couleur2;
-        } else if (currentPlayer =="AI"){
-            currentPlayer = "1";
-            currentSymbole = Menu.couleur1;
-        }else{
-            System.out.println("Erreur");
-        }
-        return false;
-    }
-
-
     public static String getcurrentSymbole(){
         return currentSymbole;
     }
     
-    public static String setNom(){
+    public static String setNom() throws ParseException{
         if (currentPlayer.equals ("1")){
             pseudo1 =CustomeUtils.getUserInput();
+            CustomeUtils.matchValue(pseudo1, NAME_PATTERN, "prénom invalideuuux");
+            
             return pseudo1;
         }else{
             pseudo2 =CustomeUtils.getUserInput();
+            CustomeUtils.matchValue(pseudo2, NAME_PATTERN, "prénom invalideuuux");
             return pseudo2;
         }
     }

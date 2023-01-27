@@ -234,7 +234,7 @@ public static String couleurIA;
         System.out.println(ConsoleColors.RED + "Fermeture du menu..." + ConsoleColors.DEFAULT);
     }
 
-    public static void settingP1(){
+    public static void settingP1() throws ParseException{
         Player.currentPlayer ="1";
         System.out.println("Joueur1");
         System.out.println("Veuillez choisir le nom de votre choix");
@@ -250,7 +250,7 @@ public static String couleurIA;
         Player.getCouleur();*/
     }
 
-    public static void settingP2(){
+    public static void settingP2() throws ParseException{
         Player.currentPlayer ="2";
         System.out.println("Joueur 2");
         System.out.println("Veuillez choisir le nom de votre choix");
