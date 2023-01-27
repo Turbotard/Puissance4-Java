@@ -104,10 +104,9 @@ public class Pion {
                 }
             }
         }
-
         // Verifie les colonnes
         for (int col = 0; col < Power4Grid.COLS; col++) {
-            for (int row = 5; row >= 0; row--) {
+            for (int row = 5; row >= 3; row--) {
                 if (currentGrid.get(row).get(col).equals(player)
                         && currentGrid.get(row - 1).get(col).equals(player)
                         && currentGrid.get(row - 2).get(col).equals(player)
@@ -227,7 +226,7 @@ public class Pion {
 
         // Verifie les colonnes
         for (int col = 0; col < Power4Grid.COLS; col++) {
-            for (int row = 5; row >= 0; row--) {
+            for (int row = 5; row >= 3; row--) {
                 if (currentGrid.get(row).get(col).equals(player)
                         && currentGrid.get(row - 1).get(col).equals(player)
                         && currentGrid.get(row - 2).get(col).equals(player)
@@ -369,7 +368,7 @@ public class Pion {
         }
         // Verifie les colonnes
         for (int col = 0; col < Power4Grid.COLS; col++) {
-            for (int row = 5; row >= 0; row--) {
+            for (int row = 5; row >= 3; row--) {
                 if (currentGrid.get(row).get(col).equals(player)
                         && currentGrid.get(row - 1).get(col).equals(player)
                         && currentGrid.get(row - 2).get(col).equals(player)
