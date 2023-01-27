@@ -6,7 +6,12 @@ import model.CustomeUtils;
 
 public class Jeu {  //classe jeu
 
-    private static void saveScore(String player, int tourCount) { // fonction sauvegarde de Score / autheur : Lucas
+
+    /**
+     * auteur Lucas
+     * Sauvegarde de Score
+     */
+    private static void saveScore(String player, int tourCount) {
         try {
             File file = new File("Top10.csv");
             FileWriter fw = new FileWriter(file, true);
@@ -19,7 +24,11 @@ public class Jeu {  //classe jeu
         }
     }
 
-    public static void jeu1v1() { // fonction pour jouer l'un contre l'autre / autheurs : Samba, Esteban et Benjamin
+    /**
+     * auteur Samba, Esteban et Benjamin
+     * Jouer l'un contre l'autre 
+     */
+    public static void jeu1v1() { // 
         int tourCount = 0;
 
         Power4Grid mygrid = new Power4Grid();
@@ -133,7 +142,11 @@ public class Jeu {  //classe jeu
         } while (true);
     }
  
-    public static void jeusolo() { // fonction pour jouer contre une IA / autheurs : Samba, Esteban et Benjamin
+    /**
+     * auteur Samba, Esteban et Benjamin
+     * Jouer contre l'IA 
+     */
+    public static void jeusolo() {
         int tourCount = 0;
         Power4Grid mygrid = new Power4Grid();
         mygrid.displayGrid();

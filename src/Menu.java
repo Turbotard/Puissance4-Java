@@ -20,6 +20,10 @@ public class Menu { // classe mneu
     static String bestPlayer = "";
     public static Object main;
 
+    /**
+     * auteur Lucas
+     * Afficher le top 10 des joueurs  
+     */
     public static void lister(String filePath) { // fonction pour afficher le top 10 des meilleurs joueurs / autheur : Lucas
         List<String[]> scores = new ArrayList<>();
         String line;
@@ -43,10 +47,11 @@ public class Menu { // classe mneu
     }
 
     /**
+     * auteur Esteban
      * Affiche le menu principal et gère les choix de l'utilisateur
-     * @throws IOException
+     * @throws IOException, @throws ParseException
      */
-    public static void displayMenu() throws ParseException, IOException {  // fontion permettant d'afficher le menu principal / autheur : Esteban
+    public static void displayMenu() throws ParseException, IOException {  
         do {
             System.out.println(ConsoleColors.GREEN + "  -- Menu --");
             System.out.println("1. Jouer en solo");
@@ -82,8 +87,12 @@ public class Menu { // classe mneu
     public static int lvl;
     public static String couleurIA;
 
-    public static void DiffIA() throws ParseException {  // fonction pour afficher le menu de difficultées de IA / autheurs : Esteban et Samba 
-
+    /**
+     * auteur Esteban et Samba
+     * Affiche le menu de difficulté des IA
+     * @throws ParseException
+     */
+    public static void DiffIA() throws ParseException {  
         System.out.println(ConsoleColors.GREEN + "1. difficulté 1" + ConsoleColors.DEFAULT);
         System.out.println(ConsoleColors.YELLOW + "2. difficulté 2" + ConsoleColors.DEFAULT);
         System.out.println(ConsoleColors.PURPLE + "3. difficulté 3" + ConsoleColors.DEFAULT);
@@ -124,12 +133,20 @@ public class Menu { // classe mneu
         }
     }
     
-
-    public static void quit() { // fonction du message de sortie de menu / autheur : Esteban
+    /**
+     * auteur Esteban
+     * Affiche le message de sortie de menu
+     */
+    public static void quit() {
         System.out.println(ConsoleColors.RED + "Fermeture du menu..." + ConsoleColors.DEFAULT);
     }
 
-    public static void settingP1() throws ParseException{  // fonction pour paramétrer le joueur 1 / autheur : Esteban
+    /**
+     * auteur Esteban
+     * Paramétre le joueur 1
+     * @throws ParseException
+     */
+    public static void settingP1() throws ParseException{ 
         Player.currentPlayer ="1";
         System.out.println("Joueur1");
         System.out.println("Veuillez choisir le nom de votre choix");
@@ -142,7 +159,12 @@ public class Menu { // classe mneu
         }
     }
 
-    public static void settingP2() throws ParseException{  // fonction pour paramétrer le joueur 2 / autheur : Esteban
+    /**
+     * auteur Esteban
+     * Paramétre le joueur 2
+     * @throws ParseException
+     */
+    public static void settingP2() throws ParseException{ 
         Player.currentPlayer ="2";
         System.out.println("Joueur 2");
         System.out.println("Veuillez choisir le nom de votre choix");
@@ -155,14 +177,23 @@ public class Menu { // classe mneu
         }
 
     }
-    public static void settingIA(){  // fonction de paramètre de l'IA / autheur : Esteban
+
+    /**
+     * auteur Esteban
+     * Paramétre l'IA
+     */
+    public static void settingIA(){  
         Player.currentPlayer ="2";
         Player.pseudo2 ="IA";
     }
 
-
-    public static void displayMenuCouleurP1() throws ParseException {  // fonction pour paramétrer le pion du joueur 1 avec un menu
-        do {                                                           // autheurs : Esteban et Benjamin
+    /**
+     * auteur Esteban et Benjamin
+     * Affiche le menu de paramétrage du pion du joueur 1
+     * @throws ParseException
+     */
+    public static void displayMenuCouleurP1() throws ParseException {
+        do {                                                         
             System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");
             System.out.println("1. 💖");
             System.out.println("2. 💚");
@@ -204,6 +235,12 @@ public class Menu { // classe mneu
             }
         } while (true);
     }
+
+    /**
+     * auteur Esteban et Benjamin
+     * Affiche le menu de paramétrage du pion du joueur 2
+     * @throws ParseException
+     */
     public static void displayMenuCouleurP2() throws ParseException {  // fonction pour paramétrer le pion du joueur 2 avec un menu                                                                  
         do {                                                           // autheurs : Esteban et Benjamin
             System.out.println(ConsoleColors.GREEN + "  -- Menu Couleur--");

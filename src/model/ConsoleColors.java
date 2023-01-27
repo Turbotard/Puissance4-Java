@@ -1,6 +1,10 @@
 package model;
 
-public class ConsoleColors {  // classe pour stocker les couleurs du texte consolo autheur : Esteban
+/**
+     * auteur Esteban
+     * Stocke les couleurs du texte console
+     */
+public class ConsoleColors { 
     public static final String DEFAULT = "\033[0m"; 
     public static final String RED = "\033[0;31m";
     public static final String GREEN = "\033[0;32m";
